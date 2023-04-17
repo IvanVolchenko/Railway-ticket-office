@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://wwww.thymeleaf.org" xmlns:sec="http://wwww.thymeleaf.org/thymeleaf-extras-springsecurity6">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HOME</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <style>
+      .rounded-img {
+        width: 70%;
+        border-radius: 50%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+        padding: 0.5em;
+        margin-bottom: 0.5em;
+      }
+      .card {
+        border-radius: 1em;
+        text-align: center;
+        padding: 1em;
+      }
+      .card img {
+        border-radius: 50%;
+        width: 70%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+        padding: 0.5em;
+        margin: auto;
+      }
+      .card:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+      .text-main {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 40px;
+        color: #471616;
+        font-style: italic;
+        font-weight: 600;
+      }
+      .text-search {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        color: #471616;
+        font-style: italic;
+        font-weight: 600;
+      }
+      .text-btn {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        color: #ffffff;
+        font-style: italic;
+        font-weight: 500;
+      }
+      .text-style {
+        font-style: italic;
+      }
+      .marg-down {
+        margin-bottom: 4em;
+        text-size-adjust: 20%;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand p-0" href="/">
+          <img src="/images/general/SpT.png" alt="logo" width="60" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="routes.html">Routes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/help">Help</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+            <li class="nav-item" sec:authorize="isAnonymous()">
+              <a class="nav-link" th:href="@{/login}">Login</a>
+            </li>
+            <li class="nav-item" sec:authorize="isAuthenticated()">
+              <a class="nav-link" th:href="@{/logout}">Logout</a>
+
+            </li>
+            <li class="nav-item" sec:authorize="isAuthenticated()">
+              <a class="nav-link" th:href="@{/profile}">My profile</a>
+            </li>
+            <li class="nav-item" sec:authorize="hasAuthority('ADMIN')">
+              <a class="nav-link" th:href="@{/admin}">Administration</a>
+            </li>
+<!--            <li class="nav-item" th:if="${adm-bt}">-->
+<!--              <a class="nav-link" th:href="@{/admin}">Administration</a>-->
+<!--            </li>-->
+<!--            <li class="nav-item">-->
+<!--              <a class="nav-link" href="/login">Log in</a>-->
+<!--            </li>-->
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container text-center marg-down">
+      <form class="form-box">
+        <div class="mb-4 my-3">
+          <label for="exampleInputEmail1" class="form-label text-search"
+            >From</label
+          >
+          <input
+            type="text"
+            id="exampleInputEmail1"
+            placeholder="Malaga"
+            aria-describedby="emailHelp"
+          />
+          <label for="exampleInputPassword1" class="form-label text-search"
+            >to</label
+          >
+          <input
+            type="password"
+            placeholder="Madrid"
+            id="exampleInputPassword1"
+          />
+          <a href="#" class="btn btn-success text-btn"> Search </a>
+        </div>
+      </form>
+    </div>
+
+    <div class="container text-center">
+      <p class="text-main">Most popular destinations</p>
+    </div>
+
+    <div class="container my-0">
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5">
+        <div class="col">
+          <div class="card">
+            <img src="/images/general/madrid.jpg" class="card-img-top" alt="Madrid" />
+            <div class="card-body">
+              <h5 class="card-title">Madrid</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <a
+                href="https://es.wikipedia.org/wiki/Madrid"
+                target="_blank"
+                class="btn btn-primary"
+                >Wikipedia
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img
+              src="/images/general/barselona.jpg"
+              class="card-img-top"
+              alt="Barcelona"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Barcelona</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <a
+                href="https://es.wikipedia.org/wiki/Barcelona"
+                target="_blank"
+                class="btn btn-primary"
+                >Wikipedia</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img
+              src="/images/general/valencia.jpg"
+              class="card-img-top"
+              alt="Valencia"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Valencia</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <a
+                href="https://es.wikipedia.org/wiki/Valencia"
+                target="_blank"
+                class="btn btn-primary"
+                >Wikipedia</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="container text-center my-5">
+      <div class="row">
+        <div class="col-lg-4 col-md-8 mx-auto">
+          <img class="rounded-img" src="/images/train.png" alt="My image" />
+          <h1>Malaga-Madrid</h1>
+          <p>The train travels on the route Malaga-Madrid!</p>
+          <a
+            href="https://www.youtube.com/@Bogdan_Stashchuk"
+            target="_blank"
+            class="btn btn-primary"
+          >
+            Youtube
+          </a>
+          <a
+            href="https://training.epam.com/Training/Details/3377?lang=en"
+            target="_blank"
+            class="btn btn-warning"
+          >
+            Java course
+          </a>
+        </div>
+      </div>
+    </div> -->
+  </body>
+</html>
