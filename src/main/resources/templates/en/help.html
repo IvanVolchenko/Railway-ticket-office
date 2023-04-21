@@ -73,84 +73,52 @@
     <div class="container my-5">
       <div class="row row-cols-1 row-cols-md-1 row-cols-lg-3 g-5">
         <div class="col"></div>
-        <form class="form-box">
+        <form class="form-box" action="help/send" method="post">
           <div class="mb-4 my-3">
-            <label for="exampleInputFirstName" class="form-label"
+            <label for="name" class="form-label"
               >First name</label
             >
             <input
               type="text"
               class="form-control"
-              placeholder="Ivan"
-              id="exampleInputFirstName"
+              required
+              minlength="2"
+              maxlength="20"
+              placeholder="Ivan Ivanov"
+              id="name"
+              name="name"
             />
           </div>
           <div class="mb-4">
-            <label for="exampleInputLastName" class="form-label"
-              >Last name</label
+            <label for="contact" class="form-label"
+              >Email address/phone</label
             >
             <input
               type="text"
               class="form-control"
-              placeholder="Ivanov"
-              id="exampleInputLastName"
-            />
-          </div>
-          <div class="mb-4">
-            <label for="exampleInputEmail1" class="form-label"
-              >Email address</label
-            >
-            <input
-              type="text"
-              class="form-control"
+              required
+              minlength="5"
+              maxlength="20"
               placeholder="user@gmail.com"
-              id="exampleInputEmail1"
-              aria-describedby="emailHelp"
+              id="contact"
+              name="contact"
             />
           </div>
           <div class="mb-4">
-            <label for="exampleFormControlTextarea1" class="form-label"
+            <label for="text" class="form-label"
               >Message</label
             >
             <textarea
               class="form-control"
-              id="exampleFormControlTextarea1"
+              id="text"
+              name="text"
+              required
+              minlength="5"
+              maxlength="100"
               rows="3"
             ></textarea>
           </div>
-          <!-- Button trigger modal -->
-          <button
-            type="button"
-            class="btn btn-primary my-3"
-            data-bs-toggle="modal"
-            data-bs-target="#staticBackdrop"
-          >
-            Send
-          </button>
-          <!-- Modal -->
-          <div
-            class="modal fade"
-            id="staticBackdrop"
-            data-bs-backdrop="static"
-            data-bs-keyboard="false"
-            tabindex="-1"
-            aria-labelledby="staticBackdropLabel"
-            aria-hidden="true"
-          >
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="staticBackdropLabel">
-                    Notification
-                  </h1>
-                </div>
-                <div class="modal-body">Your message has been sent</div>
-                <div class="modal-footer">
-                  <a href="/" class="btn btn-primary"> Main menu </a>
-                </div>
-              </div>
-            </div>
-          </div>
+          <button type="submit" class="btn btn-primary my-3">Send</button>
         </form>
       </div>
     </div>

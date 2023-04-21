@@ -31,7 +31,8 @@ public class SecurityConfiguration{
         http
                 .csrf().disable()
                 .authorizeHttpRequests(authConfig ->{
-                    authConfig.requestMatchers("/","/registration","/help", "/images/general/**").permitAll();
+                    authConfig.requestMatchers("/","/registration","/help","/profile", "/routes",
+                            "/route/{id}/details/{secondId}","/help/send", "/images/general/**").permitAll();
                     authConfig.requestMatchers("/admin/**","/images/admin/**").hasAuthority("ADMIN");// hasRole("ADMIN");
                     authConfig.anyRequest().authenticated();
                 })

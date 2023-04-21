@@ -1,7 +1,10 @@
 package com.example.epam.finalProject.Railwayticketoffice.controllers;
 
 
+import com.example.epam.finalProject.Railwayticketoffice.data.MessageRepository;
 import com.example.epam.finalProject.Railwayticketoffice.data.UserRepository;
+import com.example.epam.finalProject.Railwayticketoffice.models.Message;
+import com.example.epam.finalProject.Railwayticketoffice.models.Stop;
 import com.example.epam.finalProject.Railwayticketoffice.models.User;
 import com.example.epam.finalProject.Railwayticketoffice.services.UserService;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -11,6 +14,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 @Controller
 @RequestMapping("/admin")
@@ -18,9 +23,12 @@ public class AdminController {
 
     UserService userService;
     UserRepository userRepository;
-    public AdminController(UserService userService, UserRepository userRepository) {
+    MessageRepository messageRepository;
+    public AdminController(UserService userService, UserRepository userRepository,
+                           MessageRepository messageRepository) {
         this.userService = userService;
         this.userRepository=userRepository;
+        this.messageRepository=messageRepository;
     }
 
     @GetMapping
@@ -33,6 +41,12 @@ public class AdminController {
     @PreAuthorize("hasAuthority('ADMIN')")
     public String findAllUsers(Model model){
         ArrayList<User> users= userService.findAllUsers();
+        Collections.sort(users, new Comparator<User>() {
+            @Override
+            public int compare(User o1, User o2) {
+                return o1.getLastName().compareTo(o2.getLastName());
+            }
+        });
         model.addAttribute("users",users);
         return "/admin/report.html";
     }
@@ -43,5 +57,25 @@ public class AdminController {
         if (id==1) return "redirect:/admin";
         userRepository.deleteById(id);
         return "redirect:/admin/report";
+    }
+
+    @GetMapping("/statements")
+    @PreAuthorize("hasAuthority('ADMIN')")
+    public String getStatements(Model model){
+        ArrayList <Message>  statements = (ArrayList<Message>) messageRepository.findAll();
+        Collections.sort(statements, new Comparator<Message>() {
+            @Override
+            public int compare(Message o1, Message o2) {
+                return (int) (o1.getId()-o2.getId());
+            }
+        });
+        model.addAttribute("statements",statements);
+        return "/admin/statements.html";
+    }
+    @GetMapping("/statement/delete/{id}")
+    @PreAuthorize("hasAuthority('ADMIN')")
+    public String deleteStatement (@PathVariable("id") long id, Model model) {
+        messageRepository.deleteById(id);
+        return "redirect:/admin/statements";
     }
 }

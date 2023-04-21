@@ -120,29 +120,46 @@
       </div>
     </nav>
 
-    <div class="container text-center marg-down">
-      <form class="form-box">
+    <div class="container text-center marg-down" >
+      <form class="form-box" action="/routes" method="get">
         <div class="mb-4 my-3">
-          <label for="exampleInputEmail1" class="form-label text-search"
+          <label for="from" class="form-label text-search"
             >From</label
           >
           <input
             type="text"
-            id="exampleInputEmail1"
+            minlength="3"
+            maxlength="15"
+            required
+            id="from"
+            name="from"
             placeholder="Malaga"
-            aria-describedby="emailHelp"
           />
-          <label for="exampleInputPassword1" class="form-label text-search"
+          <label for="to" class="form-label text-search"
             >to</label
           >
           <input
-            type="password"
+            type="text"
+            minlength="3"
+            maxlength="15"
+            required
+            id="to"
+            name="to"
             placeholder="Madrid"
-            id="exampleInputPassword1"
           />
-          <a href="#" class="btn btn-success text-btn"> Search </a>
+          <button type="submit" class="btn btn-success" >Search</button>
         </div>
       </form>
+    </div>
+    <div th:if="${search}" class="container mt-5 text-center my-3">
+      <div class="alert alert-danger">
+        There isn't some of this station or there aren't so routes now!
+      </div>
+    </div>
+    <div th:if="${exist}" class="container mt-5 text-center my-3">
+      <div class="alert alert-danger">
+        There are not ticket's for this trip now!
+      </div>
     </div>
 
     <div class="container text-center">
@@ -215,29 +232,5 @@
         </div>
       </div>
     </div>
-
-    <!-- <div class="container text-center my-5">
-      <div class="row">
-        <div class="col-lg-4 col-md-8 mx-auto">
-          <img class="rounded-img" src="/images/train.png" alt="My image" />
-          <h1>Malaga-Madrid</h1>
-          <p>The train travels on the route Malaga-Madrid!</p>
-          <a
-            href="https://www.youtube.com/@Bogdan_Stashchuk"
-            target="_blank"
-            class="btn btn-primary"
-          >
-            Youtube
-          </a>
-          <a
-            href="https://training.epam.com/Training/Details/3377?lang=en"
-            target="_blank"
-            class="btn btn-warning"
-          >
-            Java course
-          </a>
-        </div>
-      </div>
-    </div> -->
   </body>
 </html>
