@@ -7,6 +7,10 @@ import jakarta.validation.constraints.Size;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * Stations of country.
+ * @author Ivan Volchenko
+ */
 @Entity
 @Table(name = "stations")
 public class Station {

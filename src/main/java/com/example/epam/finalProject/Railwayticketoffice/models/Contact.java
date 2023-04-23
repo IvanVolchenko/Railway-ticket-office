@@ -4,6 +4,10 @@ import jakarta.persistence.*;
 
 import java.util.Objects;
 
+/**
+ * Contacts for admin.
+ * @author Ivan Volchenko
+ */
 @Entity
 @Table(name = "contacts")
 public class Contact {

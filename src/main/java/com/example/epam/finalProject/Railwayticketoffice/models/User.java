@@ -10,6 +10,10 @@ import jakarta.validation.constraints.Size;
 @Table(name = "users")
 public class User {
 
+    /**
+     * User of page.
+     * @author Ivan Volchenko
+     */
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)

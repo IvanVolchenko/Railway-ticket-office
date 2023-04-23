@@ -5,6 +5,10 @@ import jakarta.validation.constraints.*;
 
 import java.time.LocalDateTime;
 
+/**
+ * Stops of routes.
+ * @author Ivan Volchenko
+ */
 @Entity
 @Table(name = "stops")
 public class Stop {

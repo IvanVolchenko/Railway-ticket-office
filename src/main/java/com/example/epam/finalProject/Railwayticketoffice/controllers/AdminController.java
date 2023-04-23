@@ -18,6 +18,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
+/**
+ * The main controller 'AdminController' com.example.epam.finalProject.Railwayticketoffice.controllers.
+ * It's responsible for viewing and deleting users and statements.
+ * @author Ivan Volchenko
+ */
 @Controller
 @RequestMapping("/admin")
 public class AdminController {

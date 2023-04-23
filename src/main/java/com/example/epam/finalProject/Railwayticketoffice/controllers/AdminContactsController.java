@@ -9,6 +9,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * The  controller 'AdminContactsController' com.example.epam.finalProject.Railwayticketoffice.controllers.
+ * It's responsible for viewing and deleting useful contacts.
+ * @author Ivan Volchenko
+ */
 @Controller
 @RequestMapping("/admin")
 public class AdminContactsController {

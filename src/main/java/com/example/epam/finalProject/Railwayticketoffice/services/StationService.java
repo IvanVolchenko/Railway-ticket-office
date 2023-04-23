@@ -1,6 +1,5 @@
 package com.example.epam.finalProject.Railwayticketoffice.services;
 
-import com.example.epam.finalProject.Railwayticketoffice.controllers.MainController;
 import com.example.epam.finalProject.Railwayticketoffice.data.StationsRepository;
 import com.example.epam.finalProject.Railwayticketoffice.models.Station;
 import org.slf4j.Logger;
@@ -9,6 +8,10 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 
+/**
+ * The interface StationService com.example.epam.finalProject.Railwayticketoffice.services.
+ * @author Ivan Volchenko
+ */
 @Service
 public class StationService {
 

@@ -15,10 +15,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.concurrent.atomic.AtomicReference;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * The interface StopService com.example.epam.finalProject.Railwayticketoffice.services.
+ * @author Ivan Volchenko
+ */
 @Service
 public class StopService {
 
@@ -60,7 +63,7 @@ public class StopService {
         return second.isAfter(first);
     }
 
-    public boolean delete(long station, String number) {
+    public boolean deleteStop(long station, String number) {
         LOGGER.info("StopService: method 'delete'");
         List<Stop> byTrain = stopRepository.findByTrain(number);
         AtomicBoolean result = new AtomicBoolean(false);
@@ -96,6 +99,15 @@ public class StopService {
         return true;
     }
 
+    /**
+     * It changes information about stops
+     * @param station the station identifier
+     * @param number the route number
+     * @param km The distance from the start of the route
+     * @param timein The arrival time
+     * @param timeout The departure time
+     * @return the boolean
+     */
     public boolean change(long station, String number,int km,LocalDateTime timein,LocalDateTime timeout) {
         LOGGER.info("StopService: method 'change'");
         if (timein.isBefore(LocalDateTime.now().plusMinutes(1))) return false;
@@ -116,6 +128,12 @@ public class StopService {
         return result.get();
     }
 
+    /**
+     * It returns all routes between the given stations information about stops ( is called from main page)
+     * @param from the departure station
+     * @param to the arrival station
+     * @return the List of Rotes
+     */
     public ArrayList <Route> search(String from, String to) {
         LOGGER.info("StopService: method 'search'");
         ArrayList<Station> allByCity = stationsRepository.findAllByCity(from);
@@ -160,6 +178,12 @@ public class StopService {
 
     }
 
+    /**
+     * It returns all routes between the given stations information about stops
+     * @param id the departure stop identifier
+     * @param secondId the arrival stop identifier
+     * @return the List of Rotes
+     */
     public List<Route> check(long id,long secondId) {
         LOGGER.info("StopService: method 'check'");
         Optional<Stop> byId = stopRepository.findById(id);

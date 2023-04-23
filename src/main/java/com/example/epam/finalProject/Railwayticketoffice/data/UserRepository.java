@@ -6,6 +6,10 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
+/**
+ * The repository 'UserRepository'.
+ * @author Ivan Volchenko
+ */
 @Repository
 public interface UserRepository extends CrudRepository<User,Long> { //CrudRepository<User,Long> {
     Optional <User> findByUsername (String username);

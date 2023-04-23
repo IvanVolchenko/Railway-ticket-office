@@ -7,6 +7,10 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.Optional;
 
+/**
+ * The repository 'StationsRepository'.
+ * @author Ivan Volchenko
+ */
 @Repository
 public interface StationsRepository extends CrudRepository<Station,Long> {
     Optional<Station> findByStreet (String street);

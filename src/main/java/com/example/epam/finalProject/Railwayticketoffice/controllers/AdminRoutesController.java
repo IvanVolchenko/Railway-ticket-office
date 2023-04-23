@@ -24,6 +24,11 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+/**
+ * The controller 'AdminRoutesController' com.example.epam.finalProject.Railwayticketoffice.controllers.
+ * It's responsible for viewing, editing and deleting stations and routes with stops.
+ * @author Ivan Volchenko
+ */
 @Controller
 @RequestMapping("/admin")
 public class AdminRoutesController {
@@ -68,7 +73,7 @@ public class AdminRoutesController {
 
     @PostMapping("/addStation")
     @PreAuthorize("hasAuthority('ADMIN')")
-    public String addContacts (@ModelAttribute ("station") @Valid Station station,
+    public String addStation (@ModelAttribute ("station") @Valid Station station,
                                BindingResult bindingResult, Model model) {
         LOGGER.info("AdminRoutesController: method 'addContacts'");
         if (bindingResult.hasErrors()) {
@@ -128,7 +133,7 @@ public class AdminRoutesController {
     public String deleteStop (@RequestParam long st, @RequestParam String train,
                                Model model) {
         LOGGER.info("AdminRoutesController: method 'deleteStop'");
-        if (!stopService.delete(st,train)){
+        if (!stopService.deleteStop(st,train)){
             model.addAttribute("notExist", "notExist");
             Iterable <Stop> stop = stopRepository.findAll();
             List <Stop> stops = new ArrayList<>();

@@ -6,6 +6,10 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+/**
+ * The repository 'TicketRepository'.
+ * @author Ivan Volchenko
+ */
 @Repository
 public interface TicketRepository extends CrudRepository<Ticket, Long> {
     List <Ticket> findByDocument(String document);

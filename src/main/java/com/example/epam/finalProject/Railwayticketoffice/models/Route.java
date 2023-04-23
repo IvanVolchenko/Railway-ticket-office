@@ -1,7 +1,10 @@
 package com.example.epam.finalProject.Railwayticketoffice.models;
 
-import java.time.LocalDateTime;
 
+/**
+ * Route between stops.
+ * @author Ivan Volchenko
+ */
 public class Route {
 
     private String  number;

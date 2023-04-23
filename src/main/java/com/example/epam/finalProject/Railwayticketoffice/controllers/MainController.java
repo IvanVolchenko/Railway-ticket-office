@@ -20,6 +20,12 @@ import org.springframework.web.bind.annotation.*;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * The main controller 'MainController' com.example.epam.finalProject.Railwayticketoffice.controllers.
+ * It's responsible for the main page,searching and viewing routes,
+ * their purchase, the 'help' department, login and registration.
+ * @author Ivan Volchenko
+ */
 @Controller
 @RequestMapping("")
 public class MainController {
@@ -58,7 +64,7 @@ public class MainController {
     }
 
     @GetMapping("/routes")
-    public String routes(HttpServletRequest req , Model model){
+    public String searchRoutes(HttpServletRequest req , Model model){
         LOGGER.info("Main controller: method 'routes'");
         String from =req.getParameter("from");
         String to =req.getParameter("to");

@@ -67,7 +67,7 @@ public class StopServiceUnitTest {
         ArrayList <Stop> stops = new ArrayList<Stop>();
         stops.add(stop);
         when(stopRepository.findByTrain(any(String.class))).thenReturn(stops);
-        boolean test = stopService.delete(12, "PQWERTYUIIOP");
+        boolean test = stopService.deleteStop(12, "PQWERTYUIIOP");
         Assert.assertTrue(test);
     }
 

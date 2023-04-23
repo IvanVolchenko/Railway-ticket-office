@@ -5,6 +5,10 @@ import org.springframework.security.core.userdetails.User;
 
 import java.util.Collection;
 
+/**
+ * User of page at the session.
+ * @author Ivan Volchenko
+ */
 public class MyUser extends User {
 
     private long id;

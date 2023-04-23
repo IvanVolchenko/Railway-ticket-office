@@ -37,7 +37,7 @@ public class StopServiceIntegrationTest {
     @Test
     public void fallDelete (){
         String number = UUID.randomUUID().toString();
-        boolean test = stopService.delete(9999, number);
+        boolean test = stopService.deleteStop(9999, number);
         Assert.assertFalse(test);
     }
 

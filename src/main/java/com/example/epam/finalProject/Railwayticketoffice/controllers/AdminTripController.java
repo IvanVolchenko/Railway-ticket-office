@@ -23,6 +23,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.*;
 
+/**
+ * The controller 'AdminTripController' com.example.epam.finalProject.Railwayticketoffice.controllers.
+ * It's responsible for the page viewing and deleting tickets for a specific route.
+ * @author Ivan Volchenko
+ */
 @Controller
 @RequestMapping("/admin")
 public class AdminTripController {

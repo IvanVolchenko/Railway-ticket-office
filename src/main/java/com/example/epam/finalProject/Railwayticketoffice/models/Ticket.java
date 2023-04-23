@@ -2,6 +2,10 @@ package com.example.epam.finalProject.Railwayticketoffice.models;
 
 import jakarta.persistence.*;
 
+/**
+ * Tickets for specific train.
+ * @author Ivan Volchenko
+ */
 @Entity
 @Table(name = "tickets")
 public class Ticket {

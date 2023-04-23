@@ -3,6 +3,10 @@ package com.example.epam.finalProject.Railwayticketoffice.models;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 
+/**
+ * Statements to admin.
+ * @author Ivan Volchenko
+ */
 @Entity
 @Table(name = "messages")
 public class Message {

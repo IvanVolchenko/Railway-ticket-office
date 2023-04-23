@@ -11,6 +11,10 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Optional;
 
+/**
+ * The interface UserService com.example.epam.finalProject.Railwayticketoffice.services.
+ * @author Ivan Volchenko
+ */
 @Service
 public class UserService {
 

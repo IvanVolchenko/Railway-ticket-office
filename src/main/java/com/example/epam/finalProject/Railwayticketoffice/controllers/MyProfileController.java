@@ -21,6 +21,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * The controller 'MyProfileController' com.example.epam.finalProject.Railwayticketoffice.controllers.
+ * It's responsible for the profile page.
+ * @author Ivan Volchenko
+ */
 @Controller
 public class MyProfileController {
 
