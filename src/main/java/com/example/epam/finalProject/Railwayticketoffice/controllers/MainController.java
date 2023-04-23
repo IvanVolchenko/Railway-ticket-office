@@ -7,6 +7,8 @@ import com.example.epam.finalProject.Railwayticketoffice.services.StopService;
 import com.example.epam.finalProject.Railwayticketoffice.services.UserService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
@@ -15,10 +17,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.atomic.AtomicReference;
 
 @Controller
 @RequestMapping("")
@@ -27,6 +27,7 @@ public class MainController {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(MainController.class);
     UserService userService;
     UserRepository userRepository;
     StationsRepository stationsRepository;
@@ -52,11 +53,13 @@ public class MainController {
 
     @GetMapping("/")
     public String startMethod(Model model){
+        LOGGER.info("Home page");
         return "/en/index.html";
     }
 
     @GetMapping("/routes")
     public String routes(HttpServletRequest req , Model model){
+        LOGGER.info("Main controller: method 'routes'");
         String from =req.getParameter("from");
         String to =req.getParameter("to");
         ArrayList<Route> routes = stopService.search(from, to);
@@ -71,6 +74,7 @@ public class MainController {
     @GetMapping("/route/{id}/details/{secondId}")
     public String getRouteDetails(@PathVariable long id , @PathVariable long secondId,
                                   Authentication authentication ,Model model){
+        LOGGER.info("Main controller: method 'getRouteDetails'");
         if (authentication==null) model.addAttribute("exist","exist");
         Optional<Stop> byId = stopRepository.findById(id);
         Stop stop = byId.get();
@@ -91,6 +95,7 @@ public class MainController {
     @PreAuthorize("hasAuthority('USER')")
     public String buyRoute(@PathVariable long id , @PathVariable long secondId,
                            Authentication authentication , Model model){
+        LOGGER.info("Main controller: method 'buyRoute'");
         MyUser myUser = (MyUser) authentication.getPrincipal();
         Optional<Stop> byId1 = stopRepository.findById(id);
         Stop stop = byId1.get();
@@ -127,6 +132,7 @@ public class MainController {
             model.addAttribute("second",second);
             model.addAttribute("number",number);
             model.addAttribute("uuid",uuid);
+            LOGGER.info("Main controller:exit from the method 'buyRoute'");
             return "/en/success.html";
         } else {
             model.addAttribute("exist","exist");
@@ -142,6 +148,7 @@ public class MainController {
     @PostMapping("/help/send")
     public String sendHelp(@RequestParam String name, @RequestParam String contact,
                            @RequestParam String text,Model model){
+        LOGGER.info("Main controller: method 'sendHelp'");
         messageRepository.save(new Message(name,contact,text));
         return "redirect:/";
     }
@@ -158,6 +165,7 @@ public class MainController {
 
     @GetMapping("/registration")
     public String getRegistration(Model model){
+        LOGGER.info("Main controller: method 'getRegistration'");
         model.addAttribute("user", new User());
         return "/en/registration.html";
     }
@@ -165,6 +173,7 @@ public class MainController {
     @PostMapping("/registration")
     public String addUser(@ModelAttribute ("user") @Valid User user,
                           BindingResult bindingResult, Model model){
+        LOGGER.info("Main controller: method 'addUser'");
         if (bindingResult.hasErrors()) return "/en/registration.html";
         if (!userService.addNewUser(user)) {
             model.addAttribute("exist", "exist");

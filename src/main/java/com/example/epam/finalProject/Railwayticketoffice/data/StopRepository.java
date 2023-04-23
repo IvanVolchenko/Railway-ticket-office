@@ -12,4 +12,6 @@ public interface StopRepository extends CrudRepository <Stop, Long> {
     List<Stop> findByTrain (String train);
 
     List <Stop> findAllByStation_id(long id);
+
+    List<Stop> findAllByTrain(String train);
 }

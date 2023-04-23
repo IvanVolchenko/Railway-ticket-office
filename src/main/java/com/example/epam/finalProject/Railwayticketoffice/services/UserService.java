@@ -2,6 +2,8 @@ package com.example.epam.finalProject.Railwayticketoffice.services;
 
 import com.example.epam.finalProject.Railwayticketoffice.data.UserRepository;
 import com.example.epam.finalProject.Railwayticketoffice.models.User;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -15,6 +17,7 @@ public class UserService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(UserService.class);
     private  UserRepository userRepository;
 
     public UserService(UserRepository userRepository) {
@@ -22,6 +25,7 @@ public class UserService {
     }
 
     public boolean addNewUser (User user){
+        LOGGER.info("UserService: method 'addNewUser'");
         Optional<User> userCheck = userRepository.findByEmailAddress(user.getEmailAddress());
         Optional<User> userCheck2 = userRepository.findByDocumentNumber(user.getDocumentNumber());
         if (userCheck.isPresent() || userCheck2.isPresent()) {
@@ -36,6 +40,7 @@ public class UserService {
     }
 
     public boolean change (User user){
+        LOGGER.info("UserService: method 'change'");
         user.setAuthorities("USER");
         Optional<User> userCheck = userRepository.findByEmailAddress(user.getEmailAddress());
         Optional<User> userCheck2 = userRepository.findByDocumentNumber(user.getDocumentNumber());
@@ -65,6 +70,7 @@ public class UserService {
     }
 
     public ArrayList<User> findAllUsers() {
+        LOGGER.info("UserService: method 'findAllUsers'");
         Iterable <User> users = userRepository.findAll();
         ArrayList<User> usersWithoutAdmin = new ArrayList<>();
         users.forEach(user -> {

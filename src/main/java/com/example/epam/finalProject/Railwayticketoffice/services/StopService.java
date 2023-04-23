@@ -5,6 +5,8 @@ import com.example.epam.finalProject.Railwayticketoffice.data.StopRepository;
 import com.example.epam.finalProject.Railwayticketoffice.models.Route;
 import com.example.epam.finalProject.Railwayticketoffice.models.Station;
 import com.example.epam.finalProject.Railwayticketoffice.models.Stop;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -20,6 +22,7 @@ import java.util.regex.Pattern;
 @Service
 public class StopService {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(StopService.class);
     private StopRepository stopRepository;
 
     private StationsRepository stationsRepository;
@@ -30,6 +33,7 @@ public class StopService {
     }
 
     public boolean createNewRoute (Stop first, Stop second, long departure, long arrival){
+        LOGGER.info("StopService: method 'createNewRoute'");
         Optional<Station> stationFirst = stationsRepository.findById(departure);
         Optional<Station> stationSecond = stationsRepository.findById(arrival);
         if (stationFirst.isEmpty() || stationSecond.isEmpty()) {
@@ -38,6 +42,8 @@ public class StopService {
         if (!differenceBetweenDatesForCreating(first.getDeparture(),second.getDeparture())){
             return false;
         }
+        List <Stop> checkStop = stopRepository.findAllByTrain(first.getTrain());
+        if (!checkStop.isEmpty()) return false;
         Station stationStart = stationFirst.get();
         first.setStation(stationStart);
         Station stationFinish = stationSecond.get();
@@ -55,6 +61,7 @@ public class StopService {
     }
 
     public boolean delete(long station, String number) {
+        LOGGER.info("StopService: method 'delete'");
         List<Stop> byTrain = stopRepository.findByTrain(number);
         AtomicBoolean result = new AtomicBoolean(false);
         if (byTrain.size()>0){
@@ -68,26 +75,29 @@ public class StopService {
         return result.get();
     }
 
-    public void addStop(long station, String number, int km,
+    public boolean addStop(long station, String number, int km,
                            LocalDateTime in, LocalDateTime out) {
-        if (out.isBefore(in)) return;
+        LOGGER.info("StopService: method 'addStop'");
+        if (out.isBefore(in)) return false;
         Optional<Station> byId = stationsRepository.findById(station);
-        if (byId.isEmpty()) return;
+        if (byId.isEmpty()) return false;
         List<Stop> byTrain = stopRepository.findByTrain(number);
-        if (byTrain.isEmpty()) return;
+        if (byTrain.isEmpty()) return false;
         AtomicBoolean result = new AtomicBoolean(false);
                 byTrain.forEach(e->{
                     if (e.getStation().getId()==station){
                         result.set(true);
                     }
                 });
-                if (result.get()==true) return;
+                if (result.get()==true) return false;
         Stop stop = new Stop(number,in,out,km);
         stop.setStation(byId.get());
         stopRepository.save(stop) ;
+        return true;
     }
 
     public boolean change(long station, String number,int km,LocalDateTime timein,LocalDateTime timeout) {
+        LOGGER.info("StopService: method 'change'");
         if (timein.isBefore(LocalDateTime.now().plusMinutes(1))) return false;
         if (timeout.isBefore(timein)) return false;
         List<Stop> byTrain = stopRepository.findByTrain(number);
@@ -107,6 +117,7 @@ public class StopService {
     }
 
     public ArrayList <Route> search(String from, String to) {
+        LOGGER.info("StopService: method 'search'");
         ArrayList<Station> allByCity = stationsRepository.findAllByCity(from);
         if (allByCity.isEmpty()) return new ArrayList <Route> ();
         ArrayList<Station> allByCity2 = stationsRepository.findAllByCity(to);
@@ -138,6 +149,7 @@ public class StopService {
     }
 
     public String calculateTime (Stop first, Stop second){
+        LOGGER.info("StopService: method 'calculateTime'");
         long result = ChronoUnit.MINUTES.between(first.getDeparture(), second.getArrival());
         long hours = result/60;
         long minutes = (result-hours*60);
@@ -149,6 +161,7 @@ public class StopService {
     }
 
     public List<Route> check(long id,long secondId) {
+        LOGGER.info("StopService: method 'check'");
         Optional<Stop> byId = stopRepository.findById(id);
         Stop stop = byId.get();
         String city = stop.getStation().getCity();

@@ -11,6 +11,8 @@ import com.example.epam.finalProject.Railwayticketoffice.services.StationService
 import com.example.epam.finalProject.Railwayticketoffice.services.StopService;
 import com.example.epam.finalProject.Railwayticketoffice.services.UserService;
 import jakarta.servlet.http.HttpServletRequest;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
@@ -25,6 +27,7 @@ import java.util.*;
 @RequestMapping("/admin")
 public class AdminTripController {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(AdminTripController.class);
     TicketRepository ticketRepository;
 
     public AdminTripController(TicketRepository ticketRepository) {
@@ -40,6 +43,7 @@ public class AdminTripController {
     @GetMapping("/checkTrip")
     @PreAuthorize("hasAuthority('ADMIN')")
     public String checkTrip(HttpServletRequest req,Model model){
+        LOGGER.info("AdminTripController: method 'checkTrip'");
         String tran =req.getParameter("tran");
         List <Ticket> tickets = ticketRepository.findAllByTran(tran);
         if (!tickets.isEmpty()) model.addAttribute("anything",tran);
@@ -51,6 +55,7 @@ public class AdminTripController {
     @GetMapping("/trip/delete/{tran}")
     @PreAuthorize("hasAuthority('ADMIN')")
     public String getRouteDetails(@PathVariable String tran, Model model){
+        LOGGER.info("AdminTripController: method 'getRouteDetails'");
         List<Ticket> allByTran = ticketRepository.findAllByTran(tran);
         ticketRepository.deleteAll(allByTran);
         return "redirect:/admin/trip";

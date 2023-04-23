@@ -3,7 +3,6 @@ package com.example.epam.finalProject.Railwayticketoffice.controllers;
 import com.example.epam.finalProject.Railwayticketoffice.data.StationsRepository;
 import com.example.epam.finalProject.Railwayticketoffice.data.StopRepository;
 import com.example.epam.finalProject.Railwayticketoffice.data.UserRepository;
-import com.example.epam.finalProject.Railwayticketoffice.models.Contact;
 import com.example.epam.finalProject.Railwayticketoffice.models.Station;
 import com.example.epam.finalProject.Railwayticketoffice.models.Stop;
 import com.example.epam.finalProject.Railwayticketoffice.services.StationService;
@@ -11,6 +10,8 @@ import com.example.epam.finalProject.Railwayticketoffice.services.StopService;
 import com.example.epam.finalProject.Railwayticketoffice.services.UserService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,6 +28,7 @@ import java.util.List;
 @RequestMapping("/admin")
 public class AdminRoutesController {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(AdminRoutesController.class);
     UserService userService;
     UserRepository userRepository;
     StationsRepository stationsRepository;
@@ -49,6 +51,7 @@ public class AdminRoutesController {
     @GetMapping("/stations")
     @PreAuthorize("hasAuthority('ADMIN')")
     public String getStations(Model model){
+        LOGGER.info("AdminRoutesController: method 'getStations'");
         Iterable <Station> stationsAll = stationsRepository.findAll();
         List <Station> stations = new ArrayList<>();
         stationsAll.forEach(stations::add);
@@ -67,6 +70,7 @@ public class AdminRoutesController {
     @PreAuthorize("hasAuthority('ADMIN')")
     public String addContacts (@ModelAttribute ("station") @Valid Station station,
                                BindingResult bindingResult, Model model) {
+        LOGGER.info("AdminRoutesController: method 'addContacts'");
         if (bindingResult.hasErrors()) {
             Iterable <Station> stations = stationsRepository.findAll();
             model.addAttribute("stations", stations);
@@ -86,7 +90,8 @@ public class AdminRoutesController {
 
     @GetMapping("/routes")
     @PreAuthorize("hasAuthority('ADMIN')")
-    public String Routes(Model model){
+    public String getRoutes(Model model){
+        LOGGER.info("AdminRoutesController: method 'getRoutes'");
         Iterable <Station> stationsAll = stationsRepository.findAll();
         List <Station> stations = new ArrayList<>();
         stationsAll.forEach(stations::add);
@@ -105,6 +110,7 @@ public class AdminRoutesController {
     public String createRoute(@RequestParam long departure, @RequestParam long arrival,
                               @RequestParam int km, @RequestParam String train,
                               @RequestParam LocalDateTime timein, @RequestParam LocalDateTime timeout, Model model){
+        LOGGER.info("AdminRoutesController: method 'createRoute'");
         Stop first = new Stop(train,timeout,timeout,0);
         Stop second = new Stop(train,timein,timein,km);
         if (!stopService.createNewRoute(first,second,departure,arrival)) {
@@ -119,35 +125,54 @@ public class AdminRoutesController {
 
     @PostMapping("/stop/delete")
     @PreAuthorize("hasAuthority('ADMIN')")
-    public String deleteStop (@RequestParam long station, @RequestParam String number,
+    public String deleteStop (@RequestParam long st, @RequestParam String train,
                                Model model) {
-        if (!stopService.delete(station,number)){
+        LOGGER.info("AdminRoutesController: method 'deleteStop'");
+        if (!stopService.delete(st,train)){
             model.addAttribute("notExist", "notExist");
-            Iterable <Station> stations = stationsRepository.findAll();
-            model.addAttribute("stations", stations);
-            return "/admin/routes.html";
+            Iterable <Stop> stop = stopRepository.findAll();
+            List <Stop> stops = new ArrayList<>();
+            stop.forEach(stops::add);
+            Collections.sort(stops, new Comparator<Stop>() {
+                @Override
+                public int compare(Stop o1, Stop o2) {
+                    return o1.getStation().getCity().compareTo(o2.getStation().getCity());
+                }
+            });
+            model.addAttribute("stops", stops);
+            return "/admin/checkRoutes.html";
         }
-        return "redirect:/admin/routes";
+        return "redirect:/admin/routes/check";
     }
 
     @PostMapping("/stop/changeStop")
     @PreAuthorize("hasAuthority('ADMIN')")
     public String changeStop (@RequestParam long station, @RequestParam String number,
-                              @RequestParam int km,
+                              @RequestParam int point,
                               @RequestParam LocalDateTime timein, @RequestParam LocalDateTime timeout,
                                Model model) {
-        if (!stopService.change(station,number,km,timein,timeout)){
+        LOGGER.info("AdminRoutesController: method 'changeStop'");
+        if (!stopService.change(station,number,point,timein,timeout)){
             model.addAttribute("notChange", "notChange");
-            Iterable <Station> stations = stationsRepository.findAll();
-            model.addAttribute("stations", stations);
-            return "/admin/routes.html";
+            Iterable <Stop> stop = stopRepository.findAll();
+            List <Stop> stops = new ArrayList<>();
+            stop.forEach(stops::add);
+            Collections.sort(stops, new Comparator<Stop>() {
+                @Override
+                public int compare(Stop o1, Stop o2) {
+                    return o1.getStation().getCity().compareTo(o2.getStation().getCity());
+                }
+            });
+            model.addAttribute("stops", stops);
+            return "/admin/checkRoutes.html";
         }
-        return "redirect:/admin/routes";
+        return "redirect:/admin/routes/check";
     }
 
     @GetMapping("/routes/check")
     @PreAuthorize("hasAuthority('ADMIN')")
     public String checkRoutes(Model model){
+        LOGGER.info("AdminRoutesController: method 'checkRoutes'");
         Iterable <Stop> stop = stopRepository.findAll();
         List <Stop> stops = new ArrayList<>();
         stop.forEach(stops::add);
@@ -166,6 +191,7 @@ public class AdminRoutesController {
     public String addStop (@RequestParam long station, @RequestParam String number,
                            @RequestParam int kil,
                            @RequestParam LocalDateTime in, @RequestParam LocalDateTime out, Model model) {
+        LOGGER.info("AdminRoutesController: method 'addStop'");
         stopService.addStop(station,number,kil,in,out);
         return "redirect:/admin/routes/check";
     }
@@ -174,20 +200,22 @@ public class AdminRoutesController {
 
     @PostMapping("/deleteRoute")
     @PreAuthorize("hasAuthority('ADMIN')")
-    public String deleteRoute (@RequestParam String number, Model model) {
-        List <Stop> stops = stopRepository.findByTrain(number);
+    public String deleteRoute (@RequestParam String code, Model model) {
+        LOGGER.info("AdminRoutesController: method 'deleteRoute'");
+        List <Stop> stops = stopRepository.findByTrain(code);
         if (!stops.isEmpty()){
-            stopRepository.deleteAll(stopRepository.findByTrain(number));
+            stopRepository.deleteAll(stopRepository.findByTrain(code));
         }
-        return "redirect:/admin/routes/check";
+        return "redirect:/admin/routes";
     }
 
     @GetMapping("/searchRoute")
     @PreAuthorize("hasAuthority('ADMIN')")
     public String searchRoute (HttpServletRequest req, Model model) {
+        LOGGER.info("AdminRoutesController: method 'searchRoute'");
         String number = req.getParameter("number");
         List <Stop> stops = stopRepository.findByTrain(number);
-        if (stops.isEmpty()) return "redirect:/admin/routes/check";
+        if (stops.isEmpty()) return "redirect:/admin/routes";
         Collections.sort(stops, new Comparator<Stop>() {
             @Override
             public int compare(Stop o1, Stop o2) {

@@ -7,6 +7,8 @@ import com.example.epam.finalProject.Railwayticketoffice.models.Ticket;
 import com.example.epam.finalProject.Railwayticketoffice.models.User;
 import com.example.epam.finalProject.Railwayticketoffice.services.UserService;
 import jakarta.validation.Valid;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
@@ -21,6 +23,8 @@ import java.util.Optional;
 
 @Controller
 public class MyProfileController {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(MyProfileController.class);
     UserService userService;
     UserRepository userRepository;
     TicketRepository ticketRepository;
@@ -35,6 +39,7 @@ public class MyProfileController {
     @GetMapping("/profile")
     @PreAuthorize("hasAnyAuthority('USER','ADMIN')")
     public String getProfile (Authentication authentication, Model model) {
+        LOGGER.info("MyProfileController: method 'getProfile'");
         Optional<User> user = userRepository.findByUsername(authentication.getName());
         User userFinal = user.get();
         if (userFinal.getAuthorities().equals("USER")) model.addAttribute("bott","bott");
@@ -47,6 +52,7 @@ public class MyProfileController {
     @GetMapping("/change")
     @PreAuthorize("hasAuthority('USER')")
     public String changeProfile(Authentication authentication, Model model){
+        LOGGER.info("MyProfileController: method 'changeProfile'");
         Optional<User> user = userRepository.findByUsername(authentication.getName());
         User userFinal = user.get();
         model.addAttribute("user",userFinal);
@@ -57,6 +63,7 @@ public class MyProfileController {
     @PreAuthorize("hasAuthority('USER')")
     public String saveProfile(@ModelAttribute("user") @Valid User user,
                               BindingResult bindingResult, Authentication authentication, Model model){
+        LOGGER.info("MyProfileController: method 'saveProfile'");
         if (bindingResult.hasErrors()) return "/en/change.html";
         MyUser myUser = (MyUser) authentication.getPrincipal();
         user.setId(myUser.getId());
@@ -71,6 +78,7 @@ public class MyProfileController {
     @GetMapping("/delete")
     @PreAuthorize("hasAuthority('USER')")
     public String deleteProfile(Authentication authentication, Model model){
+        LOGGER.info("MyProfileController: method 'deleteProfile'");
         MyUser myUser = (MyUser) authentication.getPrincipal();
         userRepository.deleteById(myUser.getId());
         return "redirect:/logout";

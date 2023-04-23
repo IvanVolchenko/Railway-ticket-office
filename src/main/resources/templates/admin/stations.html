@@ -109,6 +109,7 @@
                     type="text"
                     class="form-control"
                     minlength="3"
+                    required
                     id="city"
                     th:field="*{city}"
             />
@@ -120,14 +121,10 @@
                     type="text"
                     class="form-control"
                     minlength="3"
+                    required
                     id="street"
                     th:field="*{street}"
             />
-            <div class="col-auto my-1 mb-4">
-            <span  class="form-text">
-              You have to create the same city (Russian translation!) with the same street(without changes)!
-            </span>
-            </div>
             <div style="color:red" th:if="${#fields.hasErrors('street')}" th:errors="*{street}"></div>
         </div>
             <button type="submit" class="btn btn-success text-btn my-2" >Create</button>

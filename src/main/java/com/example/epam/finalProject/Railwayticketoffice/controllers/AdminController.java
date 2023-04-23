@@ -4,9 +4,10 @@ package com.example.epam.finalProject.Railwayticketoffice.controllers;
 import com.example.epam.finalProject.Railwayticketoffice.data.MessageRepository;
 import com.example.epam.finalProject.Railwayticketoffice.data.UserRepository;
 import com.example.epam.finalProject.Railwayticketoffice.models.Message;
-import com.example.epam.finalProject.Railwayticketoffice.models.Stop;
 import com.example.epam.finalProject.Railwayticketoffice.models.User;
 import com.example.epam.finalProject.Railwayticketoffice.services.UserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
@@ -21,6 +22,7 @@ import java.util.Comparator;
 @RequestMapping("/admin")
 public class AdminController {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(AdminController.class);
     UserService userService;
     UserRepository userRepository;
     MessageRepository messageRepository;
@@ -40,6 +42,7 @@ public class AdminController {
     @GetMapping("/report")
     @PreAuthorize("hasAuthority('ADMIN')")
     public String findAllUsers(Model model){
+        LOGGER.info("AdminController: method 'findAllUsers'");
         ArrayList<User> users= userService.findAllUsers();
         Collections.sort(users, new Comparator<User>() {
             @Override
@@ -54,6 +57,7 @@ public class AdminController {
     @GetMapping("/delete/{id}")
     @PreAuthorize("hasAuthority('ADMIN')")
     public String deleteProfile(@PathVariable("id") long id , Authentication authentication, Model model){
+        LOGGER.info("AdminController: method 'deleteProfile'");
         if (id==1) return "redirect:/admin";
         userRepository.deleteById(id);
         return "redirect:/admin/report";
@@ -62,6 +66,7 @@ public class AdminController {
     @GetMapping("/statements")
     @PreAuthorize("hasAuthority('ADMIN')")
     public String getStatements(Model model){
+        LOGGER.info("AdminController: method 'getStatements'");
         ArrayList <Message>  statements = (ArrayList<Message>) messageRepository.findAll();
         Collections.sort(statements, new Comparator<Message>() {
             @Override
@@ -75,6 +80,7 @@ public class AdminController {
     @GetMapping("/statement/delete/{id}")
     @PreAuthorize("hasAuthority('ADMIN')")
     public String deleteStatement (@PathVariable("id") long id, Model model) {
+        LOGGER.info("AdminController: method 'deleteStatement'");
         messageRepository.deleteById(id);
         return "redirect:/admin/statements";
     }

@@ -11,6 +11,4 @@ public interface TicketRepository extends CrudRepository<Ticket, Long> {
     List <Ticket> findByDocument(String document);
 
     List <Ticket> findAllByTran(String tran);
-
-    void deleteAllByTran(String tran);
 }

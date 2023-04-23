@@ -1,7 +1,10 @@
 package com.example.epam.finalProject.Railwayticketoffice.services;
 
+import com.example.epam.finalProject.Railwayticketoffice.controllers.MainController;
 import com.example.epam.finalProject.Railwayticketoffice.data.StationsRepository;
 import com.example.epam.finalProject.Railwayticketoffice.models.Station;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -9,6 +12,7 @@ import java.util.ArrayList;
 @Service
 public class StationService {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(StationService.class);
     private final StationsRepository stationsRepository;
 
     public StationService(StationsRepository stationsRepository) {
@@ -16,6 +20,7 @@ public class StationService {
     }
 
     public boolean addNewStation (Station station){
+        LOGGER.info("StationService: method 'addNewStation'");
         ArrayList<Station> stationCheck = stationsRepository.findAllByStreet(station.getStreet());
         ArrayList<Station> stationCheck2 = stationsRepository.findAllByCity(station.getCity());
         for (Station station1:stationCheck){

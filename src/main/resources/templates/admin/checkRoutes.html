@@ -129,6 +129,7 @@
                         required
                         class="form-control"
                         name="number"
+                        id="number"
                 />
             </div>
             <div class="mb-4 my-3">
@@ -163,45 +164,142 @@
             <button type="submit" class="btn btn-success text-btn my-2" >Add</button>
         </form>
 
+                <form th:action="@{/admin/stop/changeStop}" method="post" class="form-box">
+                    <div class="mb-4 my-3 text-search text-center marg-down"> Change Stop
+                    </div>
+                    <div class="mb-4 my-3">
+                        <label for="station" class="form-label">Station id</label>
+                        <input
+                                    type="number"
+                                    min="1"
+                                    required
+                                    class="form-control"
+                                    name="station"
+                        />
+                    </div>
+                    <div class="mb-4 my-3">
+                        <label for="number" class="form-label">Train number</label>
+                        <input
+                                    type="text"
+                                    minlength="3"
+                                    maxlength="12"
+                                    required
+                                    class="form-control"
+                                    name="number"
+                        />
+                    </div>
+                    <div class="mb-4 my-3">
+                        <label for="point" class="form-label">The point of route (km)</label>
+                        <input
+                                type="number"
+                                min="0"
+                                required
+                                class="form-control"
+                                name="point"
+                                id="point"
+                        />
+                    </div>
+                    <div class="mb-4 my-3">
+                        <label for="timein" >Arrival time</label>
+                        <input
+                                type="datetime-local"
+                                required
+                                name="timein"
+                                id="timein"
+                        />
+                    </div>
+                    <div class="mb-4 my-3">
+                        <label for="timeout" >Departure time</label>
+                        <input
+                                type="datetime-local"
+                                required
+                                name="timeout"
+                                id="timeout"
+                        />
+                        <div th:if="${notChange}" class="col-auto my-1 mb-4">
+                            <div class="alert alert-danger">
+                                Check your information, something isn't correct!
+                            </div>
+                        </div>
+                    </div>
+                        <button type="submit" class="btn btn-success text-btn my-2" >Change</button>
+                </form>
+
+
+
+                <form th:action="@{/admin/stop/delete}" method="post" class="form-box">
+                    <div class="mb-4 my-3 text-search text-center marg-down"> Delete Stop
+                    </div>
+                    <div class="mb-4 my-3">
+                        <label for="st" class="form-label">Station id</label>
+                        <input
+                                type="number"
+                                min="1"
+                                required
+                                class="form-control"
+                                id="st"
+                                name="st"
+                        />
+                    </div>
+                    <div class="mb-4 my-3">
+                        <label for="train" class="form-label">Train number</label>
+                        <input
+                                type="text"
+                                minlength="3"
+                                maxlength="12"
+                                required
+                                class="form-control"
+                                id="train"
+                                name="train"
+                        />
+                        <div th:if="${notExist}" class="col-auto my-1 mb-4">
+                            <div class="alert alert-danger">
+                                Check your information, something isn't correct!
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-success text-btn my-2" >Delete</button>
+                </form>
 
 
 
 
 
-        <form th:action="@{/admin/searchRoute}" method="get" class="form-box">
-            <div class="mb-4 my-3 text-search text-center marg-down"> Route search</div>
-            <div class="mb-4 my-3">
-                <label for="number" class="form-label">Route number</label>
-                <input
-                        type="text"
-                        class="form-control"
-                        minlength="3"
-                        maxlength="12"
-                        required
-                        name="number"
-                />
-            </div>
-            <button type="submit" class="btn btn-warning text-btn my-2" >Search</button>
-        </form>
+<!--        <form th:action="@{/admin/searchRoute}" method="get" class="form-box">-->
+<!--            <div class="mb-4 my-3 text-search text-center marg-down"> Route search</div>-->
+<!--            <div class="mb-4 my-3">-->
+<!--                <label for="number" class="form-label">Route number</label>-->
+<!--                <input-->
+<!--                        type="text"-->
+<!--                        class="form-control"-->
+<!--                        minlength="3"-->
+<!--                        maxlength="12"-->
+<!--                        required-->
+<!--                        name="number"-->
+<!--                />-->
+<!--            </div>-->
+<!--            <button type="submit" class="btn btn-warning text-btn my-2" >Search</button>-->
+<!--        </form>-->
 
-        <form th:action="@{/admin/deleteRoute}" method="post" class="form-box">
-            <div class="mb-4 my-3 text-search text-center marg-down"> Delete Route</div>
-            <div class="mb-4 my-3">
-                <label for="number" class="form-label">Route number</label>
-                <input
-                        type="text"
-                        class="form-control"
-                        minlength="3"
-                        maxlength="12"
-                        required
-                        id="number"
-                        name="number"
-                />
-            </div>
-            <button type="submit" class="btn btn-danger text-btn my-2" >Delete</button>
-        </form>
+<!--        <form th:action="@{/admin/deleteRoute}" method="post" class="form-box">-->
+<!--            <div class="mb-4 my-3 text-search text-center marg-down"> Delete Route</div>-->
+<!--            <div class="mb-4 my-3">-->
+<!--                <label for="number" class="form-label">Route number</label>-->
+<!--                <input-->
+<!--                        type="text"-->
+<!--                        class="form-control"-->
+<!--                        minlength="3"-->
+<!--                        maxlength="12"-->
+<!--                        required-->
+<!--                        id="number"-->
+<!--                        name="number"-->
+<!--                />-->
+<!--            </div>-->
+<!--            <button type="submit" class="btn btn-danger text-btn my-2" >Delete</button>-->
+<!--        </form>-->
     </div>
 </div>
+<div class="mb-4 my-3 text-search text-center marg-down">Stops</div>
 <table class="container mt-5 text-center my-4">
     <tr>
         <th>id</th>
