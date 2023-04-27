@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://wwww.thymeleaf.org" xmlns:sec="http://wwww.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title th:text="#{Edit}"></title>
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+            crossorigin="anonymous"
+    />
+    <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+            crossorigin="anonymous"
+    ></script>
+    <style>
+      .card {
+        border-radius: 1em;
+        text-align: center;
+        padding: 1em;
+      }
+      .card img {
+        border-radius: 50%;
+        width: 70%;
+        margin: auto;
+      }
+      .small-form {
+        width: 50%;
+      }
+      .form-box {
+        box-shadow: 0 3px 20px #d1cdcd;
+      }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand p-0" href="/">
+            <img src="/images/general/SpT.png" alt="logo" width="60" />
+        </a>
+        <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/" th:text="#{home}"></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/help" th:text="#{help}"></a>
+                </li>
+                <li class="nav-item" sec:authorize="isAnonymous()">
+                    <a class="nav-link" th:href="@{/login}" th:text="#{login}"></a>
+                </li>
+                <li class="nav-item" sec:authorize="isAuthenticated()">
+                    <a class="nav-link" th:href="@{/logout}" th:text="#{logout}"></a>
+
+                </li>
+                <li class="nav-item" sec:authorize="isAuthenticated()">
+                    <a class="nav-link" th:href="@{/profile}" th:text="#{profile}">My profile</a>
+                </li>
+                <li class="nav-item" sec:authorize="hasAuthority('ADMIN')">
+                    <a class="nav-link" th:href="@{/admin}" th:text="#{Administration}"></a>
+                </li>
+            </ul>
+        </div>
+        <button type="button" class="btn btn-dark" onclick="window.location.href='http://localhost:8080/?localeData=en'">English</button>
+        <button type="button" class="btn btn-dark" onclick="window.location.href='http://localhost:8080/?localeData=es'">Español</button>
+    </div>
+</nav>
+<div class="container my-5">
+    <div class="row row-cols-1 row-cols-md-1 row-cols-lg-3 g-5">
+        <div class="col"></div>
+        <form  th:action="@{/changesAdmin}" th:method="post" class="form-box">
+            <div class="mb-4 my-3">
+                <label for="firstName" class="form-label" th:text="#{FName}"></label>
+                <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Ivan"
+                        required
+                        minlength="2"
+                        maxlength="20"
+                        id="firstName"
+                        name="firstName"
+                />
+            </div>
+            <div class="mb-4">
+                <label for="lastName" class="form-label" th:text="#{LName}"></label>
+                <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Ivanov"
+                        required
+                        minlength="2"
+                        maxlength="20"
+                        id="lastName"
+                        name="lastName"
+                />
+            </div>
+            <div>
+                <label for="password" class="form-label" th:text="#{Passw}"></label>
+                <input
+                        type="password"
+                        class="form-control"
+                        placeholder="password"
+                        required
+                        minlength="8"
+                        maxlength="60"
+                        id="password"
+                        name="password"
+                />
+            </div>
+            <div class="col-auto my-1">
+            <span class="form-text" th:text="#{PasReq}"></span>
+            </div>
+            <button type="submit" class="btn btn-primary my-3" th:text="#{Edit}"></button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

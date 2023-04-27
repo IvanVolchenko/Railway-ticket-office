@@ -32,7 +32,7 @@ public class SecurityConfiguration{
                 .csrf().disable()
                 .authorizeHttpRequests(authConfig ->{
                     authConfig.requestMatchers("/","/registration","/help","/help/send","/profile", "/routes",
-                            "/route/{id}/details/{secondId}", "/images/general/**").permitAll();
+                            "/route/{id}/details/{secondId}","/routes/{from}/{to}/{pageNu}", "/images/general/**").permitAll();
                     authConfig.requestMatchers("/admin/**","/images/admin/**").hasAuthority("ADMIN");// hasRole("ADMIN");
                     authConfig.anyRequest().authenticated();
                 })

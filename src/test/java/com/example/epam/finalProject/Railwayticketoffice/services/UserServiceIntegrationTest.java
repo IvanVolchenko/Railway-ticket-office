@@ -1,5 +1,6 @@
 package com.example.epam.finalProject.Railwayticketoffice.services;
 
+import com.example.epam.finalProject.Railwayticketoffice.TestConfig;
 import com.example.epam.finalProject.Railwayticketoffice.data.UserRepository;
 import com.example.epam.finalProject.Railwayticketoffice.models.User;
 import org.junit.Assert;
@@ -7,6 +8,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 import java.util.Optional;
 

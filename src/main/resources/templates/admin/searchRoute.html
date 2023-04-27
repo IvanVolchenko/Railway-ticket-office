@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Search Route</title>
+    <title th:text="#{SR}"></title>
     <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
             rel="stylesheet"
@@ -16,10 +16,10 @@
             integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
             crossorigin="anonymous"
     ></script>
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
+<!--    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">-->
+<!--    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">-->
+<!--    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">-->
+<!--    <link rel="manifest" href="/images/favicon/site.webmanifest">-->
     <style>
       .center {
         text-align: center;
@@ -64,9 +64,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/admin"
-                    >Home</a
-                    >
+                    <a class="nav-link active" aria-current="page" href="/admin" th:text="#{home}"></a>
                 </li>
                 <li class="nav-item">
                     <a
@@ -102,25 +100,27 @@
                 </li>
             </ul>
         </div>
+        <button type="button" class="btn btn-dark" onclick="window.location.href='http://localhost:8080/?localeData=en'">English</button>
+        <button type="button" class="btn btn-dark" onclick="window.location.href='http://localhost:8080/?localeData=es'">Español</button>
     </div>
 </nav>
 
 <table class="container mt-5 text-center my-4">
     <tr>
         <th>id</th>
-        <th>City</th>
-        <th>Route number</th>
+        <th th:text="#{City}"></th>
+        <th th:text="#{RoutNu}"></th>
         <th>Km</th>
-        <th>Arrival time</th>
-        <th>Departure time</th>
+        <th th:text="#{ArTi}"></th>
+        <th th:text="#{DepTi}"></th>
     </tr>
     <tr th:each="el:${stops}" class="alert alert-info mt-2">
-        <td th:text="${el.id}">id</td>
-        <td th:text="${el.station.city}">city</td>
-        <td th:text="${el.train}">train</td>
-        <td th:text="${el.km}">km</td>
-        <td th:text="${el.arrival}">arrival</td>
-        <td th:text="${el.departure}">departure</td>
+        <td th:text="${el.id}"></td>
+        <td th:text="${el.station.city}"></td>
+        <td th:text="${el.train}"></td>
+        <td th:text="${el.km}"></td>
+        <td th:text="${el.arrival}"></td>
+        <td th:text="${el.departure}"></td>
     </tr>
 </table>
 </body>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Help</title>
+    <title th:text="#{help}"></title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -16,10 +16,10 @@
       integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
       crossorigin="anonymous"
     ></script>
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
+<!--    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">-->
+<!--    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">-->
+<!--    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">-->
+<!--    <link rel="manifest" href="/images/favicon/site.webmanifest">-->
     <style>
       .form-box {
         box-shadow: 0 3px 20px #d1cdcd;
@@ -46,27 +46,29 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="/">Home</a>
+              <a class="nav-link" aria-current="page" href="/" th:text="#{home}"></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="#">Help</a>
+              <a class="nav-link active" href="#" th:text="#{help}"></a>
             </li>
           </ul>
           <ul class="navbar-nav">
             <li class="nav-item" sec:authorize="isAnonymous()">
-              <a class="nav-link" th:href="@{/login}">Login</a>
+              <a class="nav-link" th:href="@{/login}" th:text="#{login}"></a>
             </li>
             <li class="nav-item" sec:authorize="isAuthenticated()">
-              <a class="nav-link" th:href="@{/logout}">Logout</a>
+              <a class="nav-link" th:href="@{/logout}" th:text="#{logout}"></a>
             </li>
             <li class="nav-item" sec:authorize="isAuthenticated()">
-              <a class="nav-link active" th:href="@{/profile}">My profile</a>
+              <a class="nav-link active" th:href="@{/profile}" th:text="#{profile}"></a>
             </li>
             <li class="nav-item" sec:authorize="hasAuthority('ADMIN')">
-              <a class="nav-link" th:href="@{/admin}">Administration</a>
+              <a class="nav-link" th:href="@{/admin}" th:text="#{Administration}"></a>
             </li>
           </ul>
         </div>
+        <button type="button" class="btn btn-dark" onclick="window.location.href='http://localhost:8080/?localeData=en'">English</button>
+        <button type="button" class="btn btn-dark" onclick="window.location.href='http://localhost:8080/?localeData=es'">Español</button>
       </div>
     </nav>
 
@@ -75,9 +77,7 @@
         <div class="col"></div>
         <form class="form-box" action="help/send" method="post">
           <div class="mb-4 my-3">
-            <label for="name" class="form-label"
-              >First name</label
-            >
+            <label for="name" class="form-label" th:text="#{FName}"></label>
             <input
               type="text"
               class="form-control"
@@ -90,9 +90,7 @@
             />
           </div>
           <div class="mb-4">
-            <label for="contact" class="form-label"
-              >Email address/phone</label
-            >
+            <label for="contact" class="form-label" th:text="#{EmPh}"></label>
             <input
               type="text"
               class="form-control"
@@ -105,9 +103,7 @@
             />
           </div>
           <div class="mb-4">
-            <label for="text" class="form-label"
-              >Message</label
-            >
+            <label for="text" class="form-label" th:text="#{Message}"></label>
             <textarea
               class="form-control"
               id="text"
@@ -118,7 +114,7 @@
               rows="3"
             ></textarea>
           </div>
-          <button type="submit" class="btn btn-primary my-3">Send</button>
+          <button type="submit" class="btn btn-primary my-3" th:text="#{Send}"></button>
         </form>
       </div>
     </div>

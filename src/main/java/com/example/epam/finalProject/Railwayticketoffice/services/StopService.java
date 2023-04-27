@@ -2,11 +2,13 @@ package com.example.epam.finalProject.Railwayticketoffice.services;
 
 import com.example.epam.finalProject.Railwayticketoffice.data.StationsRepository;
 import com.example.epam.finalProject.Railwayticketoffice.data.StopRepository;
-import com.example.epam.finalProject.Railwayticketoffice.models.Route;
-import com.example.epam.finalProject.Railwayticketoffice.models.Station;
-import com.example.epam.finalProject.Railwayticketoffice.models.Stop;
+import com.example.epam.finalProject.Railwayticketoffice.data.TicketRepository;
+import com.example.epam.finalProject.Railwayticketoffice.models.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -14,7 +16,9 @@ import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -26,25 +30,24 @@ import java.util.regex.Pattern;
 public class StopService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(StopService.class);
-    private StopRepository stopRepository;
+    private final StopRepository stopRepository;
 
-    private StationsRepository stationsRepository;
+    private final StationsRepository stationsRepository;
+    private final TicketRepository ticketRepository;
 
-    public StopService(StopRepository stopRepository, StationsRepository stationsRepository) {
+    public StopService(StopRepository stopRepository, StationsRepository stationsRepository,
+                       TicketRepository ticketRepository) {
         this.stopRepository = stopRepository;
         this.stationsRepository = stationsRepository;
+        this.ticketRepository=ticketRepository;
     }
 
     public boolean createNewRoute (Stop first, Stop second, long departure, long arrival){
         LOGGER.info("StopService: method 'createNewRoute'");
         Optional<Station> stationFirst = stationsRepository.findById(departure);
         Optional<Station> stationSecond = stationsRepository.findById(arrival);
-        if (stationFirst.isEmpty() || stationSecond.isEmpty()) {
-            return false;
-        }
-        if (!differenceBetweenDatesForCreating(first.getDeparture(),second.getDeparture())){
-            return false;
-        }
+        if (stationFirst.isEmpty() || stationSecond.isEmpty()) return false;
+        if (!differenceBetweenDatesForCreating(first.getDeparture(),second.getDeparture())) return false;
         List <Stop> checkStop = stopRepository.findAllByTrain(first.getTrain());
         if (!checkStop.isEmpty()) return false;
         Station stationStart = stationFirst.get();
@@ -92,7 +95,7 @@ public class StopService {
                         result.set(true);
                     }
                 });
-                if (result.get()==true) return false;
+                if (result.get()) return false;
         Stop stop = new Stop(number,in,out,km);
         stop.setStation(byId.get());
         stopRepository.save(stop) ;
@@ -228,4 +231,36 @@ public class StopService {
     }
 
 
+    public void buyTicket(MyUser myUser, List<Stop> allOfStops, long id, long secondId) {
+        AtomicInteger seat = new AtomicInteger();
+        allOfStops.forEach(el->{
+            seat.set(el.getSeats());
+            int b = el.getSeats() -1;
+            el.setSeats(b);
+        });
+        stopRepository.saveAll(allOfStops);
+        int seatResult = seat.get();
+        List<Route> stops = check(id, secondId);
+        String first = "";
+        String second = "";
+        String date = "";
+        for (Route el:stops){
+            if (el.getFirstId()==id) {
+                date=el.getDeparture().replace('T',' ');
+                first = el.getStationFirst();
+            }
+            if (el.getSecondId()==secondId) second = el.getStationFirst();
+        }
+        String number = stops.get(1).getNumber();
+        String uuid = UUID.randomUUID().toString();
+        Ticket ticket = new Ticket(number,seatResult,uuid, myUser.getFirstName() + " " + myUser.getLastName(),
+                myUser.getDocumentNumber(),first,second,date);
+        ticketRepository.save(ticket);
+    }
+
+    public Page<Stop> findAllStops(int page, int size) {
+        LOGGER.info("StopService: method 'findAllStops'");
+        Pageable pageable = PageRequest.of(page - 1,size);
+        return stopRepository.findAll(pageable);
+    }
 }

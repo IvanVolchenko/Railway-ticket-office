@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contacts</title>
+    <title th:text="#{Contacts}"></title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -16,10 +16,6 @@
       integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
       crossorigin="anonymous"
     ></script>
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
     <style>
       .card {
         border-radius: 1em;
@@ -56,9 +52,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/admin"
-                >Home</a
-              >
+              <a class="nav-link active" aria-current="page" href="/admin" th:text="#{home}"></a>
             </li>
             <li class="nav-item">
               <a
@@ -94,48 +88,50 @@
             </li>
           </ul>
         </div>
+        <button type="button" class="btn btn-dark" onclick="window.location.href='http://localhost:8080/?localeData=en'">English</button>
+        <button type="button" class="btn btn-dark" onclick="window.location.href='http://localhost:8080/?localeData=es'">Español</button>
       </div>
     </nav>
 
     <div class="container text-center marg-down">
       <form class="form-box"th:action="@{/admin/addContacts}" method="post">
         <div class="mb-4 my-3">
-          <label for="name" class="form-label text-search">Name</label>
+          <label for="name" class="form-label text-search" th:text="#{FName}"></label>
           <input
                   type="text"
                   required
                   id="name"
                   name="name"
           />
-          <label for="place" class="form-label text-search">Company</label>
+          <label for="place" class="form-label text-search" th:text="#{Company}"></label>
           <input
                   type="text"
                   required
                   id="place"
                   name="place"
           />
-          <label for="address" class="form-label text-search">Address</label>
+          <label for="address" class="form-label text-search" th:text="#{Address}"></label>
           <input
                   type="text"
                   required
                   id="address"
                   name="address"
           />
-          <label for="email" class="form-label text-search">Email</label>
+          <label for="email" class="form-label text-search" th:text="#{Email}"></label>
           <input
                   type="text"
                   required
                   id="email"
                   name="email"
           />
-          <label for="phone" class="form-label text-search">Phone</label>
+          <label for="phone" class="form-label text-search" th:text="#{Phone}"></label>
           <input
                   type="text"
                   required
                   id="phone"
                   name="phone"
           />
-          <button type="submit" class="btn btn-success text-btn" >Add</button>
+          <button type="submit" class="btn btn-success text-btn" th:text="#{Add}"></button>
         </div>
       </form>
     </div>
@@ -143,19 +139,19 @@
     <table class="container mt-5 text-center">
       <tr>
         <th>id</th>
-        <th>Person</th>
-        <th>Company</th>
-        <th>Address</th>
-        <th>Email</th>
-        <th>Phone</th>
+        <th th:text="#{Person}"></th>
+        <th th:text="#{Company}"></th>
+        <th th:text="#{Address}"></th>
+        <th th:text="#{Email}"></th>
+        <th th:text="#{Phone}"></th>
       </tr>
       <tr th:each="el:${contacts}" class="alert alert-info mt-2">
-        <td th:text="${el.id}">id</td>
-        <td th:text="${el.name}">Person</td>
-        <td th:text="${el.place}">Company</td>
-        <td th:text="${el.address}">Address</td>
-        <td th:text="${el.email}">Email</td>
-        <td th:text="${el.phone}">Phone</td>
+        <td th:text="${el.id}"></td>
+        <td th:text="${el.name}"></td>
+        <td th:text="${el.place}"></td>
+        <td th:text="${el.address}"></td>
+        <td th:text="${el.email}"></td>
+        <td th:text="${el.phone}"></td>
         <td>
           <a th:href="'/admin/contacts/delete/' + ${el.id}" class="btn btn-danger">Delete</a>
         </td>

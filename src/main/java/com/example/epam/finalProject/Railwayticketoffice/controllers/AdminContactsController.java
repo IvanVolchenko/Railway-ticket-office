@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/admin")
 public class AdminContactsController {
 
-    ContactsRepository contactsRepository;
+    private final ContactsRepository contactsRepository;
     private static final Logger LOGGER = LoggerFactory.getLogger(AdminContactsController.class);
 
     public AdminContactsController(ContactsRepository contactsRepository ) {

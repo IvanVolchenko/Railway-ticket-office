@@ -10,6 +10,7 @@ import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -68,12 +69,39 @@ public class MainController {
         LOGGER.info("Main controller: method 'routes'");
         String from =req.getParameter("from");
         String to =req.getParameter("to");
+        return searchPageRoutes(from,to,1,model);
+
+    }
+
+    @GetMapping("/routes/{from}/{to}/{pageNu}")
+    public String searchPageRoutes(@PathVariable (value = "from") String from,@PathVariable (value = "to") String to,
+                               @PathVariable (value = "pageNu") int pageNu, Model model){
+        LOGGER.info("Main controller: method 'routes/{from}/{to}/{pageNu}'");
+        int size = 3;
         ArrayList<Route> routes = stopService.search(from, to);
         if (routes.isEmpty()) {
             model.addAttribute("search","search");
             return "/en/index.html";
         }
-        model.addAttribute("routes",routes);
+        long totalItems = routes.size();
+        double result = (double)totalItems/size;
+        int totalPages = (int) Math.ceil(result);
+        ArrayList <Route> routesFinal = new ArrayList<>();
+        if (pageNu>totalPages) return "redirect:/routes";
+        int a = size*(pageNu-1);
+        int b;
+        if (pageNu<totalPages) b = size*pageNu;
+        else b = (int) (totalItems);
+        for (int c=a;c<b;c++){
+            routesFinal.add(routes.get(c));
+        }
+        model.addAttribute("from",from);
+        model.addAttribute("to",to);
+        model.addAttribute("zero",1);
+        model.addAttribute("currentPage",pageNu);
+        model.addAttribute("totalPages",totalPages);
+        model.addAttribute("totalItems",totalItems);
+        model.addAttribute("routes",routesFinal);
         return "/en/search.html";
     }
 
@@ -108,38 +136,8 @@ public class MainController {
         List<Stop> allOfStops = stopRepository.findByTrain(stop.getTrain());
         AtomicInteger seat = new AtomicInteger();
         if (allOfStops.get(1).getSeats()>0){
-            allOfStops.forEach(el->{
-                seat.set(el.getSeats());
-                int b = el.getSeats() -1;
-                System.err.println(b);
-                el.setSeats(b);
-            });
-            stopRepository.saveAll(allOfStops);
-            int seatResult = seat.get();
-            List<Route> stops = stopService.check(id, secondId);
-            String first = "";
-            String second = "";
-            String date = "";
-            for (Route el:stops){
-                if (el.getFirstId()==id) {
-                    date=el.getDeparture().replace('T',' ');
-                    first = el.getStationFirst();
-                }
-                if (el.getSecondId()==secondId) second = el.getStationFirst();
-            }
-            String number = stops.get(1).getNumber();
-            String uuid = UUID.randomUUID().toString();
-            Ticket ticket = new Ticket(number,seatResult,uuid, myUser.getFirstName() + " " + myUser.getLastName(),
-                    myUser.getDocumentNumber(),first,second,date);
-            ticketRepository.save(ticket);
-            model.addAttribute("date",date);
-            model.addAttribute("seat",seatResult);
-            model.addAttribute("first",first);
-            model.addAttribute("second",second);
-            model.addAttribute("number",number);
-            model.addAttribute("uuid",uuid);
-            LOGGER.info("Main controller:exit from the method 'buyRoute'");
-            return "/en/success.html";
+            stopService.buyTicket(myUser,allOfStops, id,secondId);
+            return "redirect:/profile";
         } else {
             model.addAttribute("exist","exist");
             return "/en/index.html";

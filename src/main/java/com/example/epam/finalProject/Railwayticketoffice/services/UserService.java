@@ -5,6 +5,9 @@ import com.example.epam.finalProject.Railwayticketoffice.models.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -45,7 +48,6 @@ public class UserService {
 
     public boolean change (User user){
         LOGGER.info("UserService: method 'change'");
-        user.setAuthorities("USER");
         Optional<User> userCheck = userRepository.findByEmailAddress(user.getEmailAddress());
         Optional<User> userCheck2 = userRepository.findByDocumentNumber(user.getDocumentNumber());
         boolean first= userCheck.isPresent();
@@ -73,15 +75,11 @@ public class UserService {
         return true;
     }
 
-    public ArrayList<User> findAllUsers() {
+    public Page<User> findAllUsers(int page, int size) {
         LOGGER.info("UserService: method 'findAllUsers'");
-        Iterable <User> users = userRepository.findAll();
-        ArrayList<User> usersWithoutAdmin = new ArrayList<>();
-        users.forEach(user -> {
-            if (!user.getAuthorities().equals("ADMIN")) {
-                usersWithoutAdmin.add(user);
-            }
-        });
-        return usersWithoutAdmin;
+        Pageable pageable = PageRequest.of(page - 1,size);
+        return userRepository.findAll(pageable);
     }
+
+
 }

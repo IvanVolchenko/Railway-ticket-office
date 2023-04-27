@@ -62,7 +62,7 @@ public class GeneralTest {
 
     @Test
     public void correctLoginTest() throws Exception{
-        this.mockMvc.perform(formLogin().user("Dmitriev@gmal.com").password("password"))
+        this.mockMvc.perform(formLogin().user("adminSpT@gmal.com").password("password"))
                 .andDo(print())
                 .andExpect(status().is3xxRedirection())
                 .andExpect(redirectedUrl("/"));
