@@ -3,8 +3,6 @@ package com.example.epam.finalProject.Railwayticketoffice.data;
 import com.example.epam.finalProject.Railwayticketoffice.TestConfig;
 import com.example.epam.finalProject.Railwayticketoffice.models.Station;
 import com.example.epam.finalProject.Railwayticketoffice.models.Stop;
-import com.example.epam.finalProject.Railwayticketoffice.models.Ticket;
-import com.example.epam.finalProject.Railwayticketoffice.models.User;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -18,7 +16,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest

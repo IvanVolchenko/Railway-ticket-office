@@ -110,16 +110,13 @@ public class MainController {
                                   Authentication authentication ,Model model){
         LOGGER.info("Main controller: method 'getRouteDetails'");
         if (authentication==null) model.addAttribute("exist","exist");
-        Optional<Stop> byId = stopRepository.findById(id);
-        Stop stop = byId.get();
         List<Route> stops = stopService.check(id, secondId);
-        Collections.sort(stops, new Comparator<Route>() {
-            @Override
-            public int compare(Route o1, Route o2) {
-                return o1.getKm()-o2.getKm();
-            }
-        });
+        stops.sort(Comparator.comparingInt(Route::getKm));
+        String number = stops.get(0).getNumber();
+        String time = stopService.calculateTime(stopRepository.findById(id).get(),stopRepository.findById(secondId).get());
         model.addAttribute("id",id);
+        model.addAttribute("time",time);
+        model.addAttribute("number",number);
         model.addAttribute("secondId",secondId);
         model.addAttribute("stops",stops);
         return "/en/searchResult.html";
@@ -131,12 +128,13 @@ public class MainController {
                            Authentication authentication , Model model){
         LOGGER.info("Main controller: method 'buyRoute'");
         MyUser myUser = (MyUser) authentication.getPrincipal();
+        Optional<User> userFound = userRepository.findById(myUser.getId());
+        User user = userFound.get();
         Optional<Stop> byId1 = stopRepository.findById(id);
         Stop stop = byId1.get();
         List<Stop> allOfStops = stopRepository.findByTrain(stop.getTrain());
-        AtomicInteger seat = new AtomicInteger();
         if (allOfStops.get(1).getSeats()>0){
-            stopService.buyTicket(myUser,allOfStops, id,secondId);
+            stopService.buyTicket(user,allOfStops, id,secondId);
             return "redirect:/profile";
         } else {
             model.addAttribute("exist","exist");

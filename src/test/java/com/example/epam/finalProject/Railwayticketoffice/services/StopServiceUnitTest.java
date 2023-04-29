@@ -11,6 +11,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -28,11 +29,11 @@ import static org.mockito.Mockito.when;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class StopServiceUnitTest {
 
-    @Mock
-    private StopRepository stopRepository;
 
-    @Mock
-    private StationsRepository stationsRepository;
+    private final StopRepository stopRepository = Mockito.mock(StopRepository.class);
+
+    private final StationsRepository stationsRepository = Mockito.mock(StationsRepository.class);
+
 
     @InjectMocks
     private StopService stopService;

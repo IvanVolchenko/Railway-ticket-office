@@ -52,12 +52,14 @@ public class MyProfileController {
                                   Authentication authentication, Model model) {
         LOGGER.info("MyProfileController: method 'getPageProfile'");
         int size = 4;
-        Optional<User> user = userRepository.findByUsername(authentication.getName());
-        User userFinal = user.get();
-        Page<Ticket> page = ticketService.findAllTicketsByDocument(userFinal.getDocumentNumber(),pageNu,size);
+        MyUser myUser = (MyUser) authentication.getPrincipal();
+        Optional<User> userFound = userRepository.findById(myUser.getId());
+//        Optional<User> user = userRepository.findByUsername(authentication.getName());
+        User userFinal = userFound.get();
+        Page<Ticket> page = ticketService.findAllTicketsByUser(userFinal,pageNu,size);
         List <Ticket> ticketList = page.getContent();
         ArrayList<Ticket> tickets = new ArrayList<>(ticketList);
-        tickets.sort(Comparator.comparing(Ticket::getDate));
+        tickets.sort(Comparator.comparing(Ticket::getDepTime));
         model.addAttribute("zero",1);
         model.addAttribute("currentPage",pageNu);
         model.addAttribute("totalPages",page.getTotalPages());
@@ -72,8 +74,10 @@ public class MyProfileController {
     @PreAuthorize("hasAuthority('USER')")
     public String changeProfile(Authentication authentication, Model model){
         LOGGER.info("MyProfileController: method 'changeProfile'");
-        Optional<User> user = userRepository.findByUsername(authentication.getName());
-        User userFinal = user.get();
+        MyUser myUser = (MyUser) authentication.getPrincipal();
+        Optional<User> userFound = userRepository.findById(myUser.getId());
+//        Optional<User> user = userRepository.findByUsername(authentication.getName());
+        User userFinal = userFound.get();
         model.addAttribute("user",userFinal);
         return "/en/change.html";
     }

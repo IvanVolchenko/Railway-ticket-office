@@ -28,7 +28,8 @@ public class StationService {
         ArrayList<Station> stationCheck2 = stationsRepository.findAllByCity(station.getCity());
         for (Station station1:stationCheck){
             for (Station station2:stationCheck2){
-                if (station1.getStreet().equals(station2.getStreet())){
+                if (station1.getStreet().equals(station2.getStreet()) &&
+                        station1.getCity().equals(station2.getCity())){
                     return false;
                 }
             }

@@ -19,31 +19,49 @@ public class Ticket {
     public int seat;
     @Column(name = "uuid")
     private String uuid;
-    @Column(name = "name")
-    private String name;
-    @Column(name = "document")
-    public String document;
+//    @Column(name = "name")
+//    private String name;
+//    @Column(name = "document")
+//    public String document;
     @Column(name = "departure")
     private String departure;
     @Column(name = "arrival")
     public String arrival;
-    @Column(name = "date")
-    public String date;
+    @Column(name = "depTime")
+    public String depTime;
+    @Column(name = "arTime")
+    public String arTime;
+    @ManyToOne(cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
+    @JoinColumn(name = "user_id")
+    private User user;
     public Ticket() {
     }
 
 
-    public Ticket(String tran, int seat, String uuid, String name, String document,
-                  String departure, String arrival, String date) {
+    public Ticket(String tran, int seat, String uuid, User user,
+                  String departure, String arrival, String depTime,String arTime) {
+//        public Ticket(String tran, int seat, String uuid, String name, String document,
+//                String departure, String arrival, String date) {
         this.tran = tran;
         this.seat = seat;
         this.uuid = uuid;
-        this.name = name;
-        this.document = document;
+        this.user=user;
+//        this.name = name;
+//        this.document = document;
         this.departure = departure;
         this.arrival = arrival;
-        this.date = date;
+        this.depTime = depTime;
+        this.arTime=arTime;
     }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
 
     public long getId() {
         return id;
@@ -76,23 +94,23 @@ public class Ticket {
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDocument() {
-        return document;
-    }
-
-    public void setDocument(String document) {
-        this.document = document;
-    }
-
+//
+//    public String getName() {
+//        return name;
+//    }
+//
+//    public void setName(String name) {
+//        this.name = name;
+//    }
+//
+//    public String getDocument() {
+//        return document;
+//    }
+//
+//    public void setDocument(String document) {
+//        this.document = document;
+//    }
+//
     public String getDeparture() {
         return departure;
     }
@@ -109,11 +127,34 @@ public class Ticket {
         this.arrival = arrival;
     }
 
-    public String getDate() {
-        return date;
+    public String getDepTime() {
+        return depTime;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setDepTime(String depTime) {
+        this.depTime = depTime;
+    }
+
+    public String getArTime() {
+        return arTime;
+    }
+
+    public void setArTime(String arTime) {
+        this.arTime = arTime;
+    }
+
+    @Override
+    public String toString() {
+        return "Ticket{" +
+                "id=" + id +
+                ", tran='" + tran + '\'' +
+                ", seat=" + seat +
+                ", uuid='" + uuid + '\'' +
+                ", departure='" + departure + '\'' +
+                ", arrival='" + arrival + '\'' +
+                ", depTime='" + depTime + '\'' +
+                ", arTime='" + arTime + '\'' +
+                ", user=" + user +
+                '}';
     }
 }

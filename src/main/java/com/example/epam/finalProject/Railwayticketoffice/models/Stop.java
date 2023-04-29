@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * Stops of routes.
@@ -42,9 +43,7 @@ public class Stop {
     @Min(value = 0,message = "Km should be greater than 0")
     private int km;
     @Column(name = "seats")
-//    @Min(value = 30, message = "Seats should be greater than 30" )
     private int seats = 180;
-
 
 
     public Stop() {
@@ -56,6 +55,7 @@ public class Stop {
         this.departure = departure;
         this.km = km;
     }
+
 
     public Station getStation() {
         return station;

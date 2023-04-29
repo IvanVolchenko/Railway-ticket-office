@@ -123,22 +123,21 @@
     <a href="/login" class="btn btn-primary" th:text="#{LogSec}"></a>
 </div>
 
+<div class="container text-center marg-down my-3">
+    <h2 class="text-search text-center my" th:text="#{RoutNu} + ': ' + ${number}"></h2>
+    <h2 class="text-search text-center" th:text="#{Trtime} + ': ' + ${time}"></h2>
+</div>
 <table class="container mt-5 text-center">
     <tr>
-        <th th:text="#{RoutNu}"></th>
         <th th:text="#{Station}"></th>
         <th th:text="#{Arrival}"></th>
         <th th:text="#{Departure}"></th>
     </tr>
     <tr th:each="el:${stops}" class="alert alert-info mt-2">
-        <td th:text="${el.number}"></td>
         <td th:text="${el.stationFirst}"></td>
         <td th:text="${el.arrival}"></td>
         <td th:text="${el.departure}"></td>
-        <td>
-        </td>
     </tr>
 </table>
-
 </body>
 </html>

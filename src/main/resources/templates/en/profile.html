@@ -73,14 +73,12 @@
 </nav>
     <table class="container mt-5 text-center">
         <tr>
-            <th>id</th>
             <th th:text="#{FName}"></th>
             <th th:text="#{LName}"></th>
             <th th:text="#{EmAd}"></th>
             <th th:text="#{DocNumber}"></th>
         </tr>
         <tr class="alert alert-info mt-2">
-            <td th:text="${user.id}">id</td>
             <td th:text="${user.firstName}"></td>
             <td th:text="${user.lastName}"></td>
             <td th:text="${user.emailAddress}"></td>
@@ -98,14 +96,16 @@
             <th th:text="#{from}"></th>
             <th th:text="#{DepTime}"></th>
             <th th:text="#{to}"></th>
+            <th th:text="#{ArTi}"></th>
             <th th:text="#{Train}"></th>
             <th th:text="#{Seat}"></th>
             <th th:text="#{Ticket}"></th>
         </tr>
         <tr th:each="ti:${tickets}" class="alert alert-info mt-2">
             <td th:text="${ti.departure}"></td>
-            <td th:text="${ti.date}"></td>
+            <td th:text="${ti.depTime}"></td>
             <td th:text="${ti.arrival}"></td>
+            <td th:text="${ti.arTime}"></td>
             <td th:text="${ti.tran}"></td>
             <td th:text="${ti.seat}"></td>
             <td th:text="${ti.uuid}"></td>

@@ -124,7 +124,7 @@ public class AdminRoutesController {
             model.addAttribute("stops", stops);
             return "/admin/checkRoutes.html";
         }
-        return "redirect:/admin/routes/check";
+        return "redirect:/routes/check";
     }
 
     @PostMapping("/admin/stop/changeStop")
@@ -143,7 +143,7 @@ public class AdminRoutesController {
             model.addAttribute("stops", stops);
             return "/admin/checkRoutes.html";
         }
-        return "redirect:/admin/routes/check";
+        return "redirect:/routes/check";
     }
 
     @GetMapping("/routes/check")
@@ -181,7 +181,7 @@ public class AdminRoutesController {
                            @RequestParam LocalDateTime in, @RequestParam LocalDateTime out, Model model) {
         LOGGER.info("AdminRoutesController: method 'addStop'");
         stopService.addStop(station,number,kil,in,out);
-        return "redirect:/admin/routes/check";
+        return "redirect:/routes/check";
     }
     
     

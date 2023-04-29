@@ -50,23 +50,19 @@ public class UserService {
         LOGGER.info("UserService: method 'change'");
         Optional<User> userCheck = userRepository.findByEmailAddress(user.getEmailAddress());
         Optional<User> userCheck2 = userRepository.findByDocumentNumber(user.getDocumentNumber());
-        boolean first= userCheck.isPresent();
-        boolean second= userCheck2.isPresent();
-        User user1;
-        User user2;
-        if (first && second){
-            user1 = userCheck.get();
-            user2 = userCheck2.get();
+        if (userCheck.isPresent() && userCheck2.isPresent()){
+            User user1 = userCheck.get();
+            User user2 = userCheck2.get();
             if (user.getId()!=user1.getId() || user1.getId()!=user2.getId()){
                 return false;
             }
         }
-        if (first){
-            user1 = userCheck.get();
+        if (userCheck.isPresent()){
+            User user1 = userCheck.get();
             if (user.getId()!=user1.getId())return false;
         }
-        if (second){
-            user2 = userCheck2.get();
+        if (userCheck2.isPresent()){
+            User user2 = userCheck2.get();
             if (user.getId()!=user2.getId())return false;
         }
         String pas = user.getPassword();

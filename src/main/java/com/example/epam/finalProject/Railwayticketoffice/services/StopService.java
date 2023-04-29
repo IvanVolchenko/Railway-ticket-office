@@ -152,7 +152,7 @@ public class StopService {
                     for (Stop list: allByStation_id){
                         if (list.getTrain().equals(stop.getTrain())){
                             if (list.getKm()<stop.getKm()){
-                                String s = calculateTime(list, stop);
+                                String time = calculateTime(list, stop);
                                 double value = (stop.getKm()-list.getKm())*list.getPrice();
                                 String valueFormer = String.valueOf(value).substring(0,4);
                                 value = Double.parseDouble(valueFormer);
@@ -160,7 +160,7 @@ public class StopService {
                                 String in = stop.getArrival().toString().replace('T',' ');
                                 String out = list.getDeparture().toString().replace('T',' ');
                                 routes.add(new Route(list.getTrain(),in,list.getStation().getCity() + ", "
-                                        + list.getStation().getStreet(), s  ,out,
+                                        + list.getStation().getStreet(), time  ,out,
                                         stop.getStation().getCity() + ", "+ stop.getStation().getStreet(),
                                         value,seats,list.getId(),stop.getId()));
                             }}}});
@@ -192,8 +192,7 @@ public class StopService {
         Optional<Stop> byId = stopRepository.findById(id);
         Stop stop = byId.get();
         String city = stop.getStation().getCity();
-        String routeNumber = stop.getTrain();
-        List<Stop> byTrain = stopRepository.findByTrain(routeNumber);
+        List<Stop> byTrain = stopRepository.findByTrain(stop.getTrain());
         List<Stop> result = new ArrayList<>();
         Pattern pattern = Pattern.compile(
                 "[а-яА-ЯёЁ\\s]*");
@@ -215,47 +214,50 @@ public class StopService {
         }
         List<Route> stops = new ArrayList<>();
         result.forEach(el->{
-            Route route = new Route();
-            route.setNumber(el.getTrain());
-            route.setStationFirst(el.getStation().getCity() + " , " + el.getStation().getStreet());
             String ar = el.getArrival().toString().replace('T',' ');
-            route.setArrival(ar);
             String dep = el.getDeparture().toString().replace('T',' ');
-            route.setDeparture(dep);
-            route.setKm(el.getKm());
-            route.setFirstId(el.getId());
-            route.setSecondId(el.getId());
+            Route route = new Route(el.getTrain(),ar,el.getStation().getCity() + " , " + el.getStation().getStreet(),
+                    dep,el.getKm(),el.getId(),el.getId());
             stops.add(route);
         });
         return stops;
     }
 
 
-    public void buyTicket(MyUser myUser, List<Stop> allOfStops, long id, long secondId) {
-        AtomicInteger seat = new AtomicInteger();
-        allOfStops.forEach(el->{
-            seat.set(el.getSeats());
-            int b = el.getSeats() -1;
-            el.setSeats(b);
-        });
-        stopRepository.saveAll(allOfStops);
-        int seatResult = seat.get();
+    public void buyTicket(User user, List<Stop> allOfStops, long id, long secondId) {
+        LOGGER.info("StopService: method 'buyTicket'");
+        int seat = buyTicketSaveStops(allOfStops);
         List<Route> stops = check(id, secondId);
         String first = "";
         String second = "";
-        String date = "";
+        String depTime = "";
+        String arTime = "";
         for (Route el:stops){
             if (el.getFirstId()==id) {
-                date=el.getDeparture().replace('T',' ');
+                depTime=el.getDeparture().replace('T',' ');
                 first = el.getStationFirst();
             }
-            if (el.getSecondId()==secondId) second = el.getStationFirst();
+            if (el.getSecondId()==secondId){
+                arTime=el.getArrival().replace('T',' ');
+                second = el.getStationFirst();
+            }
         }
         String number = stops.get(1).getNumber();
         String uuid = UUID.randomUUID().toString();
-        Ticket ticket = new Ticket(number,seatResult,uuid, myUser.getFirstName() + " " + myUser.getLastName(),
-                myUser.getDocumentNumber(),first,second,date);
+        Ticket ticket = new Ticket(number,seat,uuid, user,
+                first,second,depTime,arTime);
         ticketRepository.save(ticket);
+    }
+
+    public int buyTicketSaveStops (List<Stop> allOfStops){
+        int seat=0;
+        for (Stop stop:allOfStops){
+            seat=stop.getSeats();
+            int b = stop.getSeats() -1;
+            stop.setSeats(b);
+        }
+        stopRepository.saveAll(allOfStops);
+        return seat;
     }
 
     public Page<Stop> findAllStops(int page, int size) {

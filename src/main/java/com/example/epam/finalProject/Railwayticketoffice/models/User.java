@@ -6,6 +6,8 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
+import java.util.List;
+
 @Entity
 @Table(name = "users")
 public class User {
@@ -45,6 +47,9 @@ public class User {
     @Column(name = "authorities", nullable = false)
 //    @NotEmpty
     private String authorities;
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY,
+            cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
+    private List<Ticket> tickets;
 
     public User() {
     }
@@ -57,6 +62,16 @@ public class User {
         this.password = password;
     }
 
+    public List<Ticket> getTickets() {
+        return tickets;
+    }
+
+    public void setTickets(List<Ticket> tickets) {
+        if (tickets!=null){
+            tickets.forEach(s->s.setUser(this));
+        }
+        this.tickets = tickets;
+    }
 
     public long getId() {
         return id;

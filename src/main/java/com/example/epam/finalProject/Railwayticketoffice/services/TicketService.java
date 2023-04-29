@@ -3,6 +3,7 @@ package com.example.epam.finalProject.Railwayticketoffice.services;
 import com.example.epam.finalProject.Railwayticketoffice.data.TicketRepository;
 import com.example.epam.finalProject.Railwayticketoffice.models.Message;
 import com.example.epam.finalProject.Railwayticketoffice.models.Ticket;
+import com.example.epam.finalProject.Railwayticketoffice.models.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -30,9 +31,9 @@ public class TicketService {
         return ticketRepository.findAllTicketsByTran(tran,pageable);
     }
 
-    public Page<Ticket> findAllTicketsByDocument(String documentNumber, int pageNu, int size) {
+    public Page<Ticket> findAllTicketsByUser(User user, int pageNu, int size) {
         LOGGER.info("TicketService: method 'findAllTicketsByDocument'");
         Pageable pageable = PageRequest.of(pageNu - 1,size);
-        return ticketRepository.findByDocument(documentNumber,pageable);
+        return ticketRepository.findByUser(user,pageable);
     }
 }

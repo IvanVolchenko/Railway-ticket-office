@@ -37,6 +37,17 @@ public class Route {
         this.secondId = secondId;
     }
 
+    public Route(String number, String arrival, String stationFirst,
+                  String departure, int km, long firstId, long secondId) {
+        this.number = number;
+        this.arrival = arrival;
+        this.stationFirst = stationFirst;
+        this.departure = departure;
+        this.km = km;
+        this.firstId = firstId;
+        this.secondId = secondId;
+    }
+
     public Route() {
     }
 

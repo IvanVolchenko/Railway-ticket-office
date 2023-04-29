@@ -16,10 +16,6 @@
             integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
             crossorigin="anonymous"
     ></script>
-<!--    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">-->
-<!--    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">-->
-<!--    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">-->
-<!--    <link rel="manifest" href="/images/favicon/site.webmanifest">-->
     <style>
       .center {
         text-align: center;
@@ -119,8 +115,8 @@
         <td th:text="${el.station.city}"></td>
         <td th:text="${el.train}"></td>
         <td th:text="${el.km}"></td>
-        <td th:text="${el.arrival}"></td>
-        <td th:text="${el.departure}"></td>
+        <td th:text="${el.arrival.toString().replace('T',' ')}"></td>
+        <td th:text="${el.departure.toString().replace('T',' ')}"></td>
     </tr>
 </table>
 </body>
