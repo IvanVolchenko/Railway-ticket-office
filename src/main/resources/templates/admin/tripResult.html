@@ -127,10 +127,10 @@
     <tr th:each="ti:${tickets}" class="alert alert-info mt-2">
         <td th:text="${ti.user.firstName} + ' ' + ${ti.user.lastName}"></td>
         <td th:text="${ti.user.documentNumber}"></td>
-        <td th:text="${ti.departure}"></td>
-        <td th:text="${ti.depTime}"></td>
-        <td th:text="${ti.arrival}"></td>
-        <td th:text="${ti.arTime}"></td>
+        <td th:text="${ti.stopDeparture.station.city} + ' ' + ${ti.stopDeparture.station.street}"></td>
+        <td th:text="${ti.stopDeparture.departure.toString().replace('T',' ')}"></td>
+        <td th:text="${ti.stopArrival.station.city} + ' ' + ${ti.stopDeparture.station.street}"></td>
+        <td th:text="${ti.stopArrival.departure.toString().replace('T',' ')}"></td>
         <td th:text="${ti.tran}"></td>
         <td th:text="${ti.seat}"></td>
         <td th:text="${ti.uuid}"></td>

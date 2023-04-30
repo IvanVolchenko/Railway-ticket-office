@@ -65,10 +65,8 @@ public class StopServiceUnitTest {
         Station station = new Station("New York","USA");
         station.setId(12);
         stop.setStation(station);
-        ArrayList <Stop> stops = new ArrayList<Stop>();
-        stops.add(stop);
-        when(stopRepository.findByTrain(any(String.class))).thenReturn(stops);
-        boolean test = stopService.deleteStop(12, "PQWERTYUIIOP");
+        when(stopRepository.findById(any(long.class))).thenReturn(Optional.of(stop));
+        boolean test = stopService.deleteStop(12);
         Assert.assertTrue(test);
     }
 
@@ -90,15 +88,12 @@ public class StopServiceUnitTest {
     }
     @Test
     public void change (){
-        String number = UUID.randomUUID().toString();
         Stop stop = new Stop();
         Station station = new Station("New York","USA");
         station.setId(12);
         stop.setStation(station);
-        ArrayList <Stop> stops = new ArrayList<Stop>();
-        stops.add(stop);
-        when(stopRepository.findByTrain(any(String.class))).thenReturn(stops);
-        boolean test = stopService.change(12,number,200,LocalDateTime.now().plusMinutes(25),
+        when(stopRepository.findById(any(long.class))).thenReturn(Optional.of(stop));
+        boolean test = stopService.change(12,200,LocalDateTime.now().plusMinutes(25),
                 LocalDateTime.now().plusHours(2));
         Assert.assertTrue(test);
     }

@@ -38,8 +38,7 @@ public class StopServiceIntegrationTest {
 
     @Test
     public void fallDelete (){
-        String number = UUID.randomUUID().toString();
-        boolean test = stopService.deleteStop(9999, number);
+        boolean test = stopService.deleteStop(0);
         Assert.assertFalse(test);
     }
 
@@ -56,10 +55,9 @@ public class StopServiceIntegrationTest {
 
     @Test
     public void fallChange (){
-        String number = UUID.randomUUID().toString();
-        boolean testTime = stopService.change(9999,number,200,LocalDateTime.now(),
+        boolean testTime = stopService.change(9999,200,LocalDateTime.now(),
                 LocalDateTime.now().minusHours(2));
-        boolean testStationOrNumber = stopService.change(9999,number,200,
+        boolean testStationOrNumber = stopService.change(9999,200,
                 LocalDateTime.now().plusHours(5), LocalDateTime.now().plusMonths(1));
         Assert.assertFalse(testTime);
         Assert.assertFalse(testStationOrNumber);

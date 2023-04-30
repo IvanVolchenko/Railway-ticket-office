@@ -54,12 +54,11 @@ public class MyProfileController {
         int size = 4;
         MyUser myUser = (MyUser) authentication.getPrincipal();
         Optional<User> userFound = userRepository.findById(myUser.getId());
-//        Optional<User> user = userRepository.findByUsername(authentication.getName());
         User userFinal = userFound.get();
         Page<Ticket> page = ticketService.findAllTicketsByUser(userFinal,pageNu,size);
         List <Ticket> ticketList = page.getContent();
         ArrayList<Ticket> tickets = new ArrayList<>(ticketList);
-        tickets.sort(Comparator.comparing(Ticket::getDepTime));
+        tickets.sort(Comparator.comparing(Ticket::getId));
         model.addAttribute("zero",1);
         model.addAttribute("currentPage",pageNu);
         model.addAttribute("totalPages",page.getTotalPages());
@@ -76,7 +75,6 @@ public class MyProfileController {
         LOGGER.info("MyProfileController: method 'changeProfile'");
         MyUser myUser = (MyUser) authentication.getPrincipal();
         Optional<User> userFound = userRepository.findById(myUser.getId());
-//        Optional<User> user = userRepository.findByUsername(authentication.getName());
         User userFinal = userFound.get();
         model.addAttribute("user",userFinal);
         return "/en/change.html";

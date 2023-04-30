@@ -34,7 +34,7 @@ public class User {
     private String lastName;
     @Column(name = "document_number", unique = true)
     @NotBlank(message = "Document number should not be empty")
-    @Size(min = 5, max = 20, message = "Document number should not be between 2 and 20 characters" )
+    @Size(min = 5, max = 20, message = "Document number should not be between 5 and 20 characters" )
     private String documentNumber;
     @Column(name = "email_address", unique = true)
     @NotBlank(message = "Email should not be empty")

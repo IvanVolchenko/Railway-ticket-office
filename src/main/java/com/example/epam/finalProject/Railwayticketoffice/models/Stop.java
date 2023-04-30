@@ -19,23 +19,17 @@ public class Stop {
     private long id;
     @Column(name = "train")
     private String train;
-//    @Column(name = "station")
-//    @NotBlank(message = "Stop should not be empty")
-//    private String station;
     @Column(name = "arrival")
-//    @NotBlank(message = "Arrival in should not be empty")
     @NotNull(message = "Arrival in should not be empty")
     @Future
     private LocalDateTime arrival;
     @Column(name = "departure")
-//    @NotBlank(message = "Departure should not be empty")
     @NotNull(message = "Departure in should not be empty")
     @Future
     private LocalDateTime departure;
     @ManyToOne(cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
     @JoinColumn(name = "station_id")
     private Station station;
-//    private java.time.format.DateTimeFormatter time;
     @Column(name = "price")
     @Min(value = 0,message = "Price should be greater than 0")
     private double price = 0.05;
@@ -44,6 +38,12 @@ public class Stop {
     private int km;
     @Column(name = "seats")
     private int seats = 180;
+    @OneToMany(mappedBy = "stopArrival",
+            fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<Ticket> ticketsArrival;
+    @OneToMany(mappedBy = "stopDeparture",
+            fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<Ticket> ticketsDeparture;
 
 
     public Stop() {
@@ -56,6 +56,27 @@ public class Stop {
         this.km = km;
     }
 
+    public List<Ticket> getTicketsArrival() {
+        return ticketsArrival;
+    }
+
+    public void setTicketsArrival(List<Ticket> ticketsArrival) {
+        if (ticketsArrival!=null){
+            ticketsArrival.forEach(t->t.setStopArrival(this));
+        }
+        this.ticketsArrival = ticketsArrival;
+    }
+
+    public List<Ticket> getTicketsDeparture() {
+        return ticketsDeparture;
+    }
+
+    public void setTicketsDeparture(List<Ticket> ticketsDeparture) {
+        if (ticketsDeparture!=null){
+            ticketsDeparture.forEach(t->t.setStopDeparture(this));
+        }
+        this.ticketsDeparture = ticketsDeparture;
+    }
 
     public Station getStation() {
         return station;
@@ -119,5 +140,19 @@ public class Stop {
 
     public void setDeparture(LocalDateTime departure) {
         this.departure = departure;
+    }
+
+    @Override
+    public String toString() {
+        return "Stop{" +
+                "id=" + id +
+                ", train='" + train + '\'' +
+                ", arrival=" + arrival +
+                ", departure=" + departure +
+                ", station=" + station +
+                ", price=" + price +
+                ", km=" + km +
+                ", seats=" + seats +
+                '}';
     }
 }

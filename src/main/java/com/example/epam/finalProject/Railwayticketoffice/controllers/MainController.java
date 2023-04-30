@@ -74,8 +74,8 @@ public class MainController {
     }
 
     @GetMapping("/routes/{from}/{to}/{pageNu}")
-    public String searchPageRoutes(@PathVariable (value = "from") String from,@PathVariable (value = "to") String to,
-                               @PathVariable (value = "pageNu") int pageNu, Model model){
+    public String searchPageRoutes(@PathVariable String from,@PathVariable  String to,
+                               @PathVariable int pageNu, Model model){
         LOGGER.info("Main controller: method 'routes/{from}/{to}/{pageNu}'");
         int size = 3;
         ArrayList<Route> routes = stopService.search(from, to);
@@ -110,6 +110,11 @@ public class MainController {
                                   Authentication authentication ,Model model){
         LOGGER.info("Main controller: method 'getRouteDetails'");
         if (authentication==null) model.addAttribute("exist","exist");
+        Optional<Stop> byId1 = stopRepository.findById(id);
+        Optional<Stop> byId2 = stopRepository.findById(secondId);
+        if (byId1.isEmpty() || byId2.isEmpty()) {
+            return "redirect:/";
+        }
         List<Route> stops = stopService.check(id, secondId);
         stops.sort(Comparator.comparingInt(Route::getKm));
         String number = stops.get(0).getNumber();
@@ -131,6 +136,10 @@ public class MainController {
         Optional<User> userFound = userRepository.findById(myUser.getId());
         User user = userFound.get();
         Optional<Stop> byId1 = stopRepository.findById(id);
+        Optional<Stop> byId2 = stopRepository.findById(secondId);
+        if (byId1.isEmpty() || byId2.isEmpty()) {
+            return "redirect:/";
+        }
         Stop stop = byId1.get();
         List<Stop> allOfStops = stopRepository.findByTrain(stop.getTrain());
         if (allOfStops.get(1).getSeats()>0){

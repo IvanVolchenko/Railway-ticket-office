@@ -2,12 +2,15 @@ package com.example.epam.finalProject.Railwayticketoffice.controllers;
 
 import com.example.epam.finalProject.Railwayticketoffice.data.ContactsRepository;
 import com.example.epam.finalProject.Railwayticketoffice.models.Contact;
+import com.example.epam.finalProject.Railwayticketoffice.models.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 /**
  * The  controller 'AdminContactsController' com.example.epam.finalProject.Railwayticketoffice.controllers.
@@ -50,6 +53,8 @@ public class AdminContactsController {
     @PreAuthorize("hasAuthority('ADMIN')")
     public String deleteContact (@PathVariable("id") long id, Model model) {
         LOGGER.info("AdminContactsController: method 'deleteContact'");
+        Optional<Contact> contact = contactsRepository.findById(id);
+        if (contact.isEmpty()) return "redirect:/admin/contacts";
         contactsRepository.deleteById(id);
         return "redirect:/admin/contacts";
     }

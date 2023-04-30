@@ -19,39 +19,41 @@ public class Ticket {
     public int seat;
     @Column(name = "uuid")
     private String uuid;
-//    @Column(name = "name")
-//    private String name;
-//    @Column(name = "document")
-//    public String document;
-    @Column(name = "departure")
-    private String departure;
-    @Column(name = "arrival")
-    public String arrival;
-    @Column(name = "depTime")
-    public String depTime;
-    @Column(name = "arTime")
-    public String arTime;
     @ManyToOne(cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
     @JoinColumn(name = "user_id")
     private User user;
+    @ManyToOne(cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
+    @JoinColumn(name = "stop_arrival_id")
+    private Stop stopArrival;
+    @ManyToOne(cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
+    @JoinColumn(name = "stop_departure_id")
+    private Stop stopDeparture;
+
     public Ticket() {
     }
 
-
-    public Ticket(String tran, int seat, String uuid, User user,
-                  String departure, String arrival, String depTime,String arTime) {
-//        public Ticket(String tran, int seat, String uuid, String name, String document,
-//                String departure, String arrival, String date) {
-        this.tran = tran;
-        this.seat = seat;
+    public Ticket( String uuid, User user,Stop stopArrival, Stop stopDeparture) {
         this.uuid = uuid;
         this.user=user;
-//        this.name = name;
-//        this.document = document;
-        this.departure = departure;
-        this.arrival = arrival;
-        this.depTime = depTime;
-        this.arTime=arTime;
+        this.stopArrival=stopArrival;
+        this.stopDeparture=stopDeparture;
+
+    }
+
+    public Stop getStopArrival() {
+        return stopArrival;
+    }
+
+    public void setStopArrival(Stop stopArrival) {
+        this.stopArrival = stopArrival;
+    }
+
+    public Stop getStopDeparture() {
+        return stopDeparture;
+    }
+
+    public void setStopDeparture(Stop stopDeparture) {
+        this.stopDeparture = stopDeparture;
     }
 
     public User getUser() {
@@ -94,67 +96,12 @@ public class Ticket {
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
-//
-//    public String getName() {
-//        return name;
-//    }
-//
-//    public void setName(String name) {
-//        this.name = name;
-//    }
-//
-//    public String getDocument() {
-//        return document;
-//    }
-//
-//    public void setDocument(String document) {
-//        this.document = document;
-//    }
-//
-    public String getDeparture() {
-        return departure;
-    }
-
-    public void setDeparture(String departure) {
-        this.departure = departure;
-    }
-
-    public String getArrival() {
-        return arrival;
-    }
-
-    public void setArrival(String arrival) {
-        this.arrival = arrival;
-    }
-
-    public String getDepTime() {
-        return depTime;
-    }
-
-    public void setDepTime(String depTime) {
-        this.depTime = depTime;
-    }
-
-    public String getArTime() {
-        return arTime;
-    }
-
-    public void setArTime(String arTime) {
-        this.arTime = arTime;
-    }
 
     @Override
     public String toString() {
         return "Ticket{" +
                 "id=" + id +
-                ", tran='" + tran + '\'' +
-                ", seat=" + seat +
                 ", uuid='" + uuid + '\'' +
-                ", departure='" + departure + '\'' +
-                ", arrival='" + arrival + '\'' +
-                ", depTime='" + depTime + '\'' +
-                ", arTime='" + arTime + '\'' +
-                ", user=" + user +
                 '}';
     }
 }

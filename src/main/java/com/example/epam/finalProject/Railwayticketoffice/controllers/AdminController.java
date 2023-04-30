@@ -5,6 +5,7 @@ import com.example.epam.finalProject.Railwayticketoffice.data.MessageRepository;
 import com.example.epam.finalProject.Railwayticketoffice.data.UserRepository;
 import com.example.epam.finalProject.Railwayticketoffice.models.Message;
 import com.example.epam.finalProject.Railwayticketoffice.models.MyUser;
+import com.example.epam.finalProject.Railwayticketoffice.models.Station;
 import com.example.epam.finalProject.Railwayticketoffice.models.User;
 import com.example.epam.finalProject.Railwayticketoffice.services.MessageService;
 import com.example.epam.finalProject.Railwayticketoffice.services.UserService;
@@ -18,6 +19,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * The main controller 'AdminController' com.example.epam.finalProject.Railwayticketoffice.controllers.
@@ -73,6 +75,8 @@ public class AdminController {
     public String deleteProfile(@PathVariable("id") long id , Authentication authentication, Model model){
         MyUser user = (MyUser) authentication.getPrincipal();
         LOGGER.info("AdminController: method 'deleteProfile'");
+        Optional<User> user1 = userRepository.findById(id);
+        if (user1.isEmpty()) return "redirect:/admin";
         if (id==user.getId()) return "redirect:/admin";
         userRepository.deleteById(id);
         return "redirect:/report";
@@ -103,6 +107,8 @@ public class AdminController {
     @PreAuthorize("hasAuthority('ADMIN')")
     public String deleteStatement (@PathVariable("id") long id, Model model) {
         LOGGER.info("AdminController: method 'deleteStatement'");
+        Optional<Message> message = messageRepository.findById(id);
+        if (message.isEmpty()) return "redirect:/statements";
         messageRepository.deleteById(id);
         return "redirect:/statements";
     }

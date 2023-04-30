@@ -1,0 +1,20 @@
+insert into railway.users values (1,'ADMIN',434343,'adminSpT@gmal.com','Dmitro','Dmitriev','$2a$11$dp4wMyuqYE3KSwIyQmWZFeUb7jCsHAdk7ZhFc0qGw6i5J124imQBi','adminSpT@gmal.com');
+insert into railway.users values (100,'USER',40190, 'Ivanov@gmal.com','Ivan','Ivanov','$2a$11$dp4wMyuqYE3KSwIyQmWZFeUb7jCsHAdk7ZhFc0qGw6i5J124imQBi','Ivanov@gmal.com');
+INSERT INTO railway.users VALUES (2,'USER',40191, 'dhehn@gmail.com','David','Hehn','$2a$11$dp4wMyuqYE3KSwIyQmWZFeUb7jCsHAdk7ZhFc0qGw6i5J124imQBi','dhehn@gmail.com');
+INSERT INTO railway.users VALUES (3,'USER',40192, 'xyibz@gmail.com','Xavier','Yibz','$2a$11$dp4wMyuqYE3KSwIyQmWZFeUb7jCsHAdk7ZhFc0qGw6i5J124imQBi','xyibz@gmail.com');
+INSERT INTO railway.users VALUES (4,'USER',40193, 'klrbm@gmail.com','Katie','Larby','$2a$11$dp4wMyuqYE3KSwIyQmWZFeUb7jCsHAdk7ZhFc0qGw6i5J124imQBi','klrbm@gmail.com');
+INSERT INTO railway.users VALUES (5,'USER',40194, 'xrkln@gmail.com','Xander','Rkln','$2a$11$dp4wMyuqYE3KSwIyQmWZFeUb7jCsHAdk7ZhFc0qGw6i5J124imQBi','xrkln@gmail.com');
+INSERT INTO railway.users VALUES (6,'USER',40195, 'jbnmv@gmail.com','Jane','Bnmv','$2a$11$dp4wMyuqYE3KSwIyQmWZFeUb7jCsHAdk7ZhFc0qGw6i5J124imQBi','jbnmv@gmail.com');
+INSERT INTO railway.users VALUES (7,'USER',40196, 'stzkc@gmail.com','Sara','Tzkc','$2a$11$dp4wMyuqYE3KSwIyQmWZFeUb7jCsHAdk7ZhFc0qGw6i5J124imQBi','stzkc@gmail.com');
+INSERT INTO railway.users VALUES (8,'USER',40197, 'cyswp@gmail.com','Charlie','Yswp','$2a$11$dp4wMyuqYE3KSwIyQmWZFeUb7jCsHAdk7ZhFc0qGw6i5J124imQBi','cyswp@gmail.com');
+INSERT INTO railway.users VALUES (9,'USER',40198, 'pzhqf@gmail.com','Peter','Zhqf','$2a$11$dp4wMyuqYE3KSwIyQmWZFeUb7jCsHAdk7ZhFc0qGw6i5J124imQBi','pzhqf@gmail.com');
+INSERT INTO railway.users VALUES (10,'USER',40199, 'sdjgw@gmail.com','Samantha','Djgw','$2a$11$dp4wMyuqYE3KSwIyQmWZFeUb7jCsHAdk7ZhFc0qGw6i5J124imQBi','sdjgw@gmail.com');
+INSERT INTO railway.users VALUES (11,'USER',20190, 'qdcns@gmail.com','Quentin','Dcns','$2a$11$dp4wMyuqYE3KSwIyQmWZFeUb7jCsHAdk7ZhFc0qGw6i5J124imQBi','qdcns@gmail.com');
+INSERT INTO railway.users VALUES (12,'USER',30190, 'grfny@gmail.com','Gina','Rfny','$2a$11$dp4wMyuqYE3KSwIyQmWZFeUb7jCsHAdk7ZhFc0qGw6i5J124imQBi','grfny@gmail.com');
+INSERT INTO railway.users VALUES (13,'USER',00190, 'wtmbd@gmail.com','Will','Tmbd','$2a$11$dp4wMyuqYE3KSwIyQmWZFeUb7jCsHAdk7ZhFc0qGw6i5J124imQBi','wtmbd@gmail.com');
+INSERT INTO railway.users VALUES (14,'USER',50190, 'qzxvg@gmail.com','Quinn','Zxvg','$2a$11$dp4wMyuqYE3KSwIyQmWZFeUb7jCsHAdk7ZhFc0qGw6i5J124imQBi','qzxvg@gmail.com');
+INSERT INTO railway.users VALUES (15,'USER',60190, 'ryhlp@gmail.com','Ryan','Yhlp','$2a$11$dp4wMyuqYE3KSwIyQmWZFeUb7jCsHAdk7ZhFc0qGw6i5J124imQBi','ryhlp@gmail.com');
+INSERT INTO railway.users VALUES (16,'USER',470190, 'bnczv@gmail.com','Bryan','Nczv','$2a$11$dp4wMyuqYE3KSwIyQmWZFeUb7jCsHAdk7ZhFc0qGw6i5J124imQBi','bnczv@gmail.com');
+INSERT INTO railway.users VALUES (17,'USER',490190, 'dwrhg@gmail.com','Diana','Wrhg','$2a$11$dp4wMyuqYE3KSwIyQmWZFeUb7jCsHAdk7ZhFc0qGw6i5J124imQBi','dwrhg@gmail.com');
+INSERT INTO railway.users VALUES (18,'USER',408190, 'jpmxs@gmail.com','Jacob','Pmxs','$2a$11$dp4wMyuqYE3KSwIyQmWZFeUb7jCsHAdk7ZhFc0qGw6i5J124imQBi','jpmxs@gmail.com');
+INSERT INTO railway.users VALUES (19,'USER',405190, 'nrvjl@gmail.com','Nancy','Rvjl','$2a$11$dp4wMyuqYE3KSwIyQmWZFeUb7jCsHAdk7ZhFc0qGw6i5J124imQBi','nrvjl@gmail.com')

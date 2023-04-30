@@ -69,6 +69,7 @@ public class AdminTripController {
     public String getRouteDetails(@PathVariable String tran, Model model){
         LOGGER.info("AdminTripController: method 'getRouteDetails'");
         List<Ticket> allByTran = ticketRepository.findAllByTran(tran);
+        if (allByTran.isEmpty()) return "redirect:/trip";
         ticketRepository.deleteAll(allByTran);
         return "redirect:/trip";
     }

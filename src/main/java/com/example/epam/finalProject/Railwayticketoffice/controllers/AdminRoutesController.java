@@ -21,6 +21,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * The controller 'AdminRoutesController' com.example.epam.finalProject.Railwayticketoffice.controllers.
@@ -75,6 +76,8 @@ public class AdminRoutesController {
     @GetMapping("/admin/station/delete/{id}")
     @PreAuthorize("hasAuthority('ADMIN')")
     public String deleteContact (@PathVariable("id") long id, Model model) {
+        Optional<Station> station = stationsRepository.findById(id);
+        if (station.isEmpty()) return "redirect:/admin/stations";
         stationsRepository.deleteById(id);
         return "redirect:/admin/stations";
     }
@@ -112,15 +115,14 @@ public class AdminRoutesController {
 
     @PostMapping("/admin/stop/delete")
     @PreAuthorize("hasAuthority('ADMIN')")
-    public String deleteStop (@RequestParam long st, @RequestParam String train,
-                               Model model) {
+    public String deleteStop (@RequestParam long st, Model model) {
         LOGGER.info("AdminRoutesController: method 'deleteStop'");
-        if (!stopService.deleteStop(st,train)){
+        if (!stopService.deleteStop(st)){
             model.addAttribute("notExist", "notExist");
             Iterable <Stop> stop = stopRepository.findAll();
             List <Stop> stops = new ArrayList<>();
             stop.forEach(stops::add);
-            stops.sort(Comparator.comparing(o -> o.getStation().getCity()));
+            stops.sort(Comparator.comparing(Stop::getTrain));
             model.addAttribute("stops", stops);
             return "/admin/checkRoutes.html";
         }
@@ -129,12 +131,11 @@ public class AdminRoutesController {
 
     @PostMapping("/admin/stop/changeStop")
     @PreAuthorize("hasAuthority('ADMIN')")
-    public String changeStop (@RequestParam long station, @RequestParam String number,
-                              @RequestParam int point,
+    public String changeStop (@RequestParam long station, @RequestParam int point,
                               @RequestParam LocalDateTime timein, @RequestParam LocalDateTime timeout,
                                Model model) {
         LOGGER.info("AdminRoutesController: method 'changeStop'");
-        if (!stopService.change(station,number,point,timein,timeout)){
+        if (!stopService.change(station,point,timein,timeout)){
             model.addAttribute("notChange", "notChange");
             Iterable <Stop> stop = stopRepository.findAll();
             List <Stop> stops = new ArrayList<>();
@@ -174,7 +175,7 @@ public class AdminRoutesController {
 
 
 
-    @PostMapping("/admin/addStop")
+    @PostMapping("/addStop")
     @PreAuthorize("hasAuthority('ADMIN')")
     public String addStop (@RequestParam long station, @RequestParam String number,
                            @RequestParam int kil,

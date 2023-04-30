@@ -159,97 +159,70 @@
             </div>
             <button type="submit" class="btn btn-success text-btn my-2" th:text="#{Add}"></button>
         </form>
-
-                <form th:action="@{/admin/stop/changeStop}" method="post" class="form-box">
-                    <div class="mb-4 my-3 text-search text-center marg-down" th:text="#{ChStop}"></div>
-                    <div class="mb-4 my-3">
-                        <label for="station" class="form-label" th:text="#{StId}"></label>
-                        <input
+        <form th:action="@{/admin/stop/changeStop}" method="post" class="form-box">
+            <div class="mb-4 my-3 text-search text-center marg-down" th:text="#{ChStop}"></div>
+            <div class="mb-4 my-3">
+                <label for="station" class="form-label" th:text="#{StopId}"></label>
+                <input
                                     type="number"
                                     min="1"
                                     required
                                     class="form-control"
                                     name="station"
-                        />
-                    </div>
-                    <div class="mb-4 my-3">
-                        <label for="number" class="form-label" th:text="#{Train}">Train number</label>
-                        <input
-                                    type="text"
-                                    minlength="3"
-                                    maxlength="12"
-                                    required
-                                    class="form-control"
-                                    name="number"
-                        />
-                    </div>
-                    <div class="mb-4 my-3">
-                        <label for="point" class="form-label" th:text="#{TpR}"></label>
-                        <input
+                />
+            </div>
+            <div class="mb-4 my-3">
+                <label for="point" class="form-label" th:text="#{TpR}"></label>
+                <input
                                 type="number"
                                 min="0"
                                 required
                                 class="form-control"
                                 name="point"
                                 id="point"
-                        />
-                    </div>
-                    <div class="mb-4 my-3">
-                        <label for="timein" th:text="#{ArTi}"></label>
-                        <input
+                />
+            </div>
+            <div class="mb-4 my-3">
+                <label for="timein" th:text="#{ArTi}"></label>
+                <input
                                 type="datetime-local"
                                 required
                                 name="timein"
                                 id="timein"
-                        />
-                    </div>
-                    <div class="mb-4 my-3">
-                        <label for="timeout" th:text="#{DepTi}"></label>
-                        <input
+                />
+            </div>
+            <div class="mb-4 my-3">
+                <label for="timeout" th:text="#{DepTi}"></label>
+                <input
                                 type="datetime-local"
                                 required
                                 name="timeout"
                                 id="timeout"
-                        />
-                        <div th:if="${notChange}" class="col-auto my-1 mb-4">
-                            <div class="alert alert-danger" th:text="#{NCor}"></div>
-                        </div>
-                    </div>
-                        <button type="submit" class="btn btn-success text-btn my-2" th:text="#{Change}"></button>
-                </form>
-
-
-
-                <form th:action="@{/admin/stop/delete}" method="post" class="form-box">
-                    <div class="mb-4 my-3 text-search text-center marg-down" th:text="#{DelStop}"></div>
-                    <div class="mb-4 my-3">
-                        <label for="st" class="form-label" th:text="#{StId}"></label>
-                        <input
+                />
+                <div th:if="${notChange}" class="col-auto my-1 mb-4">
+                    <div class="alert alert-danger" th:text="#{NCor}"></div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success text-btn my-2" th:text="#{Change}"></button>
+        </form>
+        <form th:action="@{/admin/stop/delete}" method="post" class="form-box">
+            <div class="mb-4 my-3 text-search text-center marg-down" th:text="#{DelStop}"></div>
+            <div class="mb-4 my-3">
+                <label for="st" class="form-label" th:text="#{StopId}"></label>
+                <input
                                 type="number"
                                 min="1"
                                 required
                                 class="form-control"
                                 id="st"
                                 name="st"
-                        />
-                    </div>
-                    <div class="mb-4 my-3">
-                        <label for="train" class="form-label" th:text="#{Train}"></label>
-                        <input
-                                type="text"
-                                minlength="3"
-                                maxlength="12"
-                                required
-                                class="form-control"
-                                id="train"
-                                name="train"
-                        />
-                        <div th:if="${notExist}" class="col-auto my-1 mb-4">
-                            <div class="alert alert-danger" th:text="#{NCor}"></div>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-success text-btn my-2" th:text="#{Delete}"></button>
-                </form>
+                />
+                <div th:if="${notExist}" class="col-auto my-1 mb-4">
+                    <div class="alert alert-danger" th:text="#{NCor}"></div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success text-btn my-2" th:text="#{Delete}"></button>
+        </form>
     </div>
 </div>
 <div class="mb-4 my-3 text-search text-center marg-down" th:text="#{Stops}"></div>

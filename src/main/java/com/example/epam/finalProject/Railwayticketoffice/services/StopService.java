@@ -66,17 +66,14 @@ public class StopService {
         return second.isAfter(first);
     }
 
-    public boolean deleteStop(long station, String number) {
+    public boolean deleteStop(long st) {
         LOGGER.info("StopService: method 'delete'");
-        List<Stop> byTrain = stopRepository.findByTrain(number);
+        Optional<Stop> stopFound = stopRepository.findById(st);
         AtomicBoolean result = new AtomicBoolean(false);
-        if (byTrain.size()>0){
-            byTrain.forEach(e->{
-                if (e.getStation().getId()==station){
-                    result.set(true);
-                    stopRepository.deleteById(e.getId());
-                }
-            });
+        if (stopFound.isPresent()) {
+            Stop stop = stopFound.get();
+            result.set(true);
+            stopRepository.deleteById(stop.getId());
         }
         return result.get();
     }
@@ -104,30 +101,26 @@ public class StopService {
 
     /**
      * It changes information about stops
-     * @param station the station identifier
-     * @param number the route number
+     * @param id the stop identifier
      * @param km The distance from the start of the route
      * @param timein The arrival time
      * @param timeout The departure time
      * @return the boolean
      */
-    public boolean change(long station, String number,int km,LocalDateTime timein,LocalDateTime timeout) {
+    public boolean change(long id,int km,LocalDateTime timein,LocalDateTime timeout) {
         LOGGER.info("StopService: method 'change'");
         if (timein.isBefore(LocalDateTime.now().plusMinutes(1))) return false;
         if (timeout.isBefore(timein)) return false;
-        List<Stop> byTrain = stopRepository.findByTrain(number);
+        Optional<Stop> stopFound = stopRepository.findById(id);
         AtomicBoolean result = new AtomicBoolean(false);
-        if (byTrain.size()>0){
-            byTrain.forEach(e->{
-                if (e.getStation().getId()==station){
+                if (stopFound.isPresent()){
+                    Stop stop = stopFound.get();
                     result.set(true);
-                    e.setKm(km);
-                    e.setArrival(timein);
-                    e.setDeparture(timeout);
-                    stopRepository.save(e);
+                    stop.setKm(km);
+                    stop.setArrival(timein);
+                    stop.setDeparture(timeout);
+                    stopRepository.save(stop);
                 }
-            });
-        }
         return result.get();
     }
 
@@ -228,24 +221,19 @@ public class StopService {
         LOGGER.info("StopService: method 'buyTicket'");
         int seat = buyTicketSaveStops(allOfStops);
         List<Route> stops = check(id, secondId);
-        String first = "";
-        String second = "";
-        String depTime = "";
-        String arTime = "";
-        for (Route el:stops){
-            if (el.getFirstId()==id) {
-                depTime=el.getDeparture().replace('T',' ');
-                first = el.getStationFirst();
+        Ticket ticket = new Ticket();
+        ticket.setUuid(UUID.randomUUID().toString());
+        ticket.setUser(user);
+        ticket.setTran(allOfStops.get(1).getTrain());
+        ticket.setSeat(seat);
+        for (Stop stop: allOfStops){
+            if (stop.getId()==id) {
+                ticket.setStopDeparture(stop);
             }
-            if (el.getSecondId()==secondId){
-                arTime=el.getArrival().replace('T',' ');
-                second = el.getStationFirst();
+            if (stop.getId()==secondId){
+                ticket.setStopArrival(stop);
             }
         }
-        String number = stops.get(1).getNumber();
-        String uuid = UUID.randomUUID().toString();
-        Ticket ticket = new Ticket(number,seat,uuid, user,
-                first,second,depTime,arTime);
         ticketRepository.save(ticket);
     }
 

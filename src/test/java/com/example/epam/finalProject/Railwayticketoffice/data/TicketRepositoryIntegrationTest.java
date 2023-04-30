@@ -33,8 +33,6 @@ public class TicketRepositoryIntegrationTest {
         Ticket ticket = new Ticket();
         ticket.setTran("Y1229112U");
         ticket.setUuid(UUID.randomUUID().toString());
-        ticket.setArTime("24.02.2024");
-        ticket.setDepTime("25.02.2024");
         ticket.setSeat(120);
         entityManager.persist(ticket);
         List<Ticket> tickets = ticketRepository.findAllByTran("Y1229112U");
