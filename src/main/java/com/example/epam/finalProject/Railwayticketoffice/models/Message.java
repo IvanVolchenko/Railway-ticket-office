@@ -2,7 +2,6 @@ package com.example.epam.finalProject.Railwayticketoffice.models;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
 
 /**
  * Statements to admin.

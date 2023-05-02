@@ -1261,3 +1261,713 @@
 02.05.2023 12:52:46.727 [SpringApplicationShutdownHook] INFO   o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 02.05.2023 12:52:46.736 [SpringApplicationShutdownHook] INFO   c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated...
 02.05.2023 12:52:46.766 [SpringApplicationShutdownHook] INFO   c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed.
+02.05.2023 14:07:37.571 [background-preinit] INFO   o.h.v.i.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+02.05.2023 14:07:37.636 [restartedMain] INFO   c.e.e.f.R.RailwayTicketOfficeApplication - Starting RailwayTicketOfficeApplication using Java 17.0.3.1 with PID 9596 (C:\Users\Полина\Documents\GitHub\Railway-ticket-office\target\classes started by Полина in C:\Users\Полина\Documents\GitHub\Railway-ticket-office)
+02.05.2023 14:07:37.636 [restartedMain] INFO   c.e.e.f.R.RailwayTicketOfficeApplication - No active profile set, falling back to 1 default profile: "default"
+02.05.2023 14:07:37.707 [restartedMain] INFO   o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+02.05.2023 14:07:37.707 [restartedMain] INFO   o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+02.05.2023 14:07:38.825 [restartedMain] INFO   o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+02.05.2023 14:07:38.941 [restartedMain] INFO   o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 97 ms. Found 6 JPA repository interfaces.
+02.05.2023 14:07:39.944 [restartedMain] INFO   o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+02.05.2023 14:07:39.960 [restartedMain] INFO   o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+02.05.2023 14:07:39.960 [restartedMain] INFO   o.a.c.c.StandardService - Starting service [Tomcat]
+02.05.2023 14:07:39.960 [restartedMain] INFO   o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.7]
+02.05.2023 14:07:40.060 [restartedMain] INFO   o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext
+02.05.2023 14:07:40.060 [restartedMain] INFO   o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2353 ms
+02.05.2023 14:07:40.283 [restartedMain] INFO   o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+02.05.2023 14:07:40.377 [restartedMain] INFO   o.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+02.05.2023 14:07:40.767 [restartedMain] INFO   c.z.h.HikariDataSource - HikariPool-1 - Starting...
+02.05.2023 14:07:41.201 [restartedMain] INFO   c.z.h.p.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4b355bc4
+02.05.2023 14:07:41.201 [restartedMain] INFO   c.z.h.HikariDataSource - HikariPool-1 - Start completed.
+02.05.2023 14:07:41.285 [restartedMain] INFO   SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+02.05.2023 14:07:42.550 [restartedMain] INFO   o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+02.05.2023 14:07:42.566 [restartedMain] INFO   o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+02.05.2023 14:07:43.283 [restartedMain] WARN   o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+02.05.2023 14:07:43.691 [restartedMain] INFO   o.s.s.w.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5e922bb6, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@49f17cad, org.springframework.security.web.context.SecurityContextHolderFilter@1d3e6259, org.springframework.security.web.header.HeaderWriterFilter@9ffeb83, org.springframework.security.web.authentication.logout.LogoutFilter@55c6c86a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1ff7f720, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@647b924b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@fa933f8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@650218f9, org.springframework.security.web.access.ExceptionTranslationFilter@72996d66, org.springframework.security.web.access.intercept.AuthorizationFilter@23d3dbf4]
+02.05.2023 14:07:44.023 [restartedMain] INFO   o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+02.05.2023 14:07:44.039 [restartedMain] INFO   o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+02.05.2023 14:07:44.070 [restartedMain] INFO   o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+02.05.2023 14:07:44.086 [restartedMain] INFO   c.e.e.f.R.RailwayTicketOfficeApplication - Started RailwayTicketOfficeApplication in 6.95 seconds (process running for 8.187)
+02.05.2023 14:07:54.037 [http-nio-8080-exec-1] INFO   o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+02.05.2023 14:07:54.037 [http-nio-8080-exec-1] INFO   o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+02.05.2023 14:07:54.039 [http-nio-8080-exec-1] INFO   o.s.w.s.DispatcherServlet - Completed initialization in 2 ms
+02.05.2023 14:07:54.116 [http-nio-8080-exec-1] INFO   c.e.e.f.R.c.MainController - Home page
+02.05.2023 14:08:55.201 [http-nio-8080-exec-10] INFO   c.e.e.f.R.c.MainController - Home page
+02.05.2023 14:09:13.000 [http-nio-8080-exec-9] INFO   c.e.e.f.R.c.MainController - Home page
+02.05.2023 14:09:18.285 [http-nio-8080-exec-3] INFO   c.e.e.f.R.c.MainController - Home page
+02.05.2023 14:09:38.838 [http-nio-8080-exec-1] INFO   c.e.e.f.R.c.MainController - Main controller: method 'routes'
+02.05.2023 14:09:38.839 [http-nio-8080-exec-1] INFO   c.e.e.f.R.c.MainController - Main controller: method 'routes/{from}/{to}/{pageNu}'
+02.05.2023 14:09:38.839 [http-nio-8080-exec-1] INFO   c.e.e.f.R.s.StopService - StopService: method 'search'
+02.05.2023 14:09:39.045 [http-nio-8080-exec-1] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 14:09:39.049 [http-nio-8080-exec-1] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 14:09:39.050 [http-nio-8080-exec-1] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 14:09:39.050 [http-nio-8080-exec-1] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 14:09:43.804 [http-nio-8080-exec-8] INFO   c.e.e.f.R.c.MainController - Home page
+02.05.2023 14:09:48.972 [http-nio-8080-exec-5] INFO   c.e.e.f.R.c.MainController - Main controller: method 'routes'
+02.05.2023 14:09:48.972 [http-nio-8080-exec-5] INFO   c.e.e.f.R.c.MainController - Main controller: method 'routes/{from}/{to}/{pageNu}'
+02.05.2023 14:09:48.972 [http-nio-8080-exec-5] INFO   c.e.e.f.R.s.StopService - StopService: method 'search'
+02.05.2023 14:09:48.993 [http-nio-8080-exec-5] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 14:09:48.993 [http-nio-8080-exec-5] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 14:09:48.993 [http-nio-8080-exec-5] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 14:09:48.993 [http-nio-8080-exec-5] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 14:10:07.436 [http-nio-8080-exec-3] INFO   c.e.e.f.R.c.MainController - Main controller: method 'getRouteDetails'
+02.05.2023 14:10:07.473 [http-nio-8080-exec-3] INFO   c.e.e.f.R.s.StopService - StopService: method 'check'
+02.05.2023 14:10:07.490 [http-nio-8080-exec-3] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 14:10:31.318 [http-nio-8080-exec-1] INFO   c.e.e.f.R.c.MainController - Main controller: method 'getRegistration'
+02.05.2023 14:10:41.526 [http-nio-8080-exec-4] INFO   c.e.e.f.R.c.MainController - Home page
+02.05.2023 14:11:15.655 [http-nio-8080-exec-7] INFO   c.e.e.f.R.c.MainController - Home page
+02.05.2023 14:11:23.055 [http-nio-8080-exec-6] INFO   c.e.e.f.R.c.MainController - Home page
+02.05.2023 14:11:39.179 [http-nio-8080-exec-7] INFO   c.e.e.f.R.c.MainController - Main controller: method 'routes'
+02.05.2023 14:11:39.179 [http-nio-8080-exec-7] INFO   c.e.e.f.R.c.MainController - Main controller: method 'routes/{from}/{to}/{pageNu}'
+02.05.2023 14:11:39.180 [http-nio-8080-exec-7] INFO   c.e.e.f.R.s.StopService - StopService: method 'search'
+02.05.2023 14:11:39.201 [http-nio-8080-exec-7] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 14:11:39.201 [http-nio-8080-exec-7] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 14:11:39.201 [http-nio-8080-exec-7] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 14:11:39.201 [http-nio-8080-exec-7] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 14:11:47.541 [http-nio-8080-exec-2] INFO   c.e.e.f.R.c.MainController - Home page
+02.05.2023 14:11:56.502 [http-nio-8080-exec-6] INFO   c.e.e.f.R.c.MainController - Main controller: method 'routes'
+02.05.2023 14:11:56.502 [http-nio-8080-exec-6] INFO   c.e.e.f.R.c.MainController - Main controller: method 'routes/{from}/{to}/{pageNu}'
+02.05.2023 14:11:56.502 [http-nio-8080-exec-6] INFO   c.e.e.f.R.s.StopService - StopService: method 'search'
+02.05.2023 14:12:04.650 [http-nio-8080-exec-8] INFO   c.e.e.f.R.c.MainController - Home page
+02.05.2023 14:12:15.507 [http-nio-8080-exec-5] INFO   c.e.e.f.R.c.MainController - Main controller: method 'routes'
+02.05.2023 14:12:15.508 [http-nio-8080-exec-5] INFO   c.e.e.f.R.c.MainController - Main controller: method 'routes/{from}/{to}/{pageNu}'
+02.05.2023 14:12:15.508 [http-nio-8080-exec-5] INFO   c.e.e.f.R.s.StopService - StopService: method 'search'
+02.05.2023 14:12:36.499 [http-nio-8080-exec-1] INFO   c.e.e.f.R.c.MainController - Main controller: method 'routes'
+02.05.2023 14:12:36.499 [http-nio-8080-exec-1] INFO   c.e.e.f.R.c.MainController - Main controller: method 'routes/{from}/{to}/{pageNu}'
+02.05.2023 14:12:36.499 [http-nio-8080-exec-1] INFO   c.e.e.f.R.s.StopService - StopService: method 'search'
+02.05.2023 14:12:36.519 [http-nio-8080-exec-1] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 14:12:36.519 [http-nio-8080-exec-1] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 14:12:36.519 [http-nio-8080-exec-1] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 14:12:36.519 [http-nio-8080-exec-1] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 14:12:40.010 [http-nio-8080-exec-2] INFO   c.e.e.f.R.c.MainController - Main controller: method 'routes'
+02.05.2023 14:12:40.010 [http-nio-8080-exec-2] INFO   c.e.e.f.R.c.MainController - Main controller: method 'routes/{from}/{to}/{pageNu}'
+02.05.2023 14:12:40.010 [http-nio-8080-exec-2] INFO   c.e.e.f.R.s.StopService - StopService: method 'search'
+02.05.2023 14:12:43.874 [http-nio-8080-exec-7] INFO   c.e.e.f.R.c.MainController - Main controller: method 'routes'
+02.05.2023 14:12:43.875 [http-nio-8080-exec-7] INFO   c.e.e.f.R.c.MainController - Main controller: method 'routes/{from}/{to}/{pageNu}'
+02.05.2023 14:12:43.875 [http-nio-8080-exec-7] INFO   c.e.e.f.R.s.StopService - StopService: method 'search'
+02.05.2023 14:12:43.894 [http-nio-8080-exec-7] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 14:12:43.895 [http-nio-8080-exec-7] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 14:12:43.895 [http-nio-8080-exec-7] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 14:12:43.895 [http-nio-8080-exec-7] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 14:13:08.347 [http-nio-8080-exec-4] INFO   c.e.e.f.R.c.MainController - Main controller: method 'getRouteDetails'
+02.05.2023 14:13:08.360 [http-nio-8080-exec-4] INFO   c.e.e.f.R.s.StopService - StopService: method 'check'
+02.05.2023 14:13:08.373 [http-nio-8080-exec-4] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 14:13:50.029 [http-nio-8080-exec-7] INFO   c.e.e.f.R.c.MainController - Main controller: method 'getRegistration'
+02.05.2023 14:14:12.604 [http-nio-8080-exec-4] INFO   c.e.e.f.R.c.MainController - Main controller: method 'addUser'
+02.05.2023 14:14:28.076 [http-nio-8080-exec-9] INFO   c.e.e.f.R.c.MainController - Main controller: method 'addUser'
+02.05.2023 14:14:28.077 [http-nio-8080-exec-9] INFO   c.e.e.f.R.s.UserService - UserService: method 'addNewUser'
+02.05.2023 14:14:40.684 [http-nio-8080-exec-4] INFO   c.e.e.f.R.c.MainController - Main controller: method 'getRegistration'
+02.05.2023 14:14:52.035 [http-nio-8080-exec-9] INFO   c.e.e.f.R.c.MainController - Main controller: method 'addUser'
+02.05.2023 14:14:52.035 [http-nio-8080-exec-9] INFO   c.e.e.f.R.s.UserService - UserService: method 'addNewUser'
+02.05.2023 14:14:54.265 [http-nio-8080-exec-8] INFO   c.e.e.f.R.c.MainController - Main controller: method 'getRegistration'
+02.05.2023 14:15:19.509 [http-nio-8080-exec-1] INFO   c.e.e.f.R.c.MainController - Main controller: method 'getRegistration'
+02.05.2023 14:15:27.781 [http-nio-8080-exec-3] INFO   c.e.e.f.R.c.MainController - Main controller: method 'addUser'
+02.05.2023 14:15:27.782 [http-nio-8080-exec-3] INFO   c.e.e.f.R.s.UserService - UserService: method 'addNewUser'
+02.05.2023 14:15:29.292 [http-nio-8080-exec-6] INFO   c.e.e.f.R.c.MainController - Main controller: method 'getRegistration'
+02.05.2023 14:15:56.428 [http-nio-8080-exec-1] INFO   c.e.e.f.R.c.MainController - Main controller: method 'addUser'
+02.05.2023 14:15:56.429 [http-nio-8080-exec-1] INFO   c.e.e.f.R.s.UserService - UserService: method 'addNewUser'
+02.05.2023 14:16:44.132 [http-nio-8080-exec-8] INFO   c.e.e.f.R.c.MainController - Home page
+02.05.2023 14:17:23.657 [http-nio-8080-exec-9] INFO   c.e.e.f.R.c.MainController - Main controller: method 'routes'
+02.05.2023 14:17:23.657 [http-nio-8080-exec-9] INFO   c.e.e.f.R.c.MainController - Main controller: method 'routes/{from}/{to}/{pageNu}'
+02.05.2023 14:17:23.657 [http-nio-8080-exec-9] INFO   c.e.e.f.R.s.StopService - StopService: method 'search'
+02.05.2023 14:17:23.674 [http-nio-8080-exec-9] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 14:17:23.674 [http-nio-8080-exec-9] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 14:17:23.674 [http-nio-8080-exec-9] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 14:17:23.675 [http-nio-8080-exec-9] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 14:17:28.364 [http-nio-8080-exec-7] INFO   c.e.e.f.R.c.MainController - Main controller: method 'getRouteDetails'
+02.05.2023 14:17:28.376 [http-nio-8080-exec-7] INFO   c.e.e.f.R.s.StopService - StopService: method 'check'
+02.05.2023 14:17:28.393 [http-nio-8080-exec-7] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 14:17:29.665 [http-nio-8080-exec-4] INFO   c.e.e.f.R.c.MainController - Main controller: method 'buyRoute'
+02.05.2023 14:17:29.686 [http-nio-8080-exec-4] INFO   c.e.e.f.R.s.StopService - StopService: method 'buyTicket'
+02.05.2023 14:17:29.718 [http-nio-8080-exec-4] INFO   c.e.e.f.R.s.StopService - StopService: method 'check'
+02.05.2023 14:17:29.741 [http-nio-8080-exec-1] INFO   c.e.e.f.R.c.MyProfileController - MyProfileController: method 'getProfile'
+02.05.2023 14:17:29.742 [http-nio-8080-exec-1] INFO   c.e.e.f.R.c.MyProfileController - MyProfileController: method 'getPageProfile'
+02.05.2023 14:17:29.747 [http-nio-8080-exec-1] INFO   c.e.e.f.R.s.TicketService - TicketService: method 'findAllTicketsByDocument'
+02.05.2023 14:17:43.667 [http-nio-8080-exec-3] INFO   c.e.e.f.R.c.MyProfileController - MyProfileController: method 'changeProfile'
+02.05.2023 14:17:49.772 [http-nio-8080-exec-10] INFO   c.e.e.f.R.c.MyProfileController - MyProfileController: method 'saveProfile'
+02.05.2023 14:17:56.330 [http-nio-8080-exec-6] INFO   c.e.e.f.R.c.MainController - Home page
+02.05.2023 14:18:12.342 [http-nio-8080-exec-1] INFO   c.e.e.f.R.c.MainController - Home page
+02.05.2023 14:18:17.178 [http-nio-8080-exec-2] INFO   c.e.e.f.R.c.MainController - Main controller: method 'routes'
+02.05.2023 14:18:17.178 [http-nio-8080-exec-2] INFO   c.e.e.f.R.c.MainController - Main controller: method 'routes/{from}/{to}/{pageNu}'
+02.05.2023 14:18:17.178 [http-nio-8080-exec-2] INFO   c.e.e.f.R.s.StopService - StopService: method 'search'
+02.05.2023 14:18:17.196 [http-nio-8080-exec-2] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 14:18:17.196 [http-nio-8080-exec-2] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 14:18:17.196 [http-nio-8080-exec-2] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 14:18:17.196 [http-nio-8080-exec-2] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 14:18:20.562 [http-nio-8080-exec-5] INFO   c.e.e.f.R.c.MainController - Main controller: method 'getRouteDetails'
+02.05.2023 14:18:20.573 [http-nio-8080-exec-5] INFO   c.e.e.f.R.s.StopService - StopService: method 'check'
+02.05.2023 14:18:20.586 [http-nio-8080-exec-5] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 14:18:31.600 [http-nio-8080-exec-10] INFO   c.e.e.f.R.c.MyProfileController - MyProfileController: method 'getProfile'
+02.05.2023 14:18:31.601 [http-nio-8080-exec-10] INFO   c.e.e.f.R.c.MyProfileController - MyProfileController: method 'getPageProfile'
+02.05.2023 14:18:31.608 [http-nio-8080-exec-10] INFO   c.e.e.f.R.s.TicketService - TicketService: method 'findAllTicketsByDocument'
+02.05.2023 14:18:35.739 [http-nio-8080-exec-4] INFO   c.e.e.f.R.c.MyProfileController - MyProfileController: method 'changeAdminProfile'
+02.05.2023 14:18:50.220 [http-nio-8080-exec-5] INFO   c.e.e.f.R.c.MainController - Home page
+02.05.2023 14:18:51.524 [http-nio-8080-exec-2] INFO   c.e.e.f.R.c.MyProfileController - MyProfileController: method 'getProfile'
+02.05.2023 14:18:51.525 [http-nio-8080-exec-2] INFO   c.e.e.f.R.c.MyProfileController - MyProfileController: method 'getPageProfile'
+02.05.2023 14:18:51.532 [http-nio-8080-exec-2] INFO   c.e.e.f.R.s.TicketService - TicketService: method 'findAllTicketsByDocument'
+02.05.2023 14:18:53.009 [http-nio-8080-exec-5] INFO   c.e.e.f.R.c.MainController - Home page
+02.05.2023 14:19:21.983 [http-nio-8080-exec-7] INFO   c.e.e.f.R.c.AdminContactsController - AdminContactsController: method 'getContacts'
+02.05.2023 14:19:33.357 [http-nio-8080-exec-1] INFO   c.e.e.f.R.c.AdminContactsController - AdminContactsController: method 'getContacts'
+02.05.2023 14:19:39.269 [http-nio-8080-exec-10] INFO   c.e.e.f.R.c.AdminContactsController - AdminContactsController: method 'addContacts'
+02.05.2023 14:19:39.283 [http-nio-8080-exec-9] INFO   c.e.e.f.R.c.AdminContactsController - AdminContactsController: method 'getContacts'
+02.05.2023 14:19:42.808 [http-nio-8080-exec-6] INFO   c.e.e.f.R.c.AdminContactsController - AdminContactsController: method 'deleteContact'
+02.05.2023 14:19:42.835 [http-nio-8080-exec-1] INFO   c.e.e.f.R.c.AdminContactsController - AdminContactsController: method 'getContacts'
+02.05.2023 14:20:07.799 [http-nio-8080-exec-4] INFO   c.e.e.f.R.c.AdminController - AdminController: method 'findAllUsers'
+02.05.2023 14:20:07.800 [http-nio-8080-exec-4] INFO   c.e.e.f.R.s.UserService - UserService: method 'findAllUsers'
+02.05.2023 14:20:15.242 [http-nio-8080-exec-2] INFO   c.e.e.f.R.c.AdminController - AdminController: method 'findAllUsers'
+02.05.2023 14:20:15.243 [http-nio-8080-exec-2] INFO   c.e.e.f.R.s.UserService - UserService: method 'findAllUsers'
+02.05.2023 14:20:16.561 [http-nio-8080-exec-6] INFO   c.e.e.f.R.c.AdminController - AdminController: method 'findAllUsers'
+02.05.2023 14:20:16.562 [http-nio-8080-exec-6] INFO   c.e.e.f.R.s.UserService - UserService: method 'findAllUsers'
+02.05.2023 14:20:18.664 [http-nio-8080-exec-4] INFO   c.e.e.f.R.c.AdminController - AdminController: method 'findAllUsers'
+02.05.2023 14:20:18.664 [http-nio-8080-exec-4] INFO   c.e.e.f.R.s.UserService - UserService: method 'findAllUsers'
+02.05.2023 14:20:20.101 [http-nio-8080-exec-10] INFO   c.e.e.f.R.c.AdminController - AdminController: method 'findAllUsers'
+02.05.2023 14:20:20.101 [http-nio-8080-exec-10] INFO   c.e.e.f.R.s.UserService - UserService: method 'findAllUsers'
+02.05.2023 14:20:26.089 [http-nio-8080-exec-5] INFO   c.e.e.f.R.c.AdminController - AdminController: method 'deleteProfile'
+02.05.2023 14:20:26.125 [http-nio-8080-exec-6] INFO   c.e.e.f.R.c.AdminController - AdminController: method 'findAllUsers'
+02.05.2023 14:20:26.125 [http-nio-8080-exec-6] INFO   c.e.e.f.R.s.UserService - UserService: method 'findAllUsers'
+02.05.2023 14:20:31.636 [http-nio-8080-exec-6] INFO   c.e.e.f.R.c.AdminRoutesController - AdminRoutesController: method 'getStations'
+02.05.2023 14:20:52.435 [http-nio-8080-exec-1] INFO   c.e.e.f.R.c.AdminRoutesController - AdminRoutesController: method 'getStations'
+02.05.2023 14:21:05.609 [http-nio-8080-exec-7] INFO   c.e.e.f.R.c.AdminRoutesController - AdminRoutesController: method 'getStations'
+02.05.2023 14:21:13.803 [http-nio-8080-exec-1] INFO   c.e.e.f.R.c.AdminRoutesController - AdminRoutesController: method 'getRoutes'
+02.05.2023 14:21:56.690 [http-nio-8080-exec-9] INFO   c.e.e.f.R.c.AdminRoutesController - AdminRoutesController: method 'searchRoute'
+02.05.2023 14:22:01.734 [http-nio-8080-exec-5] INFO   c.e.e.f.R.c.AdminRoutesController - AdminRoutesController: method 'getRoutes'
+02.05.2023 14:22:17.633 [http-nio-8080-exec-8] INFO   c.e.e.f.R.c.AdminRoutesController - AdminRoutesController: method 'searchRoute'
+02.05.2023 14:22:22.420 [http-nio-8080-exec-7] INFO   c.e.e.f.R.c.AdminRoutesController - AdminRoutesController: method 'getRoutes'
+02.05.2023 14:22:46.188 [http-nio-8080-exec-2] INFO   c.e.e.f.R.c.AdminContactsController - AdminContactsController: method 'getContacts'
+02.05.2023 14:23:09.208 [http-nio-8080-exec-4] INFO   c.e.e.f.R.c.AdminController - AdminController: method 'findAllUsers'
+02.05.2023 14:23:09.208 [http-nio-8080-exec-4] INFO   c.e.e.f.R.s.UserService - UserService: method 'findAllUsers'
+02.05.2023 14:23:12.352 [http-nio-8080-exec-2] INFO   c.e.e.f.R.c.AdminController - AdminController: method 'findAllUsers'
+02.05.2023 14:23:12.352 [http-nio-8080-exec-2] INFO   c.e.e.f.R.s.UserService - UserService: method 'findAllUsers'
+02.05.2023 14:23:12.967 [http-nio-8080-exec-3] INFO   c.e.e.f.R.c.AdminController - AdminController: method 'findAllUsers'
+02.05.2023 14:23:12.968 [http-nio-8080-exec-3] INFO   c.e.e.f.R.s.UserService - UserService: method 'findAllUsers'
+02.05.2023 14:23:14.743 [http-nio-8080-exec-10] INFO   c.e.e.f.R.c.AdminController - AdminController: method 'findAllUsers'
+02.05.2023 14:23:14.743 [http-nio-8080-exec-10] INFO   c.e.e.f.R.s.UserService - UserService: method 'findAllUsers'
+02.05.2023 14:23:25.377 [http-nio-8080-exec-9] INFO   c.e.e.f.R.c.AdminRoutesController - AdminRoutesController: method 'getStations'
+02.05.2023 14:23:48.412 [http-nio-8080-exec-8] INFO   c.e.e.f.R.c.AdminRoutesController - AdminRoutesController: method 'getRoutes'
+02.05.2023 14:24:12.232 [http-nio-8080-exec-5] INFO   c.e.e.f.R.c.AdminRoutesController - AdminRoutesController: method 'checkRoutes'
+02.05.2023 14:24:12.232 [http-nio-8080-exec-5] INFO   c.e.e.f.R.c.AdminRoutesController - AdminRoutesController: method 'checkRoute'
+02.05.2023 14:24:12.232 [http-nio-8080-exec-5] INFO   c.e.e.f.R.s.StopService - StopService: method 'findAllStops'
+02.05.2023 14:24:20.341 [http-nio-8080-exec-9] INFO   c.e.e.f.R.c.AdminRoutesController - AdminRoutesController: method 'checkRoutes'
+02.05.2023 14:24:20.341 [http-nio-8080-exec-9] INFO   c.e.e.f.R.c.AdminRoutesController - AdminRoutesController: method 'checkRoute'
+02.05.2023 14:24:20.341 [http-nio-8080-exec-9] INFO   c.e.e.f.R.s.StopService - StopService: method 'findAllStops'
+02.05.2023 14:24:23.795 [http-nio-8080-exec-5] INFO   c.e.e.f.R.c.AdminRoutesController - AdminRoutesController: method 'checkRoutes'
+02.05.2023 14:24:23.796 [http-nio-8080-exec-5] INFO   c.e.e.f.R.c.AdminRoutesController - AdminRoutesController: method 'checkRoute'
+02.05.2023 14:24:23.796 [http-nio-8080-exec-5] INFO   c.e.e.f.R.s.StopService - StopService: method 'findAllStops'
+02.05.2023 14:25:12.945 [http-nio-8080-exec-1] INFO   c.e.e.f.R.c.AdminRoutesController - AdminRoutesController: method 'checkRoute'
+02.05.2023 14:25:12.946 [http-nio-8080-exec-1] INFO   c.e.e.f.R.s.StopService - StopService: method 'findAllStops'
+02.05.2023 14:25:22.504 [http-nio-8080-exec-4] INFO   c.e.e.f.R.c.AdminRoutesController - AdminRoutesController: method 'getRoutes'
+02.05.2023 14:25:25.271 [http-nio-8080-exec-7] INFO   c.e.e.f.R.c.AdminRoutesController - AdminRoutesController: method 'searchRoute'
+02.05.2023 14:25:27.454 [http-nio-8080-exec-8] INFO   c.e.e.f.R.c.AdminRoutesController - AdminRoutesController: method 'getRoutes'
+02.05.2023 14:26:00.352 [http-nio-8080-exec-3] INFO   c.e.e.f.R.c.AdminRoutesController - AdminRoutesController: method 'getRoutes'
+02.05.2023 14:26:30.447 [http-nio-8080-exec-6] INFO   c.e.e.f.R.c.AdminTripController - AdminTripController: method 'checkTrip'
+02.05.2023 14:26:30.447 [http-nio-8080-exec-6] INFO   c.e.e.f.R.c.AdminTripController - AdminTripController: method 'checkTrip'
+02.05.2023 14:26:30.448 [http-nio-8080-exec-6] INFO   c.e.e.f.R.s.TicketService - findAllTickets: method 'findAllUsers'
+02.05.2023 14:26:47.604 [http-nio-8080-exec-1] INFO   c.e.e.f.R.c.AdminTripController - AdminTripController: method 'checkTrip'
+02.05.2023 14:26:47.604 [http-nio-8080-exec-1] INFO   c.e.e.f.R.s.TicketService - findAllTickets: method 'findAllUsers'
+02.05.2023 14:26:54.296 [http-nio-8080-exec-7] INFO   c.e.e.f.R.c.AdminTripController - AdminTripController: method 'checkTrip'
+02.05.2023 14:26:54.297 [http-nio-8080-exec-7] INFO   c.e.e.f.R.c.AdminTripController - AdminTripController: method 'checkTrip'
+02.05.2023 14:26:54.297 [http-nio-8080-exec-7] INFO   c.e.e.f.R.s.TicketService - findAllTickets: method 'findAllUsers'
+02.05.2023 14:27:12.404 [http-nio-8080-exec-2] INFO   c.e.e.f.R.c.AdminController - AdminController: method 'getStatements'
+02.05.2023 14:27:12.404 [http-nio-8080-exec-2] INFO   c.e.e.f.R.c.AdminController - AdminController: method 'findAllStatements'
+02.05.2023 14:27:12.404 [http-nio-8080-exec-2] INFO   c.e.e.f.R.s.MessageService - findAllTickets: method 'findAllUsers'
+02.05.2023 14:27:14.090 [http-nio-8080-exec-6] INFO   c.e.e.f.R.c.AdminController - AdminController: method 'findAllStatements'
+02.05.2023 14:27:14.090 [http-nio-8080-exec-6] INFO   c.e.e.f.R.s.MessageService - findAllTickets: method 'findAllUsers'
+02.05.2023 14:27:15.785 [http-nio-8080-exec-8] INFO   c.e.e.f.R.c.AdminController - AdminController: method 'findAllStatements'
+02.05.2023 14:27:15.785 [http-nio-8080-exec-8] INFO   c.e.e.f.R.s.MessageService - findAllTickets: method 'findAllUsers'
+02.05.2023 14:27:37.483 [http-nio-8080-exec-7] INFO   c.e.e.f.R.c.AdminController - AdminController: method 'getStatements'
+02.05.2023 14:27:37.484 [http-nio-8080-exec-7] INFO   c.e.e.f.R.c.AdminController - AdminController: method 'findAllStatements'
+02.05.2023 14:27:37.484 [http-nio-8080-exec-7] INFO   c.e.e.f.R.s.MessageService - findAllTickets: method 'findAllUsers'
+02.05.2023 14:28:27.711 [SpringApplicationShutdownHook] INFO   o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+02.05.2023 14:28:27.719 [SpringApplicationShutdownHook] INFO   c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated...
+02.05.2023 14:28:27.734 [SpringApplicationShutdownHook] INFO   c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed.
+02.05.2023 18:15:06.875 [background-preinit] INFO   o.h.v.i.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+02.05.2023 18:15:07.049 [restartedMain] INFO   c.e.e.f.R.RailwayTicketOfficeApplication - Starting RailwayTicketOfficeApplication using Java 17.0.3.1 with PID 9084 (C:\Users\Полина\Documents\GitHub\Railway-ticket-office\target\classes started by Полина in C:\Users\Полина\Documents\GitHub\Railway-ticket-office)
+02.05.2023 18:15:07.051 [restartedMain] INFO   c.e.e.f.R.RailwayTicketOfficeApplication - No active profile set, falling back to 1 default profile: "default"
+02.05.2023 18:15:07.208 [restartedMain] INFO   o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+02.05.2023 18:15:07.208 [restartedMain] INFO   o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+02.05.2023 18:15:10.170 [restartedMain] INFO   o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+02.05.2023 18:15:10.719 [restartedMain] INFO   o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 500 ms. Found 6 JPA repository interfaces.
+02.05.2023 18:15:13.231 [restartedMain] INFO   o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+02.05.2023 18:15:13.262 [restartedMain] INFO   o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+02.05.2023 18:15:13.262 [restartedMain] INFO   o.a.c.c.StandardService - Starting service [Tomcat]
+02.05.2023 18:15:13.274 [restartedMain] INFO   o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.7]
+02.05.2023 18:15:13.429 [restartedMain] INFO   o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext
+02.05.2023 18:15:13.429 [restartedMain] INFO   o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 6221 ms
+02.05.2023 18:15:14.057 [restartedMain] INFO   o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+02.05.2023 18:15:14.201 [restartedMain] INFO   o.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+02.05.2023 18:15:14.924 [restartedMain] INFO   c.z.h.HikariDataSource - HikariPool-1 - Starting...
+02.05.2023 18:15:15.852 [restartedMain] INFO   c.z.h.p.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4a5d1fad
+02.05.2023 18:15:15.852 [restartedMain] INFO   c.z.h.HikariDataSource - HikariPool-1 - Start completed.
+02.05.2023 18:15:16.000 [restartedMain] INFO   SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+02.05.2023 18:15:18.407 [restartedMain] INFO   o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+02.05.2023 18:15:18.430 [restartedMain] INFO   o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+02.05.2023 18:15:19.812 [restartedMain] WARN   o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+02.05.2023 18:15:20.651 [restartedMain] INFO   o.s.s.w.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7296e48a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@61dd2054, org.springframework.security.web.context.SecurityContextHolderFilter@3e3589d8, org.springframework.security.web.header.HeaderWriterFilter@46dec81e, org.springframework.security.web.authentication.logout.LogoutFilter@243606be, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@29abd714, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@376e0d74, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3f5090e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@16b9580c, org.springframework.security.web.access.ExceptionTranslationFilter@11aea8ec, org.springframework.security.web.access.intercept.AuthorizationFilter@74cce29e]
+02.05.2023 18:15:21.354 [restartedMain] INFO   o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+02.05.2023 18:15:21.401 [restartedMain] INFO   o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+02.05.2023 18:15:21.454 [restartedMain] INFO   o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+02.05.2023 18:15:21.470 [restartedMain] INFO   c.e.e.f.R.RailwayTicketOfficeApplication - Started RailwayTicketOfficeApplication in 15.861 seconds (process running for 18.461)
+02.05.2023 18:16:02.721 [http-nio-8080-exec-2] INFO   o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+02.05.2023 18:16:02.721 [http-nio-8080-exec-2] INFO   o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+02.05.2023 18:16:02.721 [http-nio-8080-exec-2] INFO   o.s.w.s.DispatcherServlet - Completed initialization in 0 ms
+02.05.2023 18:16:02.849 [http-nio-8080-exec-2] INFO   c.e.e.f.R.c.MainController - Home page
+02.05.2023 18:16:52.552 [http-nio-8080-exec-10] INFO   c.e.e.f.R.c.MainController - Home page
+02.05.2023 18:17:15.190 [http-nio-8080-exec-2] INFO   c.e.e.f.R.c.MainController - Home page
+02.05.2023 18:17:16.811 [http-nio-8080-exec-4] INFO   c.e.e.f.R.c.MainController - Home page
+02.05.2023 18:18:06.358 [http-nio-8080-exec-6] INFO   c.e.e.f.R.c.MainController - Home page
+02.05.2023 18:18:30.105 [http-nio-8080-exec-9] INFO   c.e.e.f.R.c.MainController - Main controller: method 'routes'
+02.05.2023 18:18:30.105 [http-nio-8080-exec-9] INFO   c.e.e.f.R.c.MainController - Main controller: method 'routes/{from}/{to}/{pageNu}'
+02.05.2023 18:18:30.105 [http-nio-8080-exec-9] INFO   c.e.e.f.R.s.StopService - StopService: method 'search'
+02.05.2023 18:18:30.558 [http-nio-8080-exec-9] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:18:30.574 [http-nio-8080-exec-9] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:18:30.574 [http-nio-8080-exec-9] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:18:30.574 [http-nio-8080-exec-9] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:18:43.539 [http-nio-8080-exec-5] INFO   c.e.e.f.R.c.MainController - Main controller: method 'routes/{from}/{to}/{pageNu}'
+02.05.2023 18:18:43.539 [http-nio-8080-exec-5] INFO   c.e.e.f.R.s.StopService - StopService: method 'search'
+02.05.2023 18:18:43.579 [http-nio-8080-exec-5] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:18:43.579 [http-nio-8080-exec-5] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:18:43.579 [http-nio-8080-exec-5] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:18:43.579 [http-nio-8080-exec-5] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:18:44.496 [http-nio-8080-exec-1] INFO   c.e.e.f.R.c.MainController - Main controller: method 'routes/{from}/{to}/{pageNu}'
+02.05.2023 18:18:44.496 [http-nio-8080-exec-1] INFO   c.e.e.f.R.s.StopService - StopService: method 'search'
+02.05.2023 18:18:44.536 [http-nio-8080-exec-1] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:18:44.536 [http-nio-8080-exec-1] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:18:44.536 [http-nio-8080-exec-1] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:18:44.536 [http-nio-8080-exec-1] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:18:53.478 [http-nio-8080-exec-9] INFO   c.e.e.f.R.c.MainController - Main controller: method 'getRouteDetails'
+02.05.2023 18:18:53.558 [http-nio-8080-exec-9] INFO   c.e.e.f.R.s.StopService - StopService: method 'check'
+02.05.2023 18:18:53.590 [http-nio-8080-exec-9] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:19:06.444 [http-nio-8080-exec-1] INFO   c.e.e.f.R.c.MainController - Main controller: method 'getRegistration'
+02.05.2023 18:20:24.984 [http-nio-8080-exec-3] INFO   c.e.e.f.R.c.MainController - Home page
+02.05.2023 18:20:56.218 [http-nio-8080-exec-5] INFO   c.e.e.f.R.c.MainController - Main controller: method 'routes'
+02.05.2023 18:20:56.218 [http-nio-8080-exec-5] INFO   c.e.e.f.R.c.MainController - Main controller: method 'routes/{from}/{to}/{pageNu}'
+02.05.2023 18:20:56.218 [http-nio-8080-exec-5] INFO   c.e.e.f.R.s.StopService - StopService: method 'search'
+02.05.2023 18:20:56.266 [http-nio-8080-exec-5] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:20:56.266 [http-nio-8080-exec-5] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:20:56.266 [http-nio-8080-exec-5] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:20:56.266 [http-nio-8080-exec-5] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:20:58.599 [http-nio-8080-exec-8] INFO   c.e.e.f.R.c.MainController - Main controller: method 'getRouteDetails'
+02.05.2023 18:20:58.631 [http-nio-8080-exec-8] INFO   c.e.e.f.R.s.StopService - StopService: method 'check'
+02.05.2023 18:20:58.663 [http-nio-8080-exec-8] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:20:59.814 [http-nio-8080-exec-9] INFO   c.e.e.f.R.c.MainController - Main controller: method 'buyRoute'
+02.05.2023 18:20:59.862 [http-nio-8080-exec-9] INFO   c.e.e.f.R.s.StopService - StopService: method 'buyTicket'
+02.05.2023 18:20:59.990 [http-nio-8080-exec-9] INFO   c.e.e.f.R.s.StopService - StopService: method 'check'
+02.05.2023 18:21:00.070 [http-nio-8080-exec-10] INFO   c.e.e.f.R.c.MyProfileController - MyProfileController: method 'getProfile'
+02.05.2023 18:21:00.078 [http-nio-8080-exec-10] INFO   c.e.e.f.R.c.MyProfileController - MyProfileController: method 'getPageProfile'
+02.05.2023 18:21:00.094 [http-nio-8080-exec-10] INFO   c.e.e.f.R.s.TicketService - TicketService: method 'findAllTicketsByDocument'
+02.05.2023 18:21:13.315 [http-nio-8080-exec-3] INFO   c.e.e.f.R.c.MyProfileController - MyProfileController: method 'changeProfile'
+02.05.2023 18:21:17.737 [http-nio-8080-exec-1] INFO   c.e.e.f.R.c.MyProfileController - MyProfileController: method 'getProfile'
+02.05.2023 18:21:17.737 [http-nio-8080-exec-1] INFO   c.e.e.f.R.c.MyProfileController - MyProfileController: method 'getPageProfile'
+02.05.2023 18:21:17.745 [http-nio-8080-exec-1] INFO   c.e.e.f.R.s.TicketService - TicketService: method 'findAllTicketsByDocument'
+02.05.2023 18:21:24.737 [http-nio-8080-exec-2] INFO   c.e.e.f.R.c.MainController - Home page
+02.05.2023 18:21:38.215 [http-nio-8080-exec-3] INFO   c.e.e.f.R.c.MainController - Home page
+02.05.2023 18:22:02.961 [http-nio-8080-exec-4] INFO   c.e.e.f.R.c.MainController - Main controller: method 'routes'
+02.05.2023 18:22:02.969 [http-nio-8080-exec-4] INFO   c.e.e.f.R.c.MainController - Main controller: method 'routes/{from}/{to}/{pageNu}'
+02.05.2023 18:22:02.969 [http-nio-8080-exec-4] INFO   c.e.e.f.R.s.StopService - StopService: method 'search'
+02.05.2023 18:22:03.001 [http-nio-8080-exec-4] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:22:03.001 [http-nio-8080-exec-4] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:22:03.001 [http-nio-8080-exec-4] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:22:03.001 [http-nio-8080-exec-4] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:22:05.614 [http-nio-8080-exec-9] INFO   c.e.e.f.R.c.MainController - Main controller: method 'getRouteDetails'
+02.05.2023 18:22:05.646 [http-nio-8080-exec-9] INFO   c.e.e.f.R.s.StopService - StopService: method 'check'
+02.05.2023 18:22:05.670 [http-nio-8080-exec-9] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:22:14.647 [http-nio-8080-exec-5] INFO   c.e.e.f.R.c.MyProfileController - MyProfileController: method 'getProfile'
+02.05.2023 18:22:14.647 [http-nio-8080-exec-5] INFO   c.e.e.f.R.c.MyProfileController - MyProfileController: method 'getPageProfile'
+02.05.2023 18:22:14.663 [http-nio-8080-exec-5] INFO   c.e.e.f.R.s.TicketService - TicketService: method 'findAllTicketsByDocument'
+02.05.2023 18:22:56.265 [http-nio-8080-exec-3] INFO   c.e.e.f.R.c.AdminContactsController - AdminContactsController: method 'getContacts'
+02.05.2023 18:23:24.074 [http-nio-8080-exec-4] INFO   c.e.e.f.R.c.AdminController - AdminController: method 'findAllUsers'
+02.05.2023 18:23:24.074 [http-nio-8080-exec-4] INFO   c.e.e.f.R.s.UserService - UserService: method 'findAllUsers'
+02.05.2023 18:23:29.819 [http-nio-8080-exec-8] INFO   c.e.e.f.R.c.AdminController - AdminController: method 'findAllUsers'
+02.05.2023 18:23:29.819 [http-nio-8080-exec-8] INFO   c.e.e.f.R.s.UserService - UserService: method 'findAllUsers'
+02.05.2023 18:23:30.950 [http-nio-8080-exec-1] INFO   c.e.e.f.R.c.AdminController - AdminController: method 'findAllUsers'
+02.05.2023 18:23:30.950 [http-nio-8080-exec-1] INFO   c.e.e.f.R.s.UserService - UserService: method 'findAllUsers'
+02.05.2023 18:23:32.006 [http-nio-8080-exec-6] INFO   c.e.e.f.R.c.AdminController - AdminController: method 'findAllUsers'
+02.05.2023 18:23:32.006 [http-nio-8080-exec-6] INFO   c.e.e.f.R.s.UserService - UserService: method 'findAllUsers'
+02.05.2023 18:23:40.176 [http-nio-8080-exec-10] INFO   c.e.e.f.R.c.AdminRoutesController - AdminRoutesController: method 'getStations'
+02.05.2023 18:24:09.541 [http-nio-8080-exec-10] INFO   c.e.e.f.R.c.AdminRoutesController - AdminRoutesController: method 'getRoutes'
+02.05.2023 18:24:12.063 [http-nio-8080-exec-4] INFO   c.e.e.f.R.c.AdminRoutesController - AdminRoutesController: method 'getRoutes'
+02.05.2023 18:24:33.369 [http-nio-8080-exec-9] INFO   c.e.e.f.R.c.AdminRoutesController - AdminRoutesController: method 'searchRoute'
+02.05.2023 18:24:45.534 [http-nio-8080-exec-5] INFO   c.e.e.f.R.c.AdminRoutesController - AdminRoutesController: method 'getRoutes'
+02.05.2023 18:24:49.772 [http-nio-8080-exec-9] INFO   c.e.e.f.R.c.AdminRoutesController - AdminRoutesController: method 'checkRoutes'
+02.05.2023 18:24:49.772 [http-nio-8080-exec-9] INFO   c.e.e.f.R.c.AdminRoutesController - AdminRoutesController: method 'checkRoute'
+02.05.2023 18:24:49.772 [http-nio-8080-exec-9] INFO   c.e.e.f.R.s.StopService - StopService: method 'findAllStops'
+02.05.2023 18:25:22.676 [http-nio-8080-exec-1] INFO   c.e.e.f.R.c.AdminRoutesController - AdminRoutesController: method 'getRoutes'
+02.05.2023 18:25:24.839 [http-nio-8080-exec-2] INFO   c.e.e.f.R.c.AdminRoutesController - AdminRoutesController: method 'searchRoute'
+02.05.2023 18:25:24.855 [http-nio-8080-exec-7] INFO   c.e.e.f.R.c.AdminRoutesController - AdminRoutesController: method 'getRoutes'
+02.05.2023 18:25:40.249 [http-nio-8080-exec-1] INFO   c.e.e.f.R.c.MainController - Home page
+02.05.2023 18:25:58.871 [http-nio-8080-exec-10] INFO   c.e.e.f.R.c.AdminRoutesController - AdminRoutesController: method 'getRoutes'
+02.05.2023 18:26:07.806 [http-nio-8080-exec-8] INFO   c.e.e.f.R.c.AdminRoutesController - AdminRoutesController: method 'deleteRoute'
+02.05.2023 18:26:07.822 [http-nio-8080-exec-1] INFO   c.e.e.f.R.c.AdminRoutesController - AdminRoutesController: method 'getRoutes'
+02.05.2023 18:26:11.105 [http-nio-8080-exec-6] INFO   c.e.e.f.R.c.AdminRoutesController - AdminRoutesController: method 'searchRoute'
+02.05.2023 18:26:11.129 [http-nio-8080-exec-4] INFO   c.e.e.f.R.c.AdminRoutesController - AdminRoutesController: method 'getRoutes'
+02.05.2023 18:26:59.690 [http-nio-8080-exec-1] INFO   c.e.e.f.R.c.AdminTripController - AdminTripController: method 'checkTrip'
+02.05.2023 18:26:59.698 [http-nio-8080-exec-1] INFO   c.e.e.f.R.c.AdminTripController - AdminTripController: method 'checkTrip'
+02.05.2023 18:26:59.698 [http-nio-8080-exec-1] INFO   c.e.e.f.R.s.TicketService - findAllTickets: method 'findAllUsers'
+02.05.2023 18:28:09.296 [http-nio-8080-exec-4] INFO   c.e.e.f.R.c.AdminController - AdminController: method 'getStatements'
+02.05.2023 18:28:09.296 [http-nio-8080-exec-4] INFO   c.e.e.f.R.c.AdminController - AdminController: method 'findAllStatements'
+02.05.2023 18:28:09.296 [http-nio-8080-exec-4] INFO   c.e.e.f.R.s.MessageService - findAllTickets: method 'findAllUsers'
+02.05.2023 18:28:11.241 [http-nio-8080-exec-10] INFO   c.e.e.f.R.c.AdminController - AdminController: method 'findAllStatements'
+02.05.2023 18:28:11.241 [http-nio-8080-exec-10] INFO   c.e.e.f.R.s.MessageService - findAllTickets: method 'findAllUsers'
+02.05.2023 18:28:11.945 [http-nio-8080-exec-7] INFO   c.e.e.f.R.c.AdminController - AdminController: method 'findAllStatements'
+02.05.2023 18:28:11.945 [http-nio-8080-exec-7] INFO   c.e.e.f.R.s.MessageService - findAllTickets: method 'findAllUsers'
+02.05.2023 18:29:57.929 [http-nio-8080-exec-2] INFO   c.e.e.f.R.c.MainController - Home page
+02.05.2023 18:30:03.574 [http-nio-8080-exec-8] INFO   c.e.e.f.R.c.MainController - Home page
+02.05.2023 18:30:53.054 [http-nio-8080-exec-7] INFO   c.e.e.f.R.c.MainController - Home page
+02.05.2023 18:30:53.878 [http-nio-8080-exec-9] INFO   c.e.e.f.R.c.MainController - Home page
+02.05.2023 18:31:49.411 [http-nio-8080-exec-4] INFO   c.e.e.f.R.c.MainController - Home page
+02.05.2023 18:31:53.356 [http-nio-8080-exec-6] INFO   c.e.e.f.R.c.MainController - Home page
+02.05.2023 18:31:54.058 [http-nio-8080-exec-3] INFO   c.e.e.f.R.c.MainController - Home page
+02.05.2023 18:32:26.317 [http-nio-8080-exec-7] INFO   c.e.e.f.R.c.MainController - Home page
+02.05.2023 18:33:00.072 [http-nio-8080-exec-6] INFO   c.e.e.f.R.c.MainController - Main controller: method 'routes'
+02.05.2023 18:33:00.072 [http-nio-8080-exec-6] INFO   c.e.e.f.R.c.MainController - Main controller: method 'routes/{from}/{to}/{pageNu}'
+02.05.2023 18:33:00.072 [http-nio-8080-exec-6] INFO   c.e.e.f.R.s.StopService - StopService: method 'search'
+02.05.2023 18:33:01.125 [http-nio-8080-exec-4] INFO   c.e.e.f.R.c.MainController - Home page
+02.05.2023 18:33:02.253 [http-nio-8080-exec-3] INFO   c.e.e.f.R.c.MainController - Main controller: method 'routes'
+02.05.2023 18:33:02.253 [http-nio-8080-exec-3] INFO   c.e.e.f.R.c.MainController - Main controller: method 'routes/{from}/{to}/{pageNu}'
+02.05.2023 18:33:02.253 [http-nio-8080-exec-3] INFO   c.e.e.f.R.s.StopService - StopService: method 'search'
+02.05.2023 18:33:20.389 [http-nio-8080-exec-4] INFO   c.e.e.f.R.c.MainController - Main controller: method 'routes'
+02.05.2023 18:33:20.389 [http-nio-8080-exec-4] INFO   c.e.e.f.R.c.MainController - Main controller: method 'routes/{from}/{to}/{pageNu}'
+02.05.2023 18:33:20.389 [http-nio-8080-exec-4] INFO   c.e.e.f.R.s.StopService - StopService: method 'search'
+02.05.2023 18:33:20.421 [http-nio-8080-exec-4] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:33:20.421 [http-nio-8080-exec-4] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:33:20.421 [http-nio-8080-exec-4] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:33:20.421 [http-nio-8080-exec-4] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:33:24.742 [http-nio-8080-exec-5] INFO   c.e.e.f.R.c.MainController - Main controller: method 'routes'
+02.05.2023 18:33:24.742 [http-nio-8080-exec-5] INFO   c.e.e.f.R.c.MainController - Main controller: method 'routes/{from}/{to}/{pageNu}'
+02.05.2023 18:33:24.742 [http-nio-8080-exec-5] INFO   c.e.e.f.R.s.StopService - StopService: method 'search'
+02.05.2023 18:33:25.878 [http-nio-8080-exec-6] INFO   c.e.e.f.R.c.MainController - Home page
+02.05.2023 18:33:42.526 [http-nio-8080-exec-9] INFO   c.e.e.f.R.c.MainController - Main controller: method 'routes'
+02.05.2023 18:33:42.526 [http-nio-8080-exec-9] INFO   c.e.e.f.R.c.MainController - Main controller: method 'routes/{from}/{to}/{pageNu}'
+02.05.2023 18:33:42.526 [http-nio-8080-exec-9] INFO   c.e.e.f.R.s.StopService - StopService: method 'search'
+02.05.2023 18:33:42.558 [http-nio-8080-exec-9] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:33:42.558 [http-nio-8080-exec-9] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:33:42.558 [http-nio-8080-exec-9] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:33:42.558 [http-nio-8080-exec-9] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:33:52.111 [http-nio-8080-exec-1] INFO   c.e.e.f.R.c.MainController - Main controller: method 'routes/{from}/{to}/{pageNu}'
+02.05.2023 18:33:52.111 [http-nio-8080-exec-1] INFO   c.e.e.f.R.s.StopService - StopService: method 'search'
+02.05.2023 18:33:52.143 [http-nio-8080-exec-1] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:33:52.143 [http-nio-8080-exec-1] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:33:52.143 [http-nio-8080-exec-1] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:33:52.143 [http-nio-8080-exec-1] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:33:54.695 [http-nio-8080-exec-8] INFO   c.e.e.f.R.c.MainController - Main controller: method 'routes/{from}/{to}/{pageNu}'
+02.05.2023 18:33:54.695 [http-nio-8080-exec-8] INFO   c.e.e.f.R.s.StopService - StopService: method 'search'
+02.05.2023 18:33:54.720 [http-nio-8080-exec-8] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:33:54.720 [http-nio-8080-exec-8] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:33:54.720 [http-nio-8080-exec-8] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:33:54.720 [http-nio-8080-exec-8] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:34:00.647 [http-nio-8080-exec-9] INFO   c.e.e.f.R.c.MainController - Main controller: method 'getRouteDetails'
+02.05.2023 18:34:00.679 [http-nio-8080-exec-9] INFO   c.e.e.f.R.s.StopService - StopService: method 'check'
+02.05.2023 18:34:00.695 [http-nio-8080-exec-9] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:34:15.413 [http-nio-8080-exec-8] INFO   c.e.e.f.R.c.MainController - Main controller: method 'getRegistration'
+02.05.2023 18:34:40.447 [http-nio-8080-exec-3] INFO   c.e.e.f.R.c.MainController - Main controller: method 'addUser'
+02.05.2023 18:34:58.415 [http-nio-8080-exec-6] INFO   c.e.e.f.R.c.MainController - Main controller: method 'addUser'
+02.05.2023 18:34:58.415 [http-nio-8080-exec-6] INFO   c.e.e.f.R.s.UserService - UserService: method 'addNewUser'
+02.05.2023 18:35:04.173 [http-nio-8080-exec-9] INFO   c.e.e.f.R.c.MainController - Main controller: method 'getRegistration'
+02.05.2023 18:36:35.703 [http-nio-8080-exec-1] INFO   c.e.e.f.R.c.MainController - Main controller: method 'getRegistration'
+02.05.2023 18:36:42.079 [SpringApplicationShutdownHook] INFO   o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+02.05.2023 18:36:42.079 [SpringApplicationShutdownHook] INFO   c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated...
+02.05.2023 18:36:42.111 [SpringApplicationShutdownHook] INFO   c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed.
+02.05.2023 18:39:33.026 [background-preinit] INFO   o.h.v.i.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+02.05.2023 18:39:33.129 [restartedMain] INFO   c.e.e.f.R.RailwayTicketOfficeApplication - Starting RailwayTicketOfficeApplication using Java 17.0.3.1 with PID 6672 (C:\Users\Полина\Documents\GitHub\Railway-ticket-office\target\classes started by Полина in C:\Users\Полина\Documents\GitHub\Railway-ticket-office)
+02.05.2023 18:39:33.129 [restartedMain] INFO   c.e.e.f.R.RailwayTicketOfficeApplication - No active profile set, falling back to 1 default profile: "default"
+02.05.2023 18:39:33.252 [restartedMain] INFO   o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+02.05.2023 18:39:33.252 [restartedMain] INFO   o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+02.05.2023 18:39:35.259 [restartedMain] INFO   o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+02.05.2023 18:39:35.494 [restartedMain] INFO   o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 198 ms. Found 6 JPA repository interfaces.
+02.05.2023 18:39:37.465 [restartedMain] INFO   o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+02.05.2023 18:39:37.487 [restartedMain] INFO   o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+02.05.2023 18:39:37.503 [restartedMain] INFO   o.a.c.c.StandardService - Starting service [Tomcat]
+02.05.2023 18:39:37.503 [restartedMain] INFO   o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.7]
+02.05.2023 18:39:37.666 [restartedMain] INFO   o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext
+02.05.2023 18:39:37.666 [restartedMain] INFO   o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4414 ms
+02.05.2023 18:39:38.120 [restartedMain] INFO   o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+02.05.2023 18:39:38.251 [restartedMain] INFO   o.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+02.05.2023 18:39:39.053 [restartedMain] INFO   c.z.h.HikariDataSource - HikariPool-1 - Starting...
+02.05.2023 18:39:39.840 [restartedMain] INFO   c.z.h.p.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@70e37203
+02.05.2023 18:39:39.855 [restartedMain] INFO   c.z.h.HikariDataSource - HikariPool-1 - Start completed.
+02.05.2023 18:39:40.034 [restartedMain] INFO   SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+02.05.2023 18:39:42.658 [restartedMain] INFO   o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+02.05.2023 18:39:42.696 [restartedMain] INFO   o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+02.05.2023 18:39:44.032 [restartedMain] WARN   o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+02.05.2023 18:39:44.787 [restartedMain] INFO   o.s.s.w.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4cfa9abc, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3ce0ce98, org.springframework.security.web.context.SecurityContextHolderFilter@41255723, org.springframework.security.web.header.HeaderWriterFilter@b4b6587, org.springframework.security.web.authentication.logout.LogoutFilter@2152101a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4955ee6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2e457d83, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@23ae7f7f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2bffd8cd, org.springframework.security.web.access.ExceptionTranslationFilter@3dc5a024, org.springframework.security.web.access.intercept.AuthorizationFilter@5ea7f65c]
+02.05.2023 18:39:45.380 [restartedMain] INFO   o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+02.05.2023 18:39:45.405 [restartedMain] INFO   o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+02.05.2023 18:39:45.452 [restartedMain] INFO   o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+02.05.2023 18:39:45.467 [restartedMain] INFO   c.e.e.f.R.RailwayTicketOfficeApplication - Started RailwayTicketOfficeApplication in 13.127 seconds (process running for 17.34)
+02.05.2023 18:39:49.226 [http-nio-8080-exec-1] INFO   o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+02.05.2023 18:39:49.226 [http-nio-8080-exec-1] INFO   o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+02.05.2023 18:39:49.226 [http-nio-8080-exec-1] INFO   o.s.w.s.DispatcherServlet - Completed initialization in 0 ms
+02.05.2023 18:39:51.092 [http-nio-8080-exec-4] INFO   c.e.e.f.R.c.MainController - Main controller: method 'getRegistration'
+02.05.2023 18:40:03.831 [http-nio-8080-exec-8] INFO   c.e.e.f.R.c.MainController - Main controller: method 'addUser'
+02.05.2023 18:40:03.831 [http-nio-8080-exec-8] INFO   c.e.e.f.R.s.UserService - UserService: method 'addNewUser'
+02.05.2023 18:40:05.159 [http-nio-8080-exec-1] INFO   c.e.e.f.R.c.MainController - Main controller: method 'getRegistration'
+02.05.2023 18:40:06.762 [http-nio-8080-exec-3] INFO   c.e.e.f.R.c.MainController - Main controller: method 'addUser'
+02.05.2023 18:40:07.474 [http-nio-8080-exec-5] INFO   c.e.e.f.R.c.MainController - Main controller: method 'getRegistration'
+02.05.2023 18:40:14.134 [http-nio-8080-exec-8] INFO   c.e.e.f.R.c.MainController - Main controller: method 'addUser'
+02.05.2023 18:40:14.134 [http-nio-8080-exec-8] INFO   c.e.e.f.R.s.UserService - UserService: method 'addNewUser'
+02.05.2023 18:40:15.195 [http-nio-8080-exec-3] INFO   c.e.e.f.R.c.MainController - Main controller: method 'getRegistration'
+02.05.2023 18:40:25.394 [http-nio-8080-exec-6] INFO   c.e.e.f.R.c.MainController - Main controller: method 'addUser'
+02.05.2023 18:40:34.050 [http-nio-8080-exec-10] INFO   c.e.e.f.R.c.MainController - Main controller: method 'addUser'
+02.05.2023 18:40:34.050 [http-nio-8080-exec-10] INFO   c.e.e.f.R.s.UserService - UserService: method 'addNewUser'
+02.05.2023 18:40:43.724 [http-nio-8080-exec-5] INFO   c.e.e.f.R.c.MainController - Home page
+02.05.2023 18:41:29.193 [http-nio-8080-exec-1] INFO   c.e.e.f.R.c.MainController - Home page
+02.05.2023 18:41:58.638 [http-nio-8080-exec-4] INFO   c.e.e.f.R.c.MainController - Home page
+02.05.2023 18:42:03.638 [http-nio-8080-exec-7] INFO   c.e.e.f.R.c.MainController - Home page
+02.05.2023 18:42:06.206 [http-nio-8080-exec-8] INFO   c.e.e.f.R.c.MainController - Home page
+02.05.2023 18:42:43.097 [http-nio-8080-exec-3] INFO   c.e.e.f.R.c.MainController - Home page
+02.05.2023 18:42:58.466 [http-nio-8080-exec-7] INFO   c.e.e.f.R.c.MainController - Main controller: method 'routes'
+02.05.2023 18:42:58.466 [http-nio-8080-exec-7] INFO   c.e.e.f.R.c.MainController - Main controller: method 'routes/{from}/{to}/{pageNu}'
+02.05.2023 18:42:58.466 [http-nio-8080-exec-7] INFO   c.e.e.f.R.s.StopService - StopService: method 'search'
+02.05.2023 18:42:58.522 [http-nio-8080-exec-7] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:42:58.530 [http-nio-8080-exec-7] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:42:58.530 [http-nio-8080-exec-7] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:42:58.530 [http-nio-8080-exec-7] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:43:12.323 [http-nio-8080-exec-5] INFO   c.e.e.f.R.c.MainController - Main controller: method 'routes/{from}/{to}/{pageNu}'
+02.05.2023 18:43:12.323 [http-nio-8080-exec-5] INFO   c.e.e.f.R.s.StopService - StopService: method 'search'
+02.05.2023 18:43:12.363 [http-nio-8080-exec-5] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:43:12.363 [http-nio-8080-exec-5] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:43:12.363 [http-nio-8080-exec-5] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:43:12.363 [http-nio-8080-exec-5] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:43:13.654 [http-nio-8080-exec-8] INFO   c.e.e.f.R.c.MainController - Main controller: method 'routes/{from}/{to}/{pageNu}'
+02.05.2023 18:43:13.654 [http-nio-8080-exec-8] INFO   c.e.e.f.R.s.StopService - StopService: method 'search'
+02.05.2023 18:43:13.702 [http-nio-8080-exec-8] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:43:13.702 [http-nio-8080-exec-8] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:43:13.702 [http-nio-8080-exec-8] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:43:13.702 [http-nio-8080-exec-8] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:43:19.505 [http-nio-8080-exec-7] INFO   c.e.e.f.R.c.MainController - Main controller: method 'getRouteDetails'
+02.05.2023 18:43:19.558 [http-nio-8080-exec-7] INFO   c.e.e.f.R.s.StopService - StopService: method 'check'
+02.05.2023 18:43:19.598 [http-nio-8080-exec-7] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:43:35.883 [http-nio-8080-exec-6] INFO   c.e.e.f.R.c.MainController - Main controller: method 'getRegistration'
+02.05.2023 18:44:01.764 [http-nio-8080-exec-10] INFO   c.e.e.f.R.c.MainController - Main controller: method 'addUser'
+02.05.2023 18:44:24.624 [http-nio-8080-exec-4] INFO   c.e.e.f.R.c.MainController - Main controller: method 'addUser'
+02.05.2023 18:44:24.624 [http-nio-8080-exec-4] INFO   c.e.e.f.R.s.UserService - UserService: method 'addNewUser'
+02.05.2023 18:44:43.460 [http-nio-8080-exec-7] INFO   c.e.e.f.R.c.MainController - Main controller: method 'addUser'
+02.05.2023 18:44:43.460 [http-nio-8080-exec-7] INFO   c.e.e.f.R.s.UserService - UserService: method 'addNewUser'
+02.05.2023 18:45:02.782 [http-nio-8080-exec-4] INFO   c.e.e.f.R.c.MainController - Home page
+02.05.2023 18:45:22.717 [http-nio-8080-exec-5] INFO   c.e.e.f.R.c.MainController - Main controller: method 'routes'
+02.05.2023 18:45:22.717 [http-nio-8080-exec-5] INFO   c.e.e.f.R.c.MainController - Main controller: method 'routes/{from}/{to}/{pageNu}'
+02.05.2023 18:45:22.717 [http-nio-8080-exec-5] INFO   c.e.e.f.R.s.StopService - StopService: method 'search'
+02.05.2023 18:45:22.757 [http-nio-8080-exec-5] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:45:22.757 [http-nio-8080-exec-5] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:45:22.757 [http-nio-8080-exec-5] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:45:22.757 [http-nio-8080-exec-5] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:45:27.221 [http-nio-8080-exec-7] INFO   c.e.e.f.R.c.MainController - Main controller: method 'getRouteDetails'
+02.05.2023 18:45:27.245 [http-nio-8080-exec-7] INFO   c.e.e.f.R.s.StopService - StopService: method 'check'
+02.05.2023 18:45:27.277 [http-nio-8080-exec-7] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:45:33.446 [http-nio-8080-exec-10] INFO   c.e.e.f.R.c.MainController - Main controller: method 'buyRoute'
+02.05.2023 18:45:33.494 [http-nio-8080-exec-10] INFO   c.e.e.f.R.s.StopService - StopService: method 'buyTicket'
+02.05.2023 18:45:33.550 [http-nio-8080-exec-10] INFO   c.e.e.f.R.s.StopService - StopService: method 'check'
+02.05.2023 18:45:33.590 [http-nio-8080-exec-2] INFO   c.e.e.f.R.c.MyProfileController - MyProfileController: method 'getProfile'
+02.05.2023 18:45:33.590 [http-nio-8080-exec-2] INFO   c.e.e.f.R.c.MyProfileController - MyProfileController: method 'getPageProfile'
+02.05.2023 18:45:33.598 [http-nio-8080-exec-2] INFO   c.e.e.f.R.s.TicketService - TicketService: method 'findAllTicketsByDocument'
+02.05.2023 18:45:44.214 [http-nio-8080-exec-9] INFO   c.e.e.f.R.c.MyProfileController - MyProfileController: method 'changeProfile'
+02.05.2023 18:45:48.780 [http-nio-8080-exec-3] INFO   c.e.e.f.R.c.MyProfileController - MyProfileController: method 'getProfile'
+02.05.2023 18:45:48.780 [http-nio-8080-exec-3] INFO   c.e.e.f.R.c.MyProfileController - MyProfileController: method 'getPageProfile'
+02.05.2023 18:45:48.796 [http-nio-8080-exec-3] INFO   c.e.e.f.R.s.TicketService - TicketService: method 'findAllTicketsByDocument'
+02.05.2023 18:45:50.795 [http-nio-8080-exec-5] INFO   c.e.e.f.R.c.MyProfileController - MyProfileController: method 'changeProfile'
+02.05.2023 18:45:55.633 [http-nio-8080-exec-7] INFO   c.e.e.f.R.c.MyProfileController - MyProfileController: method 'getProfile'
+02.05.2023 18:45:55.633 [http-nio-8080-exec-7] INFO   c.e.e.f.R.c.MyProfileController - MyProfileController: method 'getPageProfile'
+02.05.2023 18:45:55.649 [http-nio-8080-exec-7] INFO   c.e.e.f.R.s.TicketService - TicketService: method 'findAllTicketsByDocument'
+02.05.2023 18:46:06.456 [http-nio-8080-exec-4] INFO   c.e.e.f.R.c.MainController - Home page
+02.05.2023 18:46:21.916 [http-nio-8080-exec-6] INFO   c.e.e.f.R.c.MainController - Home page
+02.05.2023 18:46:32.629 [http-nio-8080-exec-10] INFO   c.e.e.f.R.c.MainController - Main controller: method 'routes'
+02.05.2023 18:46:32.629 [http-nio-8080-exec-10] INFO   c.e.e.f.R.c.MainController - Main controller: method 'routes/{from}/{to}/{pageNu}'
+02.05.2023 18:46:32.629 [http-nio-8080-exec-10] INFO   c.e.e.f.R.s.StopService - StopService: method 'search'
+02.05.2023 18:46:32.669 [http-nio-8080-exec-10] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:46:32.669 [http-nio-8080-exec-10] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:46:32.669 [http-nio-8080-exec-10] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:46:32.669 [http-nio-8080-exec-10] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:46:34.052 [http-nio-8080-exec-5] INFO   c.e.e.f.R.c.MainController - Main controller: method 'getRouteDetails'
+02.05.2023 18:46:34.076 [http-nio-8080-exec-5] INFO   c.e.e.f.R.s.StopService - StopService: method 'check'
+02.05.2023 18:46:34.100 [http-nio-8080-exec-5] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 18:46:47.318 [http-nio-8080-exec-9] INFO   c.e.e.f.R.c.MyProfileController - MyProfileController: method 'getProfile'
+02.05.2023 18:46:47.318 [http-nio-8080-exec-9] INFO   c.e.e.f.R.c.MyProfileController - MyProfileController: method 'getPageProfile'
+02.05.2023 18:46:47.334 [http-nio-8080-exec-9] INFO   c.e.e.f.R.s.TicketService - TicketService: method 'findAllTicketsByDocument'
+02.05.2023 18:46:50.954 [http-nio-8080-exec-10] INFO   c.e.e.f.R.c.MyProfileController - MyProfileController: method 'changeAdminProfile'
+02.05.2023 18:47:11.375 [http-nio-8080-exec-5] INFO   c.e.e.f.R.c.MyProfileController - MyProfileController: method 'changeAdminProfile'
+02.05.2023 18:47:30.480 [http-nio-8080-exec-4] INFO   c.e.e.f.R.c.AdminContactsController - AdminContactsController: method 'getContacts'
+02.05.2023 18:48:03.903 [http-nio-8080-exec-7] INFO   c.e.e.f.R.c.AdminController - AdminController: method 'findAllUsers'
+02.05.2023 18:48:03.903 [http-nio-8080-exec-7] INFO   c.e.e.f.R.s.UserService - UserService: method 'findAllUsers'
+02.05.2023 18:48:07.566 [http-nio-8080-exec-6] INFO   c.e.e.f.R.c.AdminController - AdminController: method 'findAllUsers'
+02.05.2023 18:48:07.566 [http-nio-8080-exec-6] INFO   c.e.e.f.R.s.UserService - UserService: method 'findAllUsers'
+02.05.2023 18:48:08.913 [http-nio-8080-exec-5] INFO   c.e.e.f.R.c.AdminController - AdminController: method 'findAllUsers'
+02.05.2023 18:48:08.913 [http-nio-8080-exec-5] INFO   c.e.e.f.R.s.UserService - UserService: method 'findAllUsers'
+02.05.2023 18:48:11.416 [http-nio-8080-exec-7] INFO   c.e.e.f.R.c.AdminController - AdminController: method 'findAllUsers'
+02.05.2023 18:48:11.416 [http-nio-8080-exec-7] INFO   c.e.e.f.R.s.UserService - UserService: method 'findAllUsers'
+02.05.2023 18:48:12.576 [http-nio-8080-exec-10] INFO   c.e.e.f.R.c.AdminController - AdminController: method 'findAllUsers'
+02.05.2023 18:48:12.576 [http-nio-8080-exec-10] INFO   c.e.e.f.R.s.UserService - UserService: method 'findAllUsers'
+02.05.2023 18:48:16.941 [http-nio-8080-exec-5] INFO   c.e.e.f.R.c.AdminController - AdminController: method 'deleteProfile'
+02.05.2023 18:48:17.013 [http-nio-8080-exec-4] INFO   c.e.e.f.R.c.AdminController - AdminController: method 'findAllUsers'
+02.05.2023 18:48:17.013 [http-nio-8080-exec-4] INFO   c.e.e.f.R.s.UserService - UserService: method 'findAllUsers'
+02.05.2023 18:48:18.247 [http-nio-8080-exec-1] INFO   c.e.e.f.R.c.AdminController - AdminController: method 'findAllUsers'
+02.05.2023 18:48:18.247 [http-nio-8080-exec-1] INFO   c.e.e.f.R.s.UserService - UserService: method 'findAllUsers'
+02.05.2023 18:48:18.841 [http-nio-8080-exec-2] INFO   c.e.e.f.R.c.AdminController - AdminController: method 'findAllUsers'
+02.05.2023 18:48:18.841 [http-nio-8080-exec-2] INFO   c.e.e.f.R.s.UserService - UserService: method 'findAllUsers'
+02.05.2023 18:48:20.187 [http-nio-8080-exec-3] INFO   c.e.e.f.R.c.AdminController - AdminController: method 'findAllUsers'
+02.05.2023 18:48:20.187 [http-nio-8080-exec-3] INFO   c.e.e.f.R.s.UserService - UserService: method 'findAllUsers'
+02.05.2023 18:48:21.225 [http-nio-8080-exec-5] INFO   c.e.e.f.R.c.AdminController - AdminController: method 'findAllUsers'
+02.05.2023 18:48:21.225 [http-nio-8080-exec-5] INFO   c.e.e.f.R.s.UserService - UserService: method 'findAllUsers'
+02.05.2023 18:48:22.393 [http-nio-8080-exec-9] INFO   c.e.e.f.R.c.AdminController - AdminController: method 'deleteProfile'
+02.05.2023 18:48:22.433 [http-nio-8080-exec-1] INFO   c.e.e.f.R.c.AdminController - AdminController: method 'findAllUsers'
+02.05.2023 18:48:22.441 [http-nio-8080-exec-1] INFO   c.e.e.f.R.s.UserService - UserService: method 'findAllUsers'
+02.05.2023 18:48:26.216 [http-nio-8080-exec-1] INFO   c.e.e.f.R.c.AdminRoutesController - AdminRoutesController: method 'getStations'
+02.05.2023 18:48:42.904 [http-nio-8080-exec-2] INFO   c.e.e.f.R.c.AdminRoutesController - AdminRoutesController: method 'getRoutes'
+02.05.2023 18:49:16.810 [http-nio-8080-exec-8] INFO   c.e.e.f.R.c.AdminRoutesController - AdminRoutesController: method 'searchRoute'
+02.05.2023 18:49:27.627 [http-nio-8080-exec-9] INFO   c.e.e.f.R.c.AdminRoutesController - AdminRoutesController: method 'checkRoutes'
+02.05.2023 18:49:27.627 [http-nio-8080-exec-9] INFO   c.e.e.f.R.c.AdminRoutesController - AdminRoutesController: method 'checkRoute'
+02.05.2023 18:49:27.627 [http-nio-8080-exec-9] INFO   c.e.e.f.R.s.StopService - StopService: method 'findAllStops'
+02.05.2023 18:49:51.056 [http-nio-8080-exec-2] INFO   c.e.e.f.R.c.MainController - Home page
+02.05.2023 18:49:56.818 [http-nio-8080-exec-7] INFO   c.e.e.f.R.c.MainController - Main controller: method 'routes'
+02.05.2023 18:49:56.818 [http-nio-8080-exec-7] INFO   c.e.e.f.R.c.MainController - Main controller: method 'routes/{from}/{to}/{pageNu}'
+02.05.2023 18:49:56.818 [http-nio-8080-exec-7] INFO   c.e.e.f.R.s.StopService - StopService: method 'search'
+02.05.2023 18:50:05.288 [http-nio-8080-exec-3] INFO   c.e.e.f.R.c.AdminRoutesController - AdminRoutesController: method 'getRoutes'
+02.05.2023 18:50:11.721 [http-nio-8080-exec-1] INFO   c.e.e.f.R.c.AdminRoutesController - AdminRoutesController: method 'deleteRoute'
+02.05.2023 18:50:11.745 [http-nio-8080-exec-7] INFO   c.e.e.f.R.c.AdminRoutesController - AdminRoutesController: method 'getRoutes'
+02.05.2023 18:50:15.192 [http-nio-8080-exec-5] INFO   c.e.e.f.R.c.AdminRoutesController - AdminRoutesController: method 'searchRoute'
+02.05.2023 18:50:15.216 [http-nio-8080-exec-10] INFO   c.e.e.f.R.c.AdminRoutesController - AdminRoutesController: method 'getRoutes'
+02.05.2023 18:50:53.440 [http-nio-8080-exec-7] INFO   c.e.e.f.R.c.AdminTripController - AdminTripController: method 'checkTrip'
+02.05.2023 18:50:53.440 [http-nio-8080-exec-7] INFO   c.e.e.f.R.c.AdminTripController - AdminTripController: method 'checkTrip'
+02.05.2023 18:50:53.440 [http-nio-8080-exec-7] INFO   c.e.e.f.R.s.TicketService - findAllTickets: method 'findAllUsers'
+02.05.2023 18:51:09.649 [http-nio-8080-exec-10] INFO   c.e.e.f.R.c.AdminTripController - AdminTripController: method 'checkTrip'
+02.05.2023 18:51:09.649 [http-nio-8080-exec-10] INFO   c.e.e.f.R.s.TicketService - findAllTickets: method 'findAllUsers'
+02.05.2023 18:51:11.162 [http-nio-8080-exec-6] INFO   c.e.e.f.R.c.AdminTripController - AdminTripController: method 'checkTrip'
+02.05.2023 18:51:11.162 [http-nio-8080-exec-6] INFO   c.e.e.f.R.s.TicketService - findAllTickets: method 'findAllUsers'
+02.05.2023 18:51:22.086 [http-nio-8080-exec-7] INFO   c.e.e.f.R.c.AdminController - AdminController: method 'getStatements'
+02.05.2023 18:51:22.094 [http-nio-8080-exec-7] INFO   c.e.e.f.R.c.AdminController - AdminController: method 'findAllStatements'
+02.05.2023 18:51:22.094 [http-nio-8080-exec-7] INFO   c.e.e.f.R.s.MessageService - findAllTickets: method 'findAllUsers'
+02.05.2023 18:51:29.266 [http-nio-8080-exec-10] INFO   c.e.e.f.R.c.AdminController - AdminController: method 'findAllStatements'
+02.05.2023 18:51:29.266 [http-nio-8080-exec-10] INFO   c.e.e.f.R.s.MessageService - findAllTickets: method 'findAllUsers'
+02.05.2023 18:51:30.930 [http-nio-8080-exec-8] INFO   c.e.e.f.R.c.AdminController - AdminController: method 'findAllStatements'
+02.05.2023 18:51:30.930 [http-nio-8080-exec-8] INFO   c.e.e.f.R.s.MessageService - findAllTickets: method 'findAllUsers'
+02.05.2023 18:51:47.098 [http-nio-8080-exec-7] INFO   c.e.e.f.R.c.AdminController - AdminController: method 'getStatements'
+02.05.2023 18:51:47.098 [http-nio-8080-exec-7] INFO   c.e.e.f.R.c.AdminController - AdminController: method 'findAllStatements'
+02.05.2023 18:51:47.106 [http-nio-8080-exec-7] INFO   c.e.e.f.R.s.MessageService - findAllTickets: method 'findAllUsers'
+02.05.2023 18:51:59.619 [http-nio-8080-exec-10] INFO   c.e.e.f.R.c.AdminController - AdminController: method 'findAllStatements'
+02.05.2023 18:51:59.619 [http-nio-8080-exec-10] INFO   c.e.e.f.R.s.MessageService - findAllTickets: method 'findAllUsers'
+02.05.2023 18:52:00.706 [http-nio-8080-exec-6] INFO   c.e.e.f.R.c.AdminController - AdminController: method 'findAllStatements'
+02.05.2023 18:52:00.714 [http-nio-8080-exec-6] INFO   c.e.e.f.R.s.MessageService - findAllTickets: method 'findAllUsers'
+02.05.2023 18:52:02.230 [http-nio-8080-exec-7] INFO   c.e.e.f.R.c.AdminController - AdminController: method 'findAllStatements'
+02.05.2023 18:52:02.230 [http-nio-8080-exec-7] INFO   c.e.e.f.R.s.MessageService - findAllTickets: method 'findAllUsers'
+02.05.2023 18:53:13.152 [SpringApplicationShutdownHook] INFO   o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+02.05.2023 18:53:13.159 [SpringApplicationShutdownHook] INFO   c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated...
+02.05.2023 18:53:13.175 [SpringApplicationShutdownHook] INFO   c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed.
+02.05.2023 19:56:54.248 [main] INFO   o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.epam.finalProject.Railwayticketoffice.services.UserServiceIntegrationTest]: UserServiceIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+02.05.2023 19:56:54.363 [main] INFO   o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.epam.finalProject.Railwayticketoffice.RailwayTicketOfficeApplication for test class com.example.epam.finalProject.Railwayticketoffice.services.UserServiceIntegrationTest
+02.05.2023 19:56:54.538 [main] INFO   o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.epam.finalProject.Railwayticketoffice.services.StationServiceIntegrationTest]: StationServiceIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+02.05.2023 19:56:54.541 [main] INFO   o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.epam.finalProject.Railwayticketoffice.RailwayTicketOfficeApplication for test class com.example.epam.finalProject.Railwayticketoffice.services.StationServiceIntegrationTest
+02.05.2023 19:56:54.596 [main] INFO   o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.epam.finalProject.Railwayticketoffice.GeneralTest]: GeneralTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+02.05.2023 19:56:54.610 [main] INFO   o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.epam.finalProject.Railwayticketoffice.RailwayTicketOfficeApplication for test class com.example.epam.finalProject.Railwayticketoffice.GeneralTest
+02.05.2023 19:56:54.617 [main] INFO   o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.epam.finalProject.Railwayticketoffice.services.StopServiceIntegrationTest]: StopServiceIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+02.05.2023 19:56:54.619 [main] INFO   o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.epam.finalProject.Railwayticketoffice.RailwayTicketOfficeApplication for test class com.example.epam.finalProject.Railwayticketoffice.services.StopServiceIntegrationTest
+02.05.2023 19:56:55.226 [background-preinit] INFO   o.h.v.i.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+02.05.2023 19:56:55.292 [main] INFO   c.e.e.f.R.d.UserRepositoryIntegrationTest - Starting UserRepositoryIntegrationTest using Java 17.0.3.1 with PID 12804 (started by Полина in C:\Users\Полина\Documents\GitHub\Railway-ticket-office)
+02.05.2023 19:56:55.293 [main] INFO   c.e.e.f.R.d.UserRepositoryIntegrationTest - No active profile set, falling back to 1 default profile: "default"
+02.05.2023 19:56:55.802 [main] INFO   o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+02.05.2023 19:56:55.945 [main] INFO   o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 128 ms. Found 6 JPA repository interfaces.
+02.05.2023 19:56:56.306 [main] INFO   o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+02.05.2023 19:56:56.391 [main] INFO   o.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+02.05.2023 19:56:56.888 [main] INFO   c.z.h.HikariDataSource - HikariPool-1 - Starting...
+02.05.2023 19:56:57.383 [main] INFO   c.z.h.p.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@68c34db2
+02.05.2023 19:56:57.388 [main] INFO   c.z.h.HikariDataSource - HikariPool-1 - Start completed.
+02.05.2023 19:56:57.473 [main] INFO   SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+02.05.2023 19:56:58.840 [main] INFO   o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+02.05.2023 19:56:58.855 [main] INFO   o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+02.05.2023 19:56:59.500 [main] INFO   c.e.e.f.R.d.UserRepositoryIntegrationTest - Started UserRepositoryIntegrationTest in 4.559 seconds (process running for 8.762)
+02.05.2023 19:57:00.143 [main] INFO   c.e.e.f.R.s.StationService - StationService: method 'addNewStation'
+02.05.2023 19:57:00.151 [main] INFO   c.e.e.f.R.s.StationService - StationService: method 'addNewStation'
+02.05.2023 19:57:00.198 [main] INFO   c.e.e.f.R.s.UserServiceIntegrationTest - Starting UserServiceIntegrationTest using Java 17.0.3.1 with PID 12804 (started by Полина in C:\Users\Полина\Documents\GitHub\Railway-ticket-office)
+02.05.2023 19:57:00.198 [main] INFO   c.e.e.f.R.s.UserServiceIntegrationTest - No active profile set, falling back to 1 default profile: "default"
+02.05.2023 19:57:00.722 [main] INFO   o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+02.05.2023 19:57:00.743 [main] INFO   o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 20 ms. Found 6 JPA repository interfaces.
+02.05.2023 19:57:01.434 [main] INFO   o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 0 (http)
+02.05.2023 19:57:01.448 [main] INFO   o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-auto-1"]
+02.05.2023 19:57:01.450 [main] INFO   o.a.c.c.StandardService - Starting service [Tomcat]
+02.05.2023 19:57:01.450 [main] INFO   o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.7]
+02.05.2023 19:57:01.553 [main] INFO   o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext
+02.05.2023 19:57:01.554 [main] INFO   o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1351 ms
+02.05.2023 19:57:01.686 [main] INFO   o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+02.05.2023 19:57:01.695 [main] INFO   c.z.h.HikariDataSource - HikariPool-2 - Starting...
+02.05.2023 19:57:01.717 [main] INFO   c.z.h.p.HikariPool - HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@24032706
+02.05.2023 19:57:01.717 [main] INFO   c.z.h.HikariDataSource - HikariPool-2 - Start completed.
+02.05.2023 19:57:01.719 [main] INFO   SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+02.05.2023 19:57:01.872 [main] INFO   o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+02.05.2023 19:57:01.873 [main] INFO   o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+02.05.2023 19:57:02.179 [main] WARN   o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+02.05.2023 19:57:02.629 [main] INFO   o.s.s.w.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@25777ab6, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@38ebf8dc, org.springframework.security.web.context.SecurityContextHolderFilter@7310bc90, org.springframework.security.web.header.HeaderWriterFilter@4bdec54, org.springframework.security.web.authentication.logout.LogoutFilter@2abe5132, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4437af21, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@18247d9b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5632bed3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@37d12d0e, org.springframework.security.web.access.ExceptionTranslationFilter@6c07666f, org.springframework.security.web.access.intercept.AuthorizationFilter@42fe9099]
+02.05.2023 19:57:02.953 [main] INFO   o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-auto-1"]
+02.05.2023 19:57:02.985 [main] INFO   o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 51487 (http) with context path ''
+02.05.2023 19:57:02.992 [main] INFO   c.e.e.f.R.s.UserServiceIntegrationTest - Started UserServiceIntegrationTest in 2.834 seconds (process running for 12.255)
+02.05.2023 19:57:03.000 [main] INFO   c.e.e.f.R.s.UserService - UserService: method 'addNewUser'
+02.05.2023 19:57:03.267 [main] INFO   c.e.e.f.R.s.UserService - UserService: method 'addNewUser'
+02.05.2023 19:57:03.413 [main] INFO   c.e.e.f.R.s.UserService - UserService: method 'change'
+02.05.2023 19:57:03.652 [main] INFO   c.e.e.f.R.s.UserService - UserService: method 'change'
+02.05.2023 19:57:03.654 [main] INFO   c.e.e.f.R.s.UserService - UserService: method 'addNewUser'
+02.05.2023 19:57:03.659 [main] INFO   c.e.e.f.R.s.StationService - StationService: method 'addNewStation'
+02.05.2023 19:57:03.677 [main] INFO   c.e.e.f.R.s.StationService - StationService: method 'addNewStation'
+02.05.2023 19:57:03.912 [main] INFO   c.e.e.f.R.GeneralTest - Starting GeneralTest using Java 17.0.3.1 with PID 12804 (started by Полина in C:\Users\Полина\Documents\GitHub\Railway-ticket-office)
+02.05.2023 19:57:03.913 [main] INFO   c.e.e.f.R.GeneralTest - No active profile set, falling back to 1 default profile: "default"
+02.05.2023 19:57:04.185 [main] INFO   o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+02.05.2023 19:57:04.211 [main] INFO   o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 24 ms. Found 6 JPA repository interfaces.
+02.05.2023 19:57:04.335 [main] INFO   o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 0 (http)
+02.05.2023 19:57:04.336 [main] INFO   o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-auto-2"]
+02.05.2023 19:57:04.336 [main] INFO   o.a.c.c.StandardService - Starting service [Tomcat]
+02.05.2023 19:57:04.336 [main] INFO   o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.7]
+02.05.2023 19:57:04.366 [main] INFO   o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext
+02.05.2023 19:57:04.366 [main] INFO   o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 450 ms
+02.05.2023 19:57:04.436 [main] INFO   o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+02.05.2023 19:57:04.446 [main] INFO   c.z.h.HikariDataSource - HikariPool-3 - Starting...
+02.05.2023 19:57:04.462 [main] INFO   c.z.h.p.HikariPool - HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@c4ef770
+02.05.2023 19:57:04.463 [main] INFO   c.z.h.HikariDataSource - HikariPool-3 - Start completed.
+02.05.2023 19:57:04.464 [main] INFO   SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+02.05.2023 19:57:04.635 [main] INFO   o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+02.05.2023 19:57:04.636 [main] INFO   o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+02.05.2023 19:57:04.808 [main] WARN   o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+02.05.2023 19:57:04.892 [main] INFO   o.s.s.w.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@52baaf87, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5a49c1e, org.springframework.security.web.context.SecurityContextHolderFilter@229f3c5d, org.springframework.security.web.header.HeaderWriterFilter@61b83fef, org.springframework.security.web.authentication.logout.LogoutFilter@7a506493, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2bb7229e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@72e76649, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@111c9be, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4662fa99, org.springframework.security.web.access.ExceptionTranslationFilter@7de1cc9f, org.springframework.security.web.access.intercept.AuthorizationFilter@3c1fe350]
+02.05.2023 19:57:04.994 [main] INFO   o.a.c.c.C.[.[.[/] - Initializing Spring TestDispatcherServlet ''
+02.05.2023 19:57:04.995 [main] INFO   o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+02.05.2023 19:57:04.998 [main] INFO   o.s.t.w.s.TestDispatcherServlet - Completed initialization in 3 ms
+02.05.2023 19:57:05.012 [main] INFO   o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-auto-2"]
+02.05.2023 19:57:05.017 [main] INFO   o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 51498 (http) with context path ''
+02.05.2023 19:57:05.021 [main] INFO   c.e.e.f.R.GeneralTest - Started GeneralTest in 1.153 seconds (process running for 14.283)
+02.05.2023 19:57:05.203 [main] INFO   c.e.e.f.R.c.MainController - Home page
+02.05.2023 19:57:05.966 [main] INFO   c.e.e.f.R.s.StopService - StopService: method 'createNewRoute'
+02.05.2023 19:57:05.968 [main] INFO   c.e.e.f.R.s.StopService - StopService: method 'change'
+02.05.2023 19:57:05.970 [main] INFO   c.e.e.f.R.s.StopService - StopService: method 'delete'
+02.05.2023 19:57:05.972 [main] INFO   c.e.e.f.R.s.StopService - StopService: method 'addStop'
+02.05.2023 19:57:05.977 [main] INFO   c.e.e.f.R.s.StopService - StopService: method 'check'
+02.05.2023 19:57:05.993 [main] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 19:57:05.996 [main] INFO   c.e.e.f.R.s.StopService - StopService: method 'calculateTime'
+02.05.2023 19:57:06.004 [main] INFO   c.e.e.f.R.s.StopService - StopService: method 'change'
+02.05.2023 19:57:06.005 [main] INFO   c.e.e.f.R.s.StopService - StopService: method 'change'
+02.05.2023 19:57:06.018 [main] INFO   c.e.e.f.R.s.StopService - StopService: method 'delete'
+02.05.2023 19:57:06.030 [main] INFO   c.e.e.f.R.s.StopService - StopService: method 'createNewRoute'
+02.05.2023 19:57:06.048 [main] INFO   c.e.e.f.R.s.StopService - StopService: method 'addStop'
+02.05.2023 19:57:06.048 [main] INFO   c.e.e.f.R.s.StopService - StopService: method 'addStop'
+02.05.2023 19:57:06.196 [main] INFO   o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.epam.finalProject.Railwayticketoffice.RailwayTicketOfficeApplicationTests]: RailwayTicketOfficeApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+02.05.2023 19:57:06.198 [main] INFO   o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.epam.finalProject.Railwayticketoffice.RailwayTicketOfficeApplication for test class com.example.epam.finalProject.Railwayticketoffice.RailwayTicketOfficeApplicationTests
+02.05.2023 19:57:06.256 [main] INFO   c.e.e.f.R.RailwayTicketOfficeApplicationTests - Starting RailwayTicketOfficeApplicationTests using Java 17.0.3.1 with PID 12804 (started by Полина in C:\Users\Полина\Documents\GitHub\Railway-ticket-office)
+02.05.2023 19:57:06.256 [main] INFO   c.e.e.f.R.RailwayTicketOfficeApplicationTests - No active profile set, falling back to 1 default profile: "default"
+02.05.2023 19:57:06.482 [main] INFO   o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+02.05.2023 19:57:06.501 [main] INFO   o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 18 ms. Found 6 JPA repository interfaces.
+02.05.2023 19:57:06.590 [main] INFO   o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+02.05.2023 19:57:06.599 [main] INFO   c.z.h.HikariDataSource - HikariPool-4 - Starting...
+02.05.2023 19:57:06.614 [main] INFO   c.z.h.p.HikariPool - HikariPool-4 - Added connection com.mysql.cj.jdbc.ConnectionImpl@16fc5679
+02.05.2023 19:57:06.615 [main] INFO   c.z.h.HikariDataSource - HikariPool-4 - Start completed.
+02.05.2023 19:57:06.616 [main] INFO   SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+02.05.2023 19:57:06.760 [main] INFO   o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+02.05.2023 19:57:06.760 [main] INFO   o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+02.05.2023 19:57:06.942 [main] WARN   o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+02.05.2023 19:57:07.040 [main] INFO   o.s.s.w.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3230d2b2, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@aab2419, org.springframework.security.web.context.SecurityContextHolderFilter@49da976, org.springframework.security.web.header.HeaderWriterFilter@206e080, org.springframework.security.web.authentication.logout.LogoutFilter@3fe94bea, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@477367ad, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@40364273, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@63e17053, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@69fbc5f, org.springframework.security.web.access.ExceptionTranslationFilter@1f879e78, org.springframework.security.web.access.intercept.AuthorizationFilter@25b531b2]
+02.05.2023 19:57:07.152 [main] INFO   c.e.e.f.R.RailwayTicketOfficeApplicationTests - Started RailwayTicketOfficeApplicationTests in 0.93 seconds (process running for 16.414)
+02.05.2023 19:57:07.178 [SpringApplicationShutdownHook] INFO   o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+02.05.2023 19:57:07.180 [SpringApplicationShutdownHook] INFO   c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated...
+02.05.2023 19:57:07.191 [SpringApplicationShutdownHook] INFO   c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed.
+02.05.2023 19:57:07.217 [SpringApplicationShutdownHook] INFO   o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+02.05.2023 19:57:07.218 [SpringApplicationShutdownHook] INFO   c.z.h.HikariDataSource - HikariPool-2 - Shutdown initiated...
+02.05.2023 19:57:07.229 [SpringApplicationShutdownHook] INFO   c.z.h.HikariDataSource - HikariPool-2 - Shutdown completed.
+02.05.2023 19:57:07.244 [SpringApplicationShutdownHook] INFO   o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+02.05.2023 19:57:07.245 [SpringApplicationShutdownHook] INFO   c.z.h.HikariDataSource - HikariPool-3 - Shutdown initiated...
+02.05.2023 19:57:07.255 [SpringApplicationShutdownHook] INFO   c.z.h.HikariDataSource - HikariPool-3 - Shutdown completed.
+02.05.2023 19:57:07.257 [SpringApplicationShutdownHook] INFO   o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+02.05.2023 19:57:07.258 [SpringApplicationShutdownHook] INFO   c.z.h.HikariDataSource - HikariPool-4 - Shutdown initiated...
+02.05.2023 19:57:07.269 [SpringApplicationShutdownHook] INFO   c.z.h.HikariDataSource - HikariPool-4 - Shutdown completed.

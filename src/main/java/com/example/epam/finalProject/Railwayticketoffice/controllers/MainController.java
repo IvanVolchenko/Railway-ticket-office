@@ -190,7 +190,8 @@ public class MainController {
         if (bindingResult.hasErrors()) return "/en/registration.html";
         if (!userService.addNewUser(user)) {
             model.addAttribute("exist", "exist");
+            return "/en/registration.html";
         }
-        return "/en/login.html";
+        return "redirect:/login";
     }
 }
