@@ -1,10 +1,10 @@
 # Railway-ticket-office
 
-###This project was created for educational purposes.
+
+___This project was created for educational purposes.___
 
 - To see the list of dependencies go [here](./pom.xml).<br>
 - Look at `application.properties` [here](./src/main/resources/application.properties).<br>
-- The HELP.md is [here](./HELP.md).
 
 In this project MySql is used, that's why all properties are done for this
 DB. To run this project on your computer you have to change the properties
