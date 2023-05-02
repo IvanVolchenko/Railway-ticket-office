@@ -29,7 +29,7 @@ public class MessageRepositoryIntegrationTest {
 
     @Test
     public void findAll() {
-        Message message = new Message("Bob","+34641098237","Thank's for your job");
+        Message message = new Message("Bob","bobBob12231@mail.com","Thank's for your job");
         entityManager.persist(message);
         List<Message> all = (List<Message>) messageRepository.findAll();
         boolean test = all.size()>=1;

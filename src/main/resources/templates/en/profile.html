@@ -85,7 +85,6 @@
             <td th:text="${user.documentNumber}"></td>
             <td><a sec:authorize="hasAuthority('USER')" href="/change" class="btn btn-warning" th:text="#{Change}"></a>
                 <a sec:authorize="hasAuthority('ADMIN')" href="/changeAdmin" class="btn btn-warning" th:text="#{Change}"></a>
-                <a sec:authorize="hasAuthority('USER')"  href="/delete" class="btn btn-danger" th:text="#{Delete}"></a>
             </td>
 
         </tr>

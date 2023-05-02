@@ -147,7 +147,7 @@ public class StopService {
                             if (list.getKm()<stop.getKm()){
                                 String time = calculateTime(list, stop);
                                 double value = (stop.getKm()-list.getKm())*list.getPrice();
-                                String valueFormer = String.valueOf(value).substring(0,4);
+                                String valueFormer = String.valueOf(value).substring(0,2);
                                 value = Double.parseDouble(valueFormer);
                                 int seats = list.getSeats();
                                 String in = stop.getArrival().toString().replace('T',' ');

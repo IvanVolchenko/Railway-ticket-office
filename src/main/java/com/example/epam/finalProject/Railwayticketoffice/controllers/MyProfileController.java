@@ -120,13 +120,4 @@ public class MyProfileController {
         }
         return "redirect:/logout";
     }
-
-    @GetMapping("/delete")
-    @PreAuthorize("hasAuthority('USER')")
-    public String deleteProfile(Authentication authentication, Model model){
-        LOGGER.info("MyProfileController: method 'deleteProfile'");
-        MyUser myUser = (MyUser) authentication.getPrincipal();
-        userRepository.deleteById(myUser.getId());
-        return "redirect:/logout";
-    }
 }

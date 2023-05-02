@@ -18,7 +18,7 @@ public class User {
      */
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Column(name = "username", unique = true)
@@ -45,10 +45,8 @@ public class User {
     @Size(min = 8, max = 60, message = "Password should not be between 2 and 60 characters" )
     private String password;
     @Column(name = "authorities", nullable = false)
-//    @NotEmpty
     private String authorities;
-    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY,
-            cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Ticket> tickets;
 
     public User() {

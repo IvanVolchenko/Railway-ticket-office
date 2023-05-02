@@ -152,15 +152,17 @@ public class MainController {
     }
 
     @GetMapping("/help")
-    public String startHelp(){
+    public String startHelp(Model model){
+        model.addAttribute("message", new Message());
         return "/en/help.html";
     }
 
-    @PostMapping("/help/send")
-    public String sendHelp(@RequestParam String name, @RequestParam String contact,
-                           @RequestParam String text,Model model){
+    @PostMapping("/help")
+    public String sendHelp(@ModelAttribute ("message") @Valid Message message,
+                           BindingResult bindingResult){
+        if (bindingResult.hasErrors()) return "/en/help.html";
         LOGGER.info("Main controller: method 'sendHelp'");
-        messageRepository.save(new Message(name,contact,text));
+        messageRepository.save(message);
         return "redirect:/";
     }
 

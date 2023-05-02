@@ -1,6 +1,7 @@
 package com.example.epam.finalProject.Railwayticketoffice.models;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 
 /**
@@ -12,11 +13,12 @@ import jakarta.validation.constraints.NotBlank;
 public class Message {
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Column(name = "name")
     private String name;
     @Column(name = "contact")
+    @Email(message = "Email should be valid")
     private String contact;
     @Column(name = "text")
     private String text;

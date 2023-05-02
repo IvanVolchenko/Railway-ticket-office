@@ -17,7 +17,7 @@ public class Station {
 
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Column(name = "city")
     @NotBlank(message = "City should not be empty")

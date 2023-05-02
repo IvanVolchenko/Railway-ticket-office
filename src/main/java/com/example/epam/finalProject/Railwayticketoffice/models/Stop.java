@@ -15,7 +15,7 @@ import java.util.List;
 public class Stop {
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Column(name = "train")
     private String train;
