@@ -103,8 +103,7 @@
 <div class="container my-5">
     <div class="row row-cols-1 row-cols-md-1 row-cols-lg-3 g-5">
         <form th:action="@{/addStop}" method="post" class="form-box">
-            <div class="mb-4 my-3 text-search text-center marg-down"> Add Stop
-            </div>
+            <div class="mb-4 my-3 text-search text-center marg-down" th:text="#{AddStop}"></div>
             <div class="mb-4 my-3">
                 <label for="station" class="form-label" th:text="#{StId}"></label>
                 <input
