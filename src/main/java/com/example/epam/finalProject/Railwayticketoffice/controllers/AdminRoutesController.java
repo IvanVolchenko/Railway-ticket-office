@@ -104,12 +104,22 @@ public class AdminRoutesController {
         Stop firstStop = new Stop(train,timeout,timeout,0);
         Stop secondStop = new Stop(train,timein,timein,km);
         if (!stopService.createNewRoute(firstStop,secondStop,departure,arrival)) {
-            model.addAttribute("exist", "exist");
-            Iterable <Station> stations = stationsRepository.findAll();
-            model.addAttribute("stations", stations);
-            return "/admin/routes.html";
+            return "redirect:/admin/routes/error";
         }
         return "redirect:/admin/routes";
+    }
+
+    @GetMapping("/admin/routes/error")
+    @PreAuthorize("hasAuthority('ADMIN')")
+    public String getRoutesError(Model model){
+        LOGGER.info("AdminRoutesController: method 'getRoutesError'");
+        Iterable <Station> stationsAll = stationsRepository.findAll();
+        List <Station> stations = new ArrayList<>();
+        stationsAll.forEach(stations::add);
+        stations.sort(Comparator.comparing(Station::getStreet));
+        model.addAttribute("stations", stations);
+        model.addAttribute("exist", "exist");
+        return "/admin/routes.html";
     }
 
 
@@ -118,13 +128,7 @@ public class AdminRoutesController {
     public String deleteStop (@RequestParam long st, Model model) {
         LOGGER.info("AdminRoutesController: method 'deleteStop'");
         if (!stopService.deleteStop(st)){
-            model.addAttribute("notExist", "notExist");
-            Iterable <Stop> stop = stopRepository.findAll();
-            List <Stop> stops = new ArrayList<>();
-            stop.forEach(stops::add);
-            stops.sort(Comparator.comparing(Stop::getTrain));
-            model.addAttribute("stops", stops);
-            return "/admin/checkRoutes.html";
+            return "redirect:/routes/check/error";
         }
         return "redirect:/routes/check";
     }
@@ -136,15 +140,18 @@ public class AdminRoutesController {
                                Model model) {
         LOGGER.info("AdminRoutesController: method 'changeStop'");
         if (!stopService.change(station,point,timein,timeout)){
-            model.addAttribute("notChange", "notChange");
-            Iterable <Stop> stop = stopRepository.findAll();
-            List <Stop> stops = new ArrayList<>();
-            stop.forEach(stops::add);
-            stops.sort(Comparator.comparing(o -> o.getStation().getCity()));
-            model.addAttribute("stops", stops);
-            return "/admin/checkRoutes.html";
+            return "redirect:/routes/check/error";
         }
         return "redirect:/routes/check";
+    }
+
+    @GetMapping("/routes/check/error")
+    @PreAuthorize("hasAuthority('ADMIN')")
+    public String getCheckRoutesError(Model model){
+        LOGGER.info("AdminRoutesController: method 'getCheckRoutesError'");
+        model.addAttribute("notExist", "notExist");
+        model.addAttribute("notChange", "notChange");
+        return checkRoute(1,model);
     }
 
     @GetMapping("/routes/check")
@@ -171,20 +178,17 @@ public class AdminRoutesController {
         return "/admin/checkRoutes.html";
     }
 
-
-
-
-
     @PostMapping("/addStop")
     @PreAuthorize("hasAuthority('ADMIN')")
     public String addStop (@RequestParam long station, @RequestParam String number,
                            @RequestParam int kil,
                            @RequestParam LocalDateTime in, @RequestParam LocalDateTime out, Model model) {
         LOGGER.info("AdminRoutesController: method 'addStop'");
-        stopService.addStop(station,number,kil,in,out);
+        if(!stopService.addStop(station,number,kil,in,out)){
+            return "redirect:/routes/check/error";
+        }
         return "redirect:/routes/check";
     }
-    
     
 
     @PostMapping("/admin/deleteRoute")

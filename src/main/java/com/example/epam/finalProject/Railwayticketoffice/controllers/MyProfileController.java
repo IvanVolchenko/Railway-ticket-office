@@ -115,9 +115,20 @@ public class MyProfileController {
         user.setUsername(user.getEmailAddress());
         user.setAuthorities("USER");
         if (!userService.change(user)) {
-            model.addAttribute("exist", "exist");
-            return "/en/change.html";
+            return "redirect:/changes/exist";
         }
         return "redirect:/logout";
+    }
+
+    @GetMapping("/changes/exist")
+    @PreAuthorize("hasAuthority('USER')")
+    public String getChangesExist(Authentication authentication, Model model){
+        LOGGER.info("MyProfileController: method 'getChangesExist'");
+        MyUser myUser = (MyUser) authentication.getPrincipal();
+        Optional<User> userFound = userRepository.findById(myUser.getId());
+        User userFinal = userFound.get();
+        model.addAttribute("user",userFinal);
+        model.addAttribute("exist", "exist");
+        return "/en/change.html";
     }
 }

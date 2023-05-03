@@ -155,6 +155,9 @@
                         id="out"
                         name="out"
                 />
+                <div th:if="${notExist}" class="col-auto my-1 mb-4">
+                    <div class="alert alert-danger" th:text="#{NCor}"></div>
+                </div>
             </div>
             <button type="submit" class="btn btn-success text-btn my-2" th:text="#{Add}"></button>
         </form>

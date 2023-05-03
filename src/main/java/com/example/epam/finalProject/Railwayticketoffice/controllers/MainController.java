@@ -189,9 +189,16 @@ public class MainController {
         LOGGER.info("Main controller: method 'addUser'");
         if (bindingResult.hasErrors()) return "/en/registration.html";
         if (!userService.addNewUser(user)) {
-            model.addAttribute("exist", "exist");
-            return "/en/registration.html";
+            return "redirect:/registration/error";
         }
         return "redirect:/login";
+    }
+
+    @GetMapping("/registration/error")
+    public String getErrorExist(Model model){
+        LOGGER.info("Main controller: method 'getErrorExist'");
+        model.addAttribute("user", new User());
+        model.addAttribute("exist", "exist");
+        return "/en/registration.html";
     }
 }

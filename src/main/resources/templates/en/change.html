@@ -94,6 +94,9 @@
                         class="form-control"
                         placeholder="Ivan"
                         id="firstName"
+                        required
+                        minlength="2"
+                        maxlength="20"
                         th:value="${user.firstName}"
                         th:field="*{firstName}"
                 />
@@ -106,13 +109,23 @@
                         class="form-control"
                         placeholder="Ivanov"
                         id="lastName"
+                        required
+                        minlength="2"
+                        maxlength="20"
                         th:field="*{lastName}"
                 />
                 <div style="color:red" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></div>
             </div>
             <div>
                 <label for="document" class="form-label" th:text="#{DocNumber}"></label>
-                <input type="text" class="form-control" id="document" th:field="*{documentNumber}"/>
+                <input type="text"
+                       class="form-control"
+                       id="document"
+                       required
+                       minlength="5"
+                       maxlength="20"
+                       th:field="*{documentNumber}"
+                />
                 <div style="color:red" th:if="${#fields.hasErrors('documentNumber')}" th:errors="*{documentNumber}"></div>
             </div>
             <div class="col-auto my-1 mb-4">
@@ -125,6 +138,7 @@
                         class="form-control"
                         placeholder="user@gmail.com"
                         id="emailAddress"
+                        required
                         th:field="*{emailAddress}"
                         aria-describedby="emailHelp"
                 />
@@ -137,6 +151,9 @@
                         class="form-control"
                         placeholder="password"
                         id="password"
+                        required
+                        minlength="8"
+                        maxlength="60"
                         th:field="*{password}"
                 />
                 <div style="color:red" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
