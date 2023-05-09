@@ -5,6 +5,7 @@ ___This project was created for educational purposes.___
 
 - To see the list of dependencies go [here](./pom.xml).<br>
 - Look at `application.properties` [here](./src/main/resources/application.properties).<br>
+- To know more information about project read [this](./src/main/resources/static/presentation.pptx) presentation.<br>
 
 In this project MySql is used, that's why all properties are done for this
 DB. To run this project on your computer you have to change the properties
